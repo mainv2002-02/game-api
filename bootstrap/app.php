@@ -6,7 +6,7 @@ require_once __DIR__ . '/../vendor/autoload.php';
     dirname(__DIR__)
 ))->bootstrap();
 
-date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
+date_default_timezone_set(env('APP_TIMEZONE', 'Asia/Ho_Chi_Minh'));
 
 /*
 |--------------------------------------------------------------------------
@@ -58,8 +58,18 @@ $app->singleton(
 | the default version. You may register other files below as needed.
 |
 */
+$configs = [
+    'app',
+    'cache',
+    'database',
+    'mail',
+    'session',
+    'view',
+];
+foreach ($configs as $value) {
+    $app->configure($value);
+}
 
-$app->configure('app');
 
 /*
 |--------------------------------------------------------------------------
