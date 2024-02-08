@@ -1,6 +1,6 @@
 <?php
 
-/** @var \Laravel\Lumen\Routing\Router $router */
+/** @var Router $router */
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +13,8 @@
 |
 */
 
+use Laravel\Lumen\Routing\Router;
+
 $router->get('/', function () use ($router) {
-    return $router->app->version();
+    return \Illuminate\Support\Str::random(10);
 });
