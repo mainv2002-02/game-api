@@ -11,23 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('record', function (Blueprint $table) {
+        Schema::create('history', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('user_id')->default(0);
             $table->bigInteger('hero_id')->default(0);
             $table->bigInteger('question_id')->default(0);
             $table->bigInteger('option_id')->default(0);
-            $table->tinyInteger('times')->default(1);
-            $table->tinyInteger('point')->default(0);
+            $table->string('description', 512)->nullable();
             $table->timestamps();
 
             $table->index('user_id', 'idx_user_id');
             $table->index('hero_id', 'idx_hero_id');
             $table->index('question_id', 'idx_question_id');
             $table->index('option_id', 'idx_option_id');
-            $table->index('point', 'idx_point');
         });
-
     }
 
     /**
@@ -35,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('record');
+        Schema::dropIfExists('history');
     }
 };

@@ -19,7 +19,17 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
      * @var string[]
      */
     protected $fillable = [
-        'name', 'email',
+        'name',
+        'wp_id',
+        'token',
+        'full_name',
+        'phone',
+        'email',
+        'title',
+        'department',
+        'area',
+        'avatar',
+        'current_hero',
     ];
 
     /**
