@@ -1,8 +1,16 @@
 <?php
 
+use App\Console\Kernel;
+use App\Exceptions\Handler;
+use App\Providers\EventServiceProvider;
+use Illuminate\Contracts\Debug\ExceptionHandler;
+use Laravel\Lumen\Application;
+use Laravel\Lumen\Bootstrap\LoadEnvironmentVariables;
+use Laravel\Socialite\SocialiteServiceProvider;
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
-(new Laravel\Lumen\Bootstrap\LoadEnvironmentVariables(
+(new LoadEnvironmentVariables(
     dirname(__DIR__)
 ))->bootstrap();
 
@@ -19,7 +27,7 @@ date_default_timezone_set(env('APP_TIMEZONE', 'Asia/Ho_Chi_Minh'));
 |
 */
 
-$app = new Laravel\Lumen\Application(
+$app = new Application(
     dirname(__DIR__)
 );
 
@@ -39,13 +47,13 @@ $app->withEloquent();
 */
 
 $app->singleton(
-    Illuminate\Contracts\Debug\ExceptionHandler::class,
-    App\Exceptions\Handler::class
+    ExceptionHandler::class,
+    Handler::class
 );
 
 $app->singleton(
-    Illuminate\Contracts\Console\Kernel::class,
-    App\Console\Kernel::class
+    \Illuminate\Contracts\Console\Kernel::class,
+    Kernel::class
 );
 
 /*
@@ -103,7 +111,8 @@ foreach ($configs as $value) {
 
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\AuthServiceProvider::class);
-// $app->register(App\Providers\EventServiceProvider::class);
+$app->register(EventServiceProvider::class);
+$app->register(SocialiteServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
