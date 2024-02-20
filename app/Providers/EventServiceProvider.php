@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Laravel\Lumen\Providers\EventServiceProvider as ServiceProvider;
-use SocialiteProviders\Facebook\FacebookExtendSocialite;
+use SocialiteProviders\Azure\AzureExtendSocialite;
 use SocialiteProviders\Manager\SocialiteWasCalled;
 
 class EventServiceProvider extends ServiceProvider
@@ -15,7 +15,7 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         SocialiteWasCalled::class => [
-            FacebookExtendSocialite::class . '@handle',
+            AzureExtendSocialite::class . '@handle',
         ],
     ];
 

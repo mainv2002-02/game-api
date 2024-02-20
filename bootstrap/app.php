@@ -73,6 +73,7 @@ $configs = [
     'mail',
     'session',
     'view',
+    'services',
 ];
 foreach ($configs as $value) {
     $app->configure($value);

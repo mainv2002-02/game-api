@@ -9,7 +9,7 @@
         "illuminate/redis": "^10.43",
         "laravel/lumen-framework": "^10.0",
         "predis/predis": "^2.2",
-        "socialiteproviders/facebook": "^4.1",
+        "socialiteproviders/microsoft-azure": "^5.1",
         "urameshibr/lumen-form-request": "^1.6"
     },
     "require-dev": {

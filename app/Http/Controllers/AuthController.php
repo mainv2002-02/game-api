@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\View\View;
+use Laravel\Socialite\Facades\Socialite;
 
 class AuthController extends Controller
 {
@@ -11,8 +12,8 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function doLogin():View
+    public function doLogin(): mixed
     {
-        return view('auth.login');
+        return Socialite::driver('azure')->redirect();
     }
 }
