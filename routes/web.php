@@ -2,19 +2,27 @@
 
 /** @var Router $router */
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It is a breeze. Simply tell Lumen the URIs it should respond to
-| and give it the Closure to call when that URI is requested.
-|
-*/
-
 use Laravel\Lumen\Routing\Router;
 
-$router->get('/', function () use ($router) {
-    return \Illuminate\Support\Str::random(10);
+
+$router->group([
+                   'prefix'     => '',
+                   'middleware' => [
+                   ],
+               ], function () use ($router) {
+    $router->get('/login', 'AuthController@login');
+    $router->post('/login', 'AuthController@doLogin');
+
+    $router->get('/auth/facebook', 'FbAuthController@redirectToProvider');
+    $router->get('/auth/facebook/callback', 'FbAuthController@handleProviderCallback');
+});
+
+
+$router->group([
+                   'prefix'     => 'track',
+                   'middleware' => [
+                   ],
+               ], function () use ($router) {
+    $router->get('/{trackId}/question/{questionId}', 'GameController@show');
+    $router->get('/{trackId}/question/{questionId}', 'GameController@answer');
 });
