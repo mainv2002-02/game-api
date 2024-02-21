@@ -21,17 +21,17 @@ cp .env.$2 .env
 echo -e "\n----------"
 echo "Install/update composer dependencies"
 rm -rf composer.lock
-php-8.1.21 composer.phar install --no-interaction --prefer-dist --optimize-autoloader --no-dev
+php composer.phar install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 
-php-8.1.21 composer.phar dump-autoload
+php composer.phar dump-autoload
 
 # Run database migrations
-php-8.1.21 artisan migrate --force
+php artisan migrate --force
 
 # Run database seeder
-php-8.1.21 artisan db:seed --force
+php artisan db:seed --force
 
 # Clear caches
 echo -e "\n----------"
 echo "Clear caches"
-php-8.1.21 artisan cache:clear
+php artisan cache:clear
