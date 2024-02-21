@@ -21,9 +21,9 @@ cp .env.$2 .env
 echo -e "\n----------"
 echo "Install/update composer dependencies"
 rm -rf composer.lock
-php composer.phar install --no-interaction --prefer-dist --optimize-autoloader --no-dev
+composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
 
-php composer.phar dump-autoload
+composer dump-autoload
 
 # Run database migrations
 php artisan migrate --force
