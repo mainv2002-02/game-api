@@ -19,7 +19,9 @@ return new class extends Migration
             $table->text('option')->nullable();
             $table->string('avatar', '512')->nullable();
             $table->tinyInteger('is_answer')->default(0);
+            $table->json('data')->nullable();
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->index('question_id', 'idx_question_id');
             $table->index('is_answer', 'idx_is_answer');

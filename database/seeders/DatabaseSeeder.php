@@ -12,8 +12,11 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run():void
     {
-        // $this->call('UsersTableSeeder');
+         $this->call(HeroSeeder::class);
+         $this->call(Track1QuestionSeeder::class);
+         $this->call(Track2QuestionSeeder::class);
+         $this->call(Track3QuestionSeeder::class);
     }
 }

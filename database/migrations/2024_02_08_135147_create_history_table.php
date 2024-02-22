@@ -18,7 +18,10 @@ return new class extends Migration
             $table->bigInteger('question_id')->default(0);
             $table->bigInteger('option_id')->default(0);
             $table->string('description', 512)->nullable();
+            $table->json('answer')->nullable();
+            $table->json('data')->nullable();
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->index('user_id', 'idx_user_id');
             $table->index('hero_id', 'idx_hero_id');

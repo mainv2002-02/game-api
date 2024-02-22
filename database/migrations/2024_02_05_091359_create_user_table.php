@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->string('wp_id', 512);
             $table->string('token', 512);
+            $table->string('password', 512)->nullable();
             $table->string('name', '100')->nullable();
             $table->string('full_name', '256');
             $table->string('phone', '256');
@@ -23,7 +24,9 @@ return new class extends Migration {
             $table->string('area', '256');
             $table->string('avatar', '512')->nullable();
             $table->bigInteger('current_hero');
+            $table->json('data')->nullable();
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->index('wp_id', 'idx_wp_id');
             $table->index('phone', 'idx_phone');

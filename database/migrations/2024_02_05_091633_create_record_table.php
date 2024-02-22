@@ -19,7 +19,10 @@ return new class extends Migration
             $table->bigInteger('option_id')->default(0);
             $table->tinyInteger('times')->default(1);
             $table->tinyInteger('point')->default(0);
+            $table->json('answer')->nullable();
+            $table->json('data')->nullable();
             $table->timestamps();
+            $table->timestamp('deleted_at')->nullable();
 
             $table->index('user_id', 'idx_user_id');
             $table->index('hero_id', 'idx_hero_id');
