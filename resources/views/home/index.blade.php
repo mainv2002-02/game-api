@@ -1,11 +1,12 @@
 @extends('master')
 
-@section('title', 'Login Page')
+@section('title', 'Home Page')
 
 @section('style-libraries')
 
 @stop
-    @section('styles')
+
+@section('styles')
 @stop
 
 @section('content')
