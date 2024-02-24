@@ -15,6 +15,7 @@ return new class extends Migration {
             $table->bigInteger('hero_id')->default(0);
             $table->string('slug', '100')->nullable();
             $table->string('title', '100');
+            $table->string('group', '100');
             $table->text('description')->nullable();
             $table->text('infer')->nullable();
             $table->text('suggest')->nullable();

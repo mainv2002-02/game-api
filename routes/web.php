@@ -10,6 +10,7 @@ $router->group([
                    'middleware' => [
                    ],
                ], function () use ($router) {
+    $router->get('/', 'HomeController@index');
     $router->get('/login', 'AuthController@login');
     $router->post('/login', 'AuthController@doLogin');
 
