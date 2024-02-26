@@ -12,8 +12,9 @@ return new class extends Migration {
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('wp_id', 512);
-            $table->string('token', 512);
+            $table->string('azure_id', 512)->nullable();
+            $table->string('token', 512)->nullable();
+            $table->string('refresh', 512)->nullable();
             $table->string('password', 512)->nullable();
             $table->string('name', '100')->nullable();
             $table->string('full_name', '256');

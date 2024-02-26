@@ -13,9 +13,8 @@ $router->group([
     $router->get('/', 'HomeController@index');
     $router->get('/login', 'AuthController@login');
     $router->post('/login', 'AuthController@doLogin');
-
-    $router->get('/auth/facebook', 'FbAuthController@redirectToProvider');
-    $router->get('/auth/facebook/callback', 'FbAuthController@handleProviderCallback');
+    $router->get('/logout', 'AuthController@logout');
+    $router->get('/auth/callback', 'AuthController@callback');
 });
 
 

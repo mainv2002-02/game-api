@@ -2,12 +2,17 @@
 
 use App\Console\Kernel;
 use App\Exceptions\Handler;
+use App\Http\Middleware\Authenticate;
+use App\Providers\AppServiceProvider;
+use App\Providers\AuthServiceProvider;
 use App\Providers\EventServiceProvider;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Redis\RedisServiceProvider;
+use Illuminate\Session\Middleware\StartSession;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Laravel\Lumen\Application;
 use Laravel\Lumen\Bootstrap\LoadEnvironmentVariables;
-use Laravel\Socialite\SocialiteServiceProvider;
+use SocialiteProviders\Manager\ServiceProvider;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -92,14 +97,11 @@ foreach ($configs as $value) {
 |
 */
 
-// $app->middleware([
-//     App\Http\Middleware\ExampleMiddleware::class
-// ]);
-
-// $app->routeMiddleware([
-//     'auth' => App\Http\Middleware\Authenticate::class,
-// ]);
-
+$app->routeMiddleware([
+                          'auth'           => Authenticate::class,
+                          'start_session'  => StartSession::class,
+                          'session_errors' => ShareErrorsFromSession::class,
+                      ]);
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers
@@ -111,10 +113,10 @@ foreach ($configs as $value) {
 |
 */
 
-// $app->register(App\Providers\AppServiceProvider::class);
-// $app->register(App\Providers\AuthServiceProvider::class);
+$app->register(AppServiceProvider::class);
+$app->register(AuthServiceProvider::class);
 $app->register(EventServiceProvider::class);
-$app->register(SocialiteServiceProvider::class);
+$app->register(ServiceProvider::class);
 $app->register(RedisServiceProvider::class);
 
 /*
