@@ -23,6 +23,6 @@ class Question extends BaseModel
     }
     public function hero(): BelongsTo
     {
-        return $this->belongsTo(Hero::class, 'foreign_key', 'hero_id');
+        return $this->belongsTo(Hero::class);
     }
 }

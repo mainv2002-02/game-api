@@ -18,6 +18,6 @@ class Option extends BaseModel
     ];
     public function game(): BelongsTo
     {
-        return $this->belongsTo(Question::class, 'foreign_key', 'question_id');
+        return $this->belongsTo(Question::class);
     }
 }

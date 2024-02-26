@@ -11,12 +11,10 @@ class GameController extends Controller
 {
     public function show(int $questionId, string $slug): View
     {
+        /** @var Question $question */
         $question = Question::getInstance($questionId);
-        $track = null;
-        if ($question->exists && !empty($question->hero_id)) {
-            $track = Hero::getInstance($question->hero_id);
-        }
-        return view('game.question-detail')->with('question',$question)->with('track', $track);
+        $track = $question->hero;
+        return view('game.question-detail')->with('question', $question)->with('track', $track);
     }
 
     public function answer(BaseRequest $request): View

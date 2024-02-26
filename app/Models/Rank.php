@@ -16,11 +16,11 @@ class Rank extends BaseModel
     ];
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'foreign_key', 'user_id');
+        return $this->belongsTo(User::class);
     }
 
     public function hero(): BelongsTo
     {
-        return $this->belongsTo(Hero::class, 'foreign_key', 'hero_id');
+        return $this->belongsTo(Hero::class);
     }
 }

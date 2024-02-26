@@ -17,21 +17,21 @@ class History extends BaseModel
 
     public function user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'foreign_key', 'user_id');
+        return $this->belongsTo(User::class);
     }
 
     public function question(): BelongsTo
     {
-        return $this->belongsTo(Question::class, 'foreign_key', 'question_id');
+        return $this->belongsTo(Question::class);
     }
 
     public function option(): BelongsTo
     {
-        return $this->belongsTo(Option::class, 'foreign_key', 'option_id');
+        return $this->belongsTo(Option::class);
     }
 
     public function hero(): BelongsTo
     {
-        return $this->belongsTo(Hero::class, 'foreign_key', 'hero_id');
+        return $this->belongsTo(Hero::class);
     }
 }
