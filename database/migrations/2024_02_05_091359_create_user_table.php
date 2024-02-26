@@ -10,6 +10,7 @@ return new class extends Migration {
      */
     public function up(): void
     {
+        Schema::dropIfExists('users');
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('azure_id', 512)->nullable();
@@ -29,7 +30,7 @@ return new class extends Migration {
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
 
-            $table->index('wp_id', 'idx_wp_id');
+            $table->index('azure_id', 'idx_wp_id');
             $table->index('phone', 'idx_phone');
             $table->index('title', 'idx_title');
             $table->index('department', 'idx_department');
