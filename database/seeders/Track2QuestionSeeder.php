@@ -422,7 +422,7 @@ Gợi ý: chỉ số này có thể tính rất đơn giản bằng cách: lấy
                                                    'suggest'    => "",
                                                    'explain'    => "",
                                                    'order'      => 21,
-                                                   'template'   => 'templates.track-2.problem-solver-1',
+                                                   'template'   => 'templates.track-2.problem-solver-1-1',
                                                    'answer'     => json_encode([]),
                                                    'created_at' => $now,
                                                    'updated_at' => $now,
