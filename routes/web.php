@@ -20,10 +20,10 @@ $router->group([
 
 
 $router->group([
-                   'prefix'     => 'track',
+                   'prefix'     => 'questions',
                    'middleware' => [
                    ],
                ], function () use ($router) {
-    $router->get('/{trackId}/question/{questionId}', 'GameController@show');
-    $router->get('/{trackId}/question/{questionId}', 'GameController@answer');
+    $router->get('/{questionId}/{slug}', 'GameController@show');
+    $router->post('/{questionId}/{slug}', 'GameController@answer');
 });

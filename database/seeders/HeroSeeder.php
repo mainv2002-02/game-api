@@ -15,7 +15,7 @@ class HeroSeeder extends Seeder
     {
         $now = Carbon::now();
         for ($i = 1; $i <= 3; $i++) {
-            DB::table('hero')->insertOrIgnore([
+            DB::table('heroes')->insertOrIgnore([
                                                   'id'         => $i * 100,
                                                   'name'       => "track-{$i}",
                                                   'slug'       => "track-{$i}",

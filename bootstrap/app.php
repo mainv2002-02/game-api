@@ -4,6 +4,7 @@ use App\Console\Kernel;
 use App\Exceptions\Handler;
 use App\Providers\EventServiceProvider;
 use Illuminate\Contracts\Debug\ExceptionHandler;
+use Illuminate\Redis\RedisServiceProvider;
 use Laravel\Lumen\Application;
 use Laravel\Lumen\Bootstrap\LoadEnvironmentVariables;
 use Laravel\Socialite\SocialiteServiceProvider;
@@ -114,6 +115,7 @@ foreach ($configs as $value) {
 // $app->register(App\Providers\AuthServiceProvider::class);
 $app->register(EventServiceProvider::class);
 $app->register(SocialiteServiceProvider::class);
+$app->register(RedisServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
