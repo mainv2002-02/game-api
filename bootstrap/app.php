@@ -3,6 +3,7 @@
 use App\Console\Kernel;
 use App\Exceptions\Handler;
 use App\Http\Middleware\Authenticate;
+use App\Http\Middleware\EncryptCookies;
 use App\Providers\AppServiceProvider;
 use App\Providers\AuthServiceProvider;
 use App\Providers\EventServiceProvider;
@@ -12,7 +13,8 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Laravel\Lumen\Application;
 use Laravel\Lumen\Bootstrap\LoadEnvironmentVariables;
-use SocialiteProviders\Manager\ServiceProvider;
+use Slides\Saml2\Facades\Auth;
+use App\Providers\Saml2;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -80,6 +82,7 @@ $configs = [
     'session',
     'view',
     'services',
+    'saml2',
 ];
 foreach ($configs as $value) {
     $app->configure($value);
@@ -98,10 +101,16 @@ foreach ($configs as $value) {
 */
 
 $app->routeMiddleware([
-                          'auth'           => Authenticate::class,
-                          'start_session'  => StartSession::class,
-                          'session_errors' => ShareErrorsFromSession::class,
+                          'auth'            => Authenticate::class,
+                          'start_session'   => StartSession::class,
+                          'session_errors'  => ShareErrorsFromSession::class,
+                          'encrypt_cookies' => EncryptCookies::class,
+                          //                          'cookies_response' => \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
                       ]);
+
+if (!class_exists('Saml2')) {
+    class_alias(Auth::class, 'Saml2');
+}
 /*
 |--------------------------------------------------------------------------
 | Register Service Providers
@@ -116,8 +125,8 @@ $app->routeMiddleware([
 $app->register(AppServiceProvider::class);
 $app->register(AuthServiceProvider::class);
 $app->register(EventServiceProvider::class);
-$app->register(ServiceProvider::class);
 $app->register(RedisServiceProvider::class);
+$app->register(Saml2::class);
 
 /*
 |--------------------------------------------------------------------------
