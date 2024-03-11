@@ -63,17 +63,12 @@ $app->singleton(
     \Illuminate\Contracts\Console\Kernel::class,
     Kernel::class
 );
+$app->singleton('cookie', function () use ($app) {
+    return $app->loadComponent('session', 'Illuminate\Cookie\CookieServiceProvider', 'cookie');
+});
 
-/*
-|--------------------------------------------------------------------------
-| Register Config Files
-|--------------------------------------------------------------------------
-|
-| Now we will register the "app" configuration file. If the file exists in
-| your configuration directory it will be loaded; otherwise, we'll load
-| the default version. You may register other files below as needed.
-|
-*/
+$app->bind('Illuminate\Contracts\Cookie\QueueingFactory', 'cookie');
+
 $configs = [
     'app',
     'cache',
@@ -100,14 +95,19 @@ foreach ($configs as $value) {
 |
 */
 
+
+
 $app->routeMiddleware([
+                          \Illuminate\Session\Middleware\StartSession::class,
+                          \Illuminate\View\Middleware\ShareErrorsFromSession::class,
                           'auth'            => Authenticate::class,
                           'start_session'   => StartSession::class,
                           'session_errors'  => ShareErrorsFromSession::class,
                           'encrypt_cookies' => EncryptCookies::class,
                           //                          'cookies_response' => \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
                       ]);
-
+$app->alias(\App\Http\Middleware\ResolveTenant::class, 'saml2.resolveTenant');
+$app->alias(\Slides\Saml2\Facades\Auth::class, 'Saml2');
 if (!class_exists('Saml2')) {
     class_alias(Auth::class, 'Saml2');
 }

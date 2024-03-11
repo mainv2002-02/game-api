@@ -1,6 +1,6 @@
 <?php
 
-namespace Slides\Saml2\Http\Middleware;
+namespace App\Http\Middleware;
 
 use Slides\Saml2\Repositories\TenantRepository;
 use Illuminate\Support\Facades\Log;
@@ -60,7 +60,7 @@ class ResolveTenant
             ]);
         }
 
-        session()->flash('saml2.tenant.uuid', $tenant->uuid);
+//        $request->session()->flash('saml2.tenant.uuid', $tenant->uuid);
 
         $this->builder
             ->withTenant($tenant)

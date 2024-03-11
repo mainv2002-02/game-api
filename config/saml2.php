@@ -1,5 +1,9 @@
 <?php
 
+use App\Http\Middleware\EncryptCookies;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
+use Illuminate\Session\Middleware\StartSession;
+use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Slides\Saml2\Models\Tenant;
 
 return [
@@ -54,7 +58,12 @@ return [
     |
     */
 
-    'routesMiddleware' => [],
+    'routesMiddleware' => [
+        StartSession::class,
+        ShareErrorsFromSession::class,
+        EncryptCookies::class,
+        AddQueuedCookiesToResponse::class,
+    ],
 
     /*
     |--------------------------------------------------------------------------
