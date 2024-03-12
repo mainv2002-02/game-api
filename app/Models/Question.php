@@ -23,6 +23,6 @@ class Question extends BaseModel
     }
     public function hero(): BelongsTo
     {
-        return $this->belongsTo(Hero::class);
+        return $this->belongsTo(Track::class);
     }
 }

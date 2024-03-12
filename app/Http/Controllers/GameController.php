@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BaseRequest;
-use App\Models\Hero;
+use App\Models\Track;
 use App\Models\Question;
 use Illuminate\View\View;
 

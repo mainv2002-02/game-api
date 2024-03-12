@@ -47,16 +47,16 @@ class Cache
 
     public function flushByTags(): bool
     {
+        $this->flushByPattern();
         return $this->tags->flush();
     }
 
-    public function flushByPattern(string $pattern = ''): void
+    public function flushByPattern(): void
     {
         $taggedCache = $this->tags;
         $store = $taggedCache->getStore();
         $connection = $store->connection();
 
-        $match = !empty($pattern) ? "*{$pattern}*" : '*';
         foreach ($taggedCache->getTags()->getNames() as $name) {
             $tagKey = $taggedCache->getTags()->tagKey($name);
             $cursor = $defaultCursorValue = '0';
@@ -65,7 +65,7 @@ class Cache
                 [$cursor, $entries] = $connection->zscan(
                     $store->getPrefix() . $tagKey,
                     $cursor,
-                    ['match' => $match, 'count' => 1000]
+                    ['match' => '*', 'count' => 1000]
                 );
 
                 if (!is_array($entries)) {
@@ -82,6 +82,5 @@ class Cache
 
             } while (((string)$cursor) !== $defaultCursorValue);
         }
-
     }
 }

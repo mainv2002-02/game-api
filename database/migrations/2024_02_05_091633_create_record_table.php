@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->bigInteger('user_id')->default(0);
             $table->bigInteger('hero_id')->default(0);
+            $table->bigInteger('track_id')->default(0);
             $table->bigInteger('question_id')->default(0);
             $table->bigInteger('option_id')->default(0);
             $table->tinyInteger('times')->default(1);

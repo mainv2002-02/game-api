@@ -10,26 +10,19 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('questions', function (Blueprint $table) {
+        Schema::create('tracks', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('track_id')->default(0);
-            $table->string('slug', '100')->nullable();
+            $table->string('name', '100');
             $table->string('title', '100');
-            $table->string('group', '100');
+            $table->string('slug', '100')->nullable();
             $table->text('description')->nullable();
-            $table->text('infer')->nullable();
-            $table->text('suggest')->nullable();
-            $table->text('explain')->nullable();
             $table->text('option')->nullable();
             $table->string('avatar', '512')->nullable();
-            $table->string('template', 100)->default('');
-            $table->integer('order')->default(0);
-            $table->json('answer')->nullable();
             $table->json('data')->nullable();
             $table->timestamps();
             $table->timestamp('deleted_at')->nullable();
 
-            $table->index('track_id', 'idx_track_id');
+            $table->index('name', 'idx_name');
         });
     }
 
@@ -38,6 +31,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('questions');
+        Schema::dropIfExists('tracks');
     }
 };

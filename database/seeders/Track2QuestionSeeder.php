@@ -16,7 +16,7 @@ class Track2QuestionSeeder extends Seeder
         $now = Carbon::now();
         DB::table('questions')->insertOrIgnore([
                                                    'id'          => 201,
-                                                   'hero_id'     => 200,
+                                                   'track_id'     => 200,
                                                    'slug'        => 'question-1',
                                                    'title'       => 'Câu 1',
                                                    'group'       => 'Selling - Data Master',
@@ -52,7 +52,7 @@ class Track2QuestionSeeder extends Seeder
 
         DB::table('questions')->insertOrIgnore([
                                                    'id'          => 202,
-                                                   'hero_id'     => 200,
+                                                   'track_id'     => 200,
                                                    'slug'        => 'question-2',
                                                    'title'       => 'Câu 2',
                                                    'group'       => 'Selling - Data Master',
@@ -78,7 +78,7 @@ Vậy, bạn A sẽ cần tối thiểu ? giờ để ghé thăm hết tuyến b
 
         DB::table('questions')->insertOrIgnore([
                                                    'id'          => 203,
-                                                   'hero_id'     => 200,
+                                                   'track_id'     => 200,
                                                    'slug'        => 'question-3',
                                                    'title'       => 'Câu 3',
                                                    'group'       => 'Selling - Data Master',
@@ -125,7 +125,7 @@ Vậy, bạn A sẽ cần tối thiểu ? giờ để ghé thăm hết tuyến b
 
         DB::table('questions')->insertOrIgnore([
                                                    'id'          => 204,
-                                                   'hero_id'     => 200,
+                                                   'track_id'     => 200,
                                                    'slug'        => 'question-4',
                                                    'title'       => 'Câu 4',
                                                    'group'       => 'Selling - Data Master',
@@ -181,7 +181,7 @@ Gợi ý: chỉ số này có thể tính rất đơn giản bằng cách: lấy
 
         DB::table('questions')->insertOrIgnore([
                                                    'id'          => 211,
-                                                   'hero_id'     => 200,
+                                                   'track_id'     => 200,
                                                    'slug'        => 'question-1',
                                                    'title'       => 'Câu hỏi 1',
                                                    'group'       => 'Distributing - Data Master',
@@ -252,7 +252,7 @@ Gợi ý: chỉ số này có thể tính rất đơn giản bằng cách: lấy
 
         DB::table('questions')->insertOrIgnore([
                                                    'id'          => 212,
-                                                   'hero_id'     => 200,
+                                                   'track_id'     => 200,
                                                    'slug'        => 'question-2',
                                                    'title'       => 'Câu hỏi 2',
                                                    'group'       => 'Distributing - Data Master',
@@ -335,7 +335,7 @@ Gợi ý: chỉ số này có thể tính rất đơn giản bằng cách: lấy
 
         DB::table('questions')->insertOrIgnore([
                                                    'id'          => 213,
-                                                   'hero_id'     => 200,
+                                                   'track_id'     => 200,
                                                    'slug'        => 'question-3',
                                                    'title'       => 'Câu hỏi 3',
                                                    'group'       => 'Distributing - Data Master',
@@ -402,7 +402,7 @@ Gợi ý: chỉ số này có thể tính rất đơn giản bằng cách: lấy
 
         DB::table('questions')->insertOrIgnore([
                                                    'id'          => 221,
-                                                   'hero_id'     => 200,
+                                                   'track_id'     => 200,
                                                    'slug'        => 'thu-thach-xep-tu-lanh',
                                                    'title'       => 'Thử thách xếp tủ lạnh',
                                                    'group'       => 'Selling - Problem Solver 1',
@@ -430,7 +430,7 @@ Gợi ý: chỉ số này có thể tính rất đơn giản bằng cách: lấy
 
         DB::table('questions')->insertOrIgnore([
                                                    'id'          => 222,
-                                                   'hero_id'     => 200,
+                                                   'track_id'     => 200,
                                                    'slug'        => 'problem-solver-1',
                                                    'title'       => 'Problem Solver 1 - 2',
                                                    'group'       => 'Selling - Problem Solver 1',
@@ -448,7 +448,7 @@ Gợi ý: chỉ số này có thể tính rất đơn giản bằng cách: lấy
 
         DB::table('questions')->insertOrIgnore([
                                                    'id'          => 225,
-                                                   'hero_id'     => 200,
+                                                   'track_id'     => 200,
                                                    'slug'        => 'problem-solver-2-cau-hoi-1',
                                                    'title'       => 'Câu hỏi 1',
                                                    'group'       => 'Selling - Problem Solver 2',

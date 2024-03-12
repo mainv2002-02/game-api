@@ -4,11 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Hero extends BaseModel
+class Track extends BaseModel
 {
     protected static array $instances = [];
 
     public $fillable = [
+        'hero_id',
         'name',
         'description',
         'option',
@@ -16,6 +17,6 @@ class Hero extends BaseModel
     ];
     public function questions(): HasMany
     {
-        return $this->hasMany(Track::class);
+        return $this->hasMany(Question::class);
     }
 }

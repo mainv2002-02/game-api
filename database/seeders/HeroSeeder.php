@@ -16,13 +16,13 @@ class HeroSeeder extends Seeder
         $now = Carbon::now();
         for ($i = 1; $i <= 3; $i++) {
             DB::table('heroes')->insertOrIgnore([
-                                                  'id'         => $i * 100,
-                                                  'name'       => "track-{$i}",
-                                                  'slug'       => "track-{$i}",
-                                                  'title'      => "Track {$i}",
-                                                  'created_at' => $now,
-                                                  'updated_at' => $now,
-                                              ]);
+                                                    'id'         => $i,
+                                                    'name'       => "Hero - {$i}",
+                                                    'slug'       => "hero-{$i}",
+                                                    'title'      => "Hero {$i}",
+                                                    'created_at' => $now,
+                                                    'updated_at' => $now,
+                                                ]);
         }
     }
 }

@@ -14,6 +14,7 @@ return new class extends Migration {
             $table->id();
             $table->bigInteger('user_id')->default(0);
             $table->bigInteger('hero_id')->default(0);
+            $table->bigInteger('track_id')->default(0);
             $table->tinyInteger('point')->default(0);
             $table->tinyInteger('bonus')->default(0);
             $table->string('description', 512)->nullable();
@@ -22,7 +23,7 @@ return new class extends Migration {
             $table->timestamp('deleted_at')->nullable();
 
             $table->index('user_id', 'idx_user_id');
-            $table->index('hero_id', 'idx_hero_id');
+            $table->index('track_id', 'idx_track_id');
         });
     }
 
