@@ -7,6 +7,7 @@ use App\Http\Middleware\EncryptCookies;
 use App\Providers\AppServiceProvider;
 use App\Providers\AuthServiceProvider;
 use App\Providers\EventServiceProvider;
+use App\Providers\Saml2;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Redis\RedisServiceProvider;
 use Illuminate\Session\Middleware\StartSession;
@@ -14,7 +15,7 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Laravel\Lumen\Application;
 use Laravel\Lumen\Bootstrap\LoadEnvironmentVariables;
 use Slides\Saml2\Facades\Auth;
-use App\Providers\Saml2;
+use App\Http\Middleware\ResolveTenant;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -96,18 +97,17 @@ foreach ($configs as $value) {
 */
 
 
-
 $app->routeMiddleware([
-                          \Illuminate\Session\Middleware\StartSession::class,
-                          \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+                          StartSession::class,
+                          ShareErrorsFromSession::class,
                           'auth'            => Authenticate::class,
                           'start_session'   => StartSession::class,
                           'session_errors'  => ShareErrorsFromSession::class,
                           'encrypt_cookies' => EncryptCookies::class,
                           //                          'cookies_response' => \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
                       ]);
-$app->alias(\App\Http\Middleware\ResolveTenant::class, 'saml2.resolveTenant');
-$app->alias(\Slides\Saml2\Facades\Auth::class, 'Saml2');
+$app->alias(ResolveTenant::class, 'saml2.resolveTenant');
+$app->alias(Auth::class, 'Saml2');
 if (!class_exists('Saml2')) {
     class_alias(Auth::class, 'Saml2');
 }

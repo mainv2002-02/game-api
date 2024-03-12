@@ -2,9 +2,11 @@
 
 namespace App\Providers;
 
+use App\Listeners\Login;
+use App\Listeners\Logout;
 use Laravel\Lumen\Providers\EventServiceProvider as ServiceProvider;
-use SocialiteProviders\Azure\AzureExtendSocialite;
-use SocialiteProviders\Manager\SocialiteWasCalled;
+use Slides\Saml2\Events\SignedIn;
+use Slides\Saml2\Events\SignedOut;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -14,8 +16,11 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        SocialiteWasCalled::class => [
-            AzureExtendSocialite::class . '@handle',
+        SignedIn::class  => [
+            Login::class . '@handle',
+        ],
+        SignedOut::class => [
+            Logout::class . '@handle',
         ],
     ];
 
