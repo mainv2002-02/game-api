@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Track extends BaseModel
@@ -20,5 +21,10 @@ class Track extends BaseModel
     public function questions(): HasMany
     {
         return $this->hasMany(Question::class);
+    }
+
+    public function hero(): BelongsTo
+    {
+        return $this->belongsTo(Hero::class);
     }
 }

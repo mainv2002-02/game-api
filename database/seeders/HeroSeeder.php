@@ -19,7 +19,7 @@ class HeroSeeder extends Seeder
                                                 'slug'        => 'data-master',
                                                 'name'        => 'Data Master',
                                                 'description' => 'Data Master',
-                                                'avatar'      => url('img/data-master.jpeg'),
+                                                'avatar'      => 'assets/img/data-master.jpeg',
                                                 'created_at'  => $now,
                                                 'updated_at'  => $now,
                                             ]);
@@ -29,16 +29,16 @@ class HeroSeeder extends Seeder
                                                 'slug'        => 'problem-solver',
                                                 'name'        => 'Problem Solver',
                                                 'description' => 'Problem Solver',
-                                                'avatar'      => url('img/problem-solver.png'),
+                                                'avatar'      => 'assets/img/problem-solver.png',
                                                 'created_at'  => $now,
                                                 'updated_at'  => $now,
                                             ]);
         DB::table('heroes')->insertOrIgnore([
                                                 'id'          => 3,
-                                                'slug'        => 'hero 3',
+                                                'slug'        => 'hero-3',
                                                 'name'        => 'Hero 3',
                                                 'description' => 'No Name',
-                                                'avatar'      => url('img/hero-3.png'),
+                                                'avatar'      => 'assets/img/hero-3.png',
                                                 'created_at'  => $now,
                                                 'updated_at'  => $now,
                                             ]);

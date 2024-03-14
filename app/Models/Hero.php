@@ -15,7 +15,7 @@ class Hero extends BaseModel
         'option',
         'avatar',
     ];
-    public function questions(): HasMany
+    public function tracks(): HasMany
     {
         return $this->hasMany(Track::class);
     }

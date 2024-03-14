@@ -17,7 +17,7 @@ class Question extends BaseModel
         'avatar',
         'order',
     ];
-    public function hero(): BelongsTo
+    public function track(): BelongsTo
     {
         return $this->belongsTo(Track::class);
     }

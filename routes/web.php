@@ -19,10 +19,14 @@ $router->group([
 
 
 $router->group([
-                   'prefix'     => 'questions',
+                   'prefix'     => 'games',
                    'middleware' => [
                    ],
                ], function () use ($router) {
+    $router->get('/', 'GameController@heroList');
+    $router->get('/hero/{heroId}/{heroSlug}', 'GameController@heroDetail');
+    $router->get('/track/{trackId}/{trackSlug}', 'GameController@trackDetail');
+    $router->get('/question/{questionId}/{questionSlug}', 'GameController@questionDetail');
     $router->get('/{questionId}/{slug}', 'GameController@show');
     $router->post('/{questionId}/{slug}', 'GameController@answer');
 });

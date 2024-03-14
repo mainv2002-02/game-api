@@ -14,13 +14,15 @@
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
           crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url('assets/css/app.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/styles.css') }}">
     @yield('style-libraries')
     {{--Styles custom--}}
     @yield('styles')
 </head>
 <body>
+    @include('nav')
     @yield('content')
-
+    @include('footer')
     {{--Scripts js common--}}
     <script src="//code.jquery.com/jquery-3.7.1.min.js"
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
