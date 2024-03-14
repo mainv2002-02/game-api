@@ -9,6 +9,7 @@ class Hero extends BaseModel
     protected static array $instances = [];
 
     public $fillable = [
+        'slug',
         'name',
         'description',
         'option',

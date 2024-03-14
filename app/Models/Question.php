@@ -17,10 +17,6 @@ class Question extends BaseModel
         'avatar',
         'order',
     ];
-    public function options(): HasMany
-    {
-        return $this->hasMany(Option::class);
-    }
     public function hero(): BelongsTo
     {
         return $this->belongsTo(Track::class);

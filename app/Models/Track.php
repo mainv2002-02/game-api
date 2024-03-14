@@ -10,7 +10,9 @@ class Track extends BaseModel
 
     public $fillable = [
         'hero_id',
+        'slug',
         'name',
+        'title',
         'description',
         'option',
         'avatar',

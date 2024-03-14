@@ -25,10 +25,6 @@ class History extends BaseModel
         return $this->belongsTo(Question::class);
     }
 
-    public function option(): BelongsTo
-    {
-        return $this->belongsTo(Option::class);
-    }
 
     public function hero(): BelongsTo
     {

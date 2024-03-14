@@ -12,6 +12,7 @@ return new class extends Migration {
     {
         Schema::create('tracks', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('hero_id')->default(0);
             $table->string('name', '100');
             $table->string('title', '100');
             $table->string('slug', '100')->nullable();

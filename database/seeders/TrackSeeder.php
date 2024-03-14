@@ -14,16 +14,68 @@ class TrackSeeder extends Seeder
     public function run(): void
     {
         $now = Carbon::now();
-        for ($i = 1; $i <= 3; $i++) {
-            DB::table('tracks')->insertOrIgnore([
-                                                  'id'         => $i * 100,
-                                                  'hero'       => $i,
-                                                  'name'       => "track-{$i}",
-                                                  'slug'       => "track-{$i}",
-                                                  'title'      => "Track {$i}",
-                                                  'created_at' => $now,
-                                                  'updated_at' => $now,
-                                              ]);
-        }
+        DB::table('tracks')->insertOrIgnore([
+                                                'id'          => 101,
+                                                'hero_id'     => 1,
+                                                'slug'        => 'data-master-track-1',
+                                                'name'        => 'Track-1',
+                                                'title'       => 'Track 1',
+                                                'description' => 'Track 1 - Data Master',
+                                                'created_at'  => $now,
+                                                'updated_at'  => $now,
+                                            ]);
+        DB::table('tracks')->insertOrIgnore([
+                                                'id'          => 102,
+                                                'hero_id'     => 1,
+                                                'slug'        => 'Track-2',
+                                                'name'        => 'data-master-track-2',
+                                                'title'       => 'Track 2',
+                                                'description' => 'Track 2 - Data Master',
+                                                'created_at'  => $now,
+                                                'updated_at'  => $now,
+                                            ]);
+        DB::table('tracks')->insertOrIgnore([
+                                                'id'          => 103,
+                                                'hero_id'     => 1,
+                                                'slug'        => 'data-master-track-3',
+                                                'name'        => 'Track 3',
+                                                'title'       => 'Track 3',
+                                                'description' => 'Track 3 - Data Master',
+                                                'created_at'  => $now,
+                                                'updated_at'  => $now,
+                                            ]);
+
+        DB::table('tracks')->insertOrIgnore([
+                                                'id'          => 201,
+                                                'hero_id'     => 2,
+                                                'slug'        => 'problem-solver-track-1',
+                                                'name'        => 'Track 1',
+                                                'title'       => 'Track 1',
+                                                'description' => 'Track 1 - Problem Solver',
+                                                'created_at'  => $now,
+                                                'updated_at'  => $now,
+                                            ]);
+
+        DB::table('tracks')->insertOrIgnore([
+                                                'id'          => 202,
+                                                'hero_id'     => 2,
+                                                'slug'        => 'problem-solver-track-2',
+                                                'name'        => 'Track 2',
+                                                'title'       => 'Track 2',
+                                                'description' => 'Track 2 - Problem Solver',
+                                                'created_at'  => $now,
+                                                'updated_at'  => $now,
+                                            ]);
+
+        DB::table('tracks')->insertOrIgnore([
+                                                'id'          => 203,
+                                                'hero_id'     => 2,
+                                                'slug'        => 'problem-solver-track-3',
+                                                'name'        => 'Track 3',
+                                                'title'       => 'Track 3',
+                                                'description' => 'Track 3 - Problem Solver',
+                                                'created_at'  => $now,
+                                                'updated_at'  => $now,
+                                            ]);
     }
 }

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->bigInteger('hero_id')->default(0);
             $table->bigInteger('track_id')->default(0);
             $table->bigInteger('question_id')->default(0);
-            $table->bigInteger('option_id')->default(0);
             $table->string('description', 512)->nullable();
             $table->json('answer')->nullable();
             $table->json('data')->nullable();
@@ -27,7 +26,6 @@ return new class extends Migration
             $table->index('user_id', 'idx_user_id');
             $table->index('track_id', 'idx_track_id');
             $table->index('question_id', 'idx_question_id');
-            $table->index('option_id', 'idx_option_id');
         });
     }
 

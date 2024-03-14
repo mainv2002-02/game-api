@@ -16,8 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call(Saml::class);
 
         $this->call(HeroSeeder::class);
-        $this->call(Track1QuestionSeeder::class);
-        $this->call(Track2QuestionSeeder::class);
-        $this->call(Track3QuestionSeeder::class);
+        $this->call(TrackSeeder::class);
+        $this->call(QuestionSeeder::class);
     }
 }

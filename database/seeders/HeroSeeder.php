@@ -14,15 +14,33 @@ class HeroSeeder extends Seeder
     public function run(): void
     {
         $now = Carbon::now();
-        for ($i = 1; $i <= 3; $i++) {
-            DB::table('heroes')->insertOrIgnore([
-                                                    'id'         => $i,
-                                                    'name'       => "Hero - {$i}",
-                                                    'slug'       => "hero-{$i}",
-                                                    'title'      => "Hero {$i}",
-                                                    'created_at' => $now,
-                                                    'updated_at' => $now,
-                                                ]);
-        }
+        DB::table('heroes')->insertOrIgnore([
+                                                'id'          => 1,
+                                                'slug'        => 'data-master',
+                                                'name'        => 'Data Master',
+                                                'description' => 'Data Master',
+                                                'avatar'      => url('img/data-master.jpeg'),
+                                                'created_at'  => $now,
+                                                'updated_at'  => $now,
+                                            ]);
+
+        DB::table('heroes')->insertOrIgnore([
+                                                'id'          => 2,
+                                                'slug'        => 'problem-solver',
+                                                'name'        => 'Problem Solver',
+                                                'description' => 'Problem Solver',
+                                                'avatar'      => url('img/problem-solver.png'),
+                                                'created_at'  => $now,
+                                                'updated_at'  => $now,
+                                            ]);
+        DB::table('heroes')->insertOrIgnore([
+                                                'id'          => 3,
+                                                'slug'        => 'hero 3',
+                                                'name'        => 'Hero 3',
+                                                'description' => 'No Name',
+                                                'avatar'      => url('img/hero-3.png'),
+                                                'created_at'  => $now,
+                                                'updated_at'  => $now,
+                                            ]);
     }
 }
