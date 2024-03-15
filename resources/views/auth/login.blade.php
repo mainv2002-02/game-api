@@ -3,36 +3,34 @@
 @section('title', 'Login Page')
 
 @section('style-libraries')
-    <link rel="stylesheet" href="{{url('assets/css/login.css')}}">
 @stop
-    @section('styles')
+
+@section('styles')
 @stop
 
 @section('content')
-    <div id="background_branding_container" data-tenant-branding-background-color="true">
-        <img id="background_background_image" data-tenant-branding-background="true" src="{{url('assets/img/login.png')}}" alt="Background Image" aria-hidden="true">
-    </div>
-    <div class="panel" id="panel">
-        <table class="panel_layout" role="presentation">
-            <tbody>
-            <tr class="panel_layout_row">
-                <td id="panel_left">
-                </td><td id="panel_center">
-                    <div class="inner_container">
-                        <div class="api_container normaltext">
-                            <img alt="Company Logo" class="companyLogo" style="display: none;" data-tenant-branding-logo="true">
-                            <div id="api" role="main">
-                                <form method="POST">
-                                    <button type="submit" value="Login" name="submit">Login</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            </tbody>
-        </table>
-    </div>
+    <section class="page-section" id="contact">
+        <div class="container">
+            <!-- Contact Section Heading-->
+            <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Login</h2>
+            <!-- Icon Divider-->
+            <div class="divider-custom">
+                <div class="divider-custom-line"></div>
+                <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                <div class="divider-custom-line"></div>
+            </div>
+            <!-- Contact Section Form-->
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-xl-7 align-content-center">
+                    <form id="contactForm" data-sb-form-api-token="" method="POST" action="">
+                        <button class="btn btn-primary btn-xl align-content-center" id="submitButton" type="submit">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 @stop
 
 @section('scripts')

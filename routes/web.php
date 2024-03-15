@@ -13,8 +13,13 @@ $router->group([
     $router->get('/', 'HomeController@index');
     $router->get('/login', 'AuthController@login');
     $router->post('/login', 'AuthController@doLogin');
+
+    $router->get('/update-profile', 'AuthController@getUpdateProfile');
+    $router->post('/update-profile', 'AuthController@postUpdateProfile');
+
     $router->get('/logout', 'AuthController@logout');
     $router->get('/auth/callback', 'AuthController@callback');
+    $router->post('/auth/callback', 'AuthController@callback');
 });
 
 

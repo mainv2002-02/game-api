@@ -15,8 +15,20 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function doLogin()
+    public function doLogin():RedirectResponse|Redirector
     {
+        return redirect('/update-profile');
+    }
+
+    public function getUpdateProfile()
+    {
+        return view('auth.update-profile');
+    }
+
+    public function postUpdateProfile()
+    {
+        //save and redirect
+        return redirect('/games');
     }
 
     public function logout(BaseRequest $request): RedirectResponse|Redirector
