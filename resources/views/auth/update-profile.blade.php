@@ -41,7 +41,7 @@
                             <label for="title">Title</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <select id="department" name="department" class="form-control form-select">
+                            <select id="department" name="department" class="form-select">
                                 <option value="Supply Chain">Supply Chain</option>
                                 <option value="Sales & Commercial">Sales & Commercial</option>
                                 <option value="People">People</option>
@@ -54,7 +54,7 @@
                             <label for="department">Phòng ban</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <select id="area" name="area" class="form-control form-select">
+                            <select id="area" name="area" class="form-select">
                                 <option value="HO (trụ sở chính)">HO (trụ sở chính)</option>
                                 <option value="HCM">HCM</option>
                                 <option value="Mekong">Mekong</option>
