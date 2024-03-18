@@ -41,12 +41,30 @@
                             <label for="title">Title</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="department" type="text" placeholder="Department" />
-                            <label for="department">Department</label>
+                            <select id="department" name="department">
+                                <option value="Supply Chain">Supply Chain</option>
+                                <option value="Sales & Commercial">Sales & Commercial</option>
+                                <option value="People">People</option>
+                                <option value="IT">IT</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Legal">Legal</option>
+                                <option value="PACS">PACS</option>
+                                <option value="Strategy">Strategy</option>
+                            </select>
+                            <label for="department">Phòng ban</label>
                         </div>
                         <div class="form-floating mb-3">
-                            <input class="form-control" id="area" type="text" placeholder="Area" />
-                            <label for="area">Area</label>
+                            <select id="area" name="area">
+                                <option value="HO (trụ sở chính)">HO (trụ sở chính)</option>
+                                <option value="HCM">HCM</option>
+                                <option value="Mekong">Mekong</option>
+                                <option value="South Provinces">South Provinces</option>
+                                <option value="Da Nang">Da Nang</option>
+                                <option value="Hanoi">Hanoi</option>
+                                <option value="North East">North East</option>
+                                <option value="North">North</option>
+                            </select>
+                            <label for="department">Vùng miền</label>
                         </div>
                         <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                         <!-- Submit Button-->
