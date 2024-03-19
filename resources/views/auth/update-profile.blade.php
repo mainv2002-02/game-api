@@ -64,7 +64,7 @@
                                 <option value="North East">North East</option>
                                 <option value="North">North</option>
                             </select>
-                            <label for="department">Vùng miền</label>
+                            <label for="area">Vùng miền</label>
                         </div>
                         <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
                         <!-- Submit Button-->
