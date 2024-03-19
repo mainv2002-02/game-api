@@ -40,6 +40,7 @@ class AuthController extends Controller
 
     public function callback(BaseRequest $request)
     {
-        dd($request->all());
+        var_dump($request->all());
+        exit();
     }
 }
