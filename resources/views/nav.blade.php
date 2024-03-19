@@ -13,7 +13,7 @@
                     <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/games">Game</a>
                 </li>
                 <li class="nav-item mx-0 mx-lg-1">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/login">Login</a>
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/saml2/87c296fa-7526-4054-b294-0d476e51f7ea/login">Login</a>
                 </li>
             </ul>
         </div>
