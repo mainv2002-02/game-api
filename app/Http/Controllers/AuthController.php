@@ -38,8 +38,9 @@ class AuthController extends Controller
         return redirect('/');
     }
 
-    public function callback(): RedirectResponse|Redirector
+    public function callback(BaseRequest $request)
     {
-        return redirect('/dashboard');
+        var_dump($request->all());
+        exit();
     }
 }
