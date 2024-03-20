@@ -1,0 +1,178 @@
+.video-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.frame-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+#border-frame, #button-frame {
+    position: absolute;
+    z-index: 20;
+}
+
+#border-frame {
+    width: 65vw; /* Use viewport width for scalability */
+    height: 65vh; /* Use viewport height for scalability */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#button-frame {
+    width: 40vw; /* Use viewport width for scalability */
+    /*min-width: 300px; !* Ensure it doesn't get too small *!*/
+    height: 8vh; /* Use viewport height for scalability */
+    bottom: 10vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button-frame svg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+#button-text {
+    position: relative;
+    z-index: 2;
+    color: #19FFE1;
+    /*font-size: 2vw; !* Use viewport width for scalable font size *!*/
+    font-size: 26px; /* Ensures font size doesn't get too small */
+    bottom: 0.5vh;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) and (orientation: landscape) {
+    #border-frame, #button-frame {
+        width: 80vw; /* Increase width in landscape */
+    }
+
+    #button-frame {
+        bottom: 5%; /* Adjust position for better visibility */
+        height: 12vh; /* Adjust height in landscape */
+    }
+
+    #button-text {
+        /*font-size: 4vw; !* Increase font size in landscape *!*/
+    }
+}
+
+.full-page-background {
+    background: url('../../img/mission/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Keep the background behind contents */
+}
+
+#border-frame-mission, #button-frame-mission {
+    position: absolute;
+    z-index: 20;
+}
+
+#border-frame-mission {
+    width: 100%; /* Use viewport width for scalability */
+    height: 100%; /* Use viewport height for scalability */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#button-frame-mission {
+    width: 40vw; /* Use viewport width for scalability */
+    /*min-width: 300px; !* Ensure it doesn't get too small *!*/
+    height: 11vh; /* Use viewport height for scalability */
+    bottom: 30vh;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#border-frame-mission svg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+}
+
+#border-frame-mission > .typewriter {
+    position: fixed;
+    z-index: 2;
+    font-size: 26px; /* Ensures font size doesn't get too small */
+    top: 29%;
+    left: 22%;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.typewriter > p {
+    margin-bottom: 0;
+}
+
+.green {
+    color: #56FF9E;
+}
+
+.pink {
+    color: #F565AF;
+}
+
+#mission-content {
+    width: 55vw;
+}
+
+/* Typewriter effect for the text */
+.typewriter h1 {
+    overflow: hidden;
+    border-right: .15em solid orange;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+}
+
+@media (max-width: 768px) {
+    /* Responsive adjustments for mobile */
+    .border-frame {
+        height: 90%;
+        margin-top: 2%;
+    }
+}

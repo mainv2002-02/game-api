@@ -1,0 +1,82 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.background {
+    background-image: url('../../img/home/background.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 90%; /* Nearly full screen */
+    height: 90%; /* Nearly full screen */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.form input, .form select {
+    /*width: 90%;*/
+    margin: 10px 0;
+}
+
+.form button {
+    align-self: flex-end;
+    margin-top: 10px;
+}
+
+.lottie-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensures it stays behind other content */
+}
+
+.input-container {
+    position: relative;
+    width: 100%; /* Adjust as needed */
+    margin: 10px 0;
+}
+
+.lottie-input-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.form-input {
+    position: relative;
+    width: calc(100% - 20px); /* Adjust based on padding */
+    padding: 10px;
+    z-index: 2; /* Ensures input is above the Lottie animation */
+    border: 1px solid #ccc; /* Optional, for visibility */
+}
+
+@media (orientation: landscape) {
+    .form {
+        width: 50%; /* Adjust form size in landscape mode */
+    }
+}
