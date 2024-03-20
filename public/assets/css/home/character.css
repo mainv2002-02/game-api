@@ -1,0 +1,40 @@
+.background {
+    background-image: url('../../img/character/background.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.frame-container {
+    position: relative;
+    width: 80vw;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.frame-container > img {
+    cursor: pointer;
+}
+.character-image {
+    position: absolute;
+    width: 15vw; /* Set the width of the character image */
+    height: 40vh;
+    bottom: 18vh;
+    z-index: 2;
+}
+.lottie-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.character-label {
+    position: absolute;
+    color: #19FF7A; /* Adjust text color as needed */
+    font-size: 30px; /* Adjust font size as needed */
+    z-index: 2;
+    bottom: 10vh;
+}
