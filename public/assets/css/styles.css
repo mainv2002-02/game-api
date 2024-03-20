@@ -13,7 +13,7 @@
 /* Define Regular font */
 @font-face {
     font-family: 'SVN-Poppins';
-    src: url('../font/SVN-Poppins-Regular.ttf') format('truetype');
+    src: url('../fonts/SVN-Poppins-Regular.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -21,21 +21,21 @@
 /* Define Bold font */
 @font-face {
     font-family: 'SVN-Poppins';
-    src: url('../font/SVN-Poppins-Bold.ttf') format('truetype');
+    src: url('../fonts/SVN-Poppins-Bold.ttf') format('truetype');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'SVN-Poppins';
-    src: url('../font/SVN-Poppins-Medium.ttf') format('truetype');
+    src: url('../fonts/SVN-Poppins-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'SVN-Poppins';
-    src: url('../font/SVN-Poppins-Medium.ttf') format('truetype');
+    src: url('../fonts/SVN-Poppins-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
