@@ -11,28 +11,31 @@
 @stop
 
 @section('content')
-    <div class="background">
-        <div id="lottie-background" class="lottie-background"></div>
-        <div class="container">
-            <form class="form">
-                <div class="input-container" id="input1Container">
-                    <div class="lottie-input-background" id="input1Animation"></div>
-{{--                    <input type="text" placeholder="Input 1" class="form-input">--}}
-                </div>
-{{--                <input type="text" placeholder="Input 1" class="form-input">--}}
-{{--                <input type="text" placeholder="Input 2">--}}
-                <select>
-                    <option value="">Dropdown 1</option>
-                </select>
-                <select>
-                    <option value="">Dropdown 2</option>
-                </select>
-                <select>
-                    <option value="">Dropdown 3</option>
-                </select>
-{{--                <div class="form-field" id="buttonAnimation"></div>--}}
-                <button type="submit"  id="lottie-button-animation"></button>
-            </form>
+    <video autoplay muted id="bg-video" class="video-background">
+        <source src="{{url('assets/img/home/background01.mp4')}}" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+
+    <div id="content" style="display: none">
+        <div id="lottie-background" class="lottie"></div>
+
+        <div class="form-container">
+            <div id="lottie-input-1" class="lottie-input">
+                <div class="lottie-text">Họ Tên</div>
+            </div>
+            <div id="lottie-input-2" class="lottie-input">
+                <div class="lottie-text">Số điện thoại</div>
+            </div>
+            <div id="lottie-input-3" class="lottie-input">
+                <div class="lottie-text">Chức danh</div>
+            </div>
+            <div id="lottie-input-4" class="lottie-input">
+                <div class="lottie-text">Bộ Phận</div>
+            </div>
+            <div id="lottie-input-5" class="lottie-input">
+                <div class="lottie-text">Vùng miền</div>
+            </div>
+            <div id="lottie-button" class="lottie-button"></div>
         </div>
     </div>
 @stop
@@ -40,28 +43,30 @@
 @section('scripts')
     <script>
         $(document).ready(function() {
-            lottie.loadAnimation({
-                container: document.getElementById('lottie-background'),
-                renderer: 'svg',
-                loop: true,
-                autoplay: true,
-                path: '{{url('assets/img/home/background.json')}}' // path to your animation JSON file
-            });
+            function loadLottieAnimation(elementId, pathToJson) {
+                lottie.loadAnimation({
+                    container: document.getElementById(elementId), // the DOM element that will contain the animation
+                    renderer: 'svg',
+                    loop: false,
+                    autoplay: true,
+                    path: pathToJson
+                });
+            }
+            setTimeout(function () {
 
-            lottie.loadAnimation({
-                container: document.getElementById('input1Animation'),
-                renderer: 'svg',
-                loop: false,
-                autoplay: true,
-                path: '{{url('assets/img/home/input.json')}}'
-            });
-            lottie.loadAnimation({
-                container: document.getElementById('lottie-button-animation'),
-                renderer: 'svg',
-                loop: false,
-                autoplay: true,
-                path: '{{url('assets/img/home/next.json')}}'
-            });
+                loadLottieAnimation('lottie-background', '{{url('assets/img/home/border.json')}}');
+                // Initialize Lottie animations for each input and the button
+                loadLottieAnimation('lottie-input-1', '{{url('assets/img/home/input.json')}}');
+                loadLottieAnimation('lottie-input-2', '{{url('assets/img/home/input.json')}}');
+                loadLottieAnimation('lottie-input-3', '{{url('assets/img/home/input.json')}}');
+                loadLottieAnimation('lottie-input-4', '{{url('assets/img/home/input.json')}}');
+                loadLottieAnimation('lottie-input-5', '{{url('assets/img/home/input.json')}}');
+                loadLottieAnimation('lottie-button', '{{url('assets/img/home/button.json')}}');
+            }, 2000)
+
+            setTimeout(function() {
+                $("#content").css("display", "block");
+            }, 2005)
         });
     </script>
 @stop
