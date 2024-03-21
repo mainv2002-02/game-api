@@ -55,7 +55,7 @@
     /* placeholder for Lottie animations */
     width: 15vw; /* Set a fixed width */
     height: 15vh; /* Set a fixed height */
-    margin: 0 10px; /* Spacing between items */
+    margin: 0 25px; /* Spacing between items */
 }
 .user-info {
     display: flex;

@@ -84,38 +84,6 @@
                 path: '{{url('assets/img/kickoff/button.json')}}' // the path to the animation json
             });
 
-             lottie.loadAnimation({
-                 container: document.getElementById('border-frame-story'), // the dom element
-                 renderer: 'svg',
-                 loop: false,
-                 autoplay: true,
-                 path: '{{url('assets/img/story/border.json')}}' // the path to the animation json
-             });
-
-             lottie.loadAnimation({
-                 container: document.getElementById('button-frame-story'), // the dom element
-                 renderer: 'svg',
-                 loop: false,
-                 autoplay: true,
-                 path: '{{url('assets/img/story/button.json')}}' // the path to the animation json
-             });
-
-             lottie.loadAnimation({
-                 container: document.getElementById('border-frame-mission'), // the dom element
-                 renderer: 'svg',
-                 loop: false,
-                 autoplay: true,
-                 path: '{{url('assets/img/mission/border.json')}}' // the path to the animation json
-             });
-
-             lottie.loadAnimation({
-                 container: document.getElementById('button-frame-mission'), // the dom element
-                 renderer: 'svg',
-                 loop: false,
-                 autoplay: true,
-                 path: '{{url('assets/img/mission/button.json')}}' // the path to the animation json
-             });
-
              var video = document.getElementById('myVideo');
 
              video.addEventListener('ended', function() {
@@ -129,6 +97,22 @@
              $("#button-frame").click(function() {
                  $("#kickoff").css("display", "none");
                  $("#story").css("display", "block");
+
+                 lottie.loadAnimation({
+                     container: document.getElementById('border-frame-story'), // the dom element
+                     renderer: 'svg',
+                     loop: false,
+                     autoplay: true,
+                     path: '{{url('assets/img/story/border.json')}}' // the path to the animation json
+                 });
+
+                 lottie.loadAnimation({
+                     container: document.getElementById('button-frame-story'), // the dom element
+                     renderer: 'svg',
+                     loop: false,
+                     autoplay: true,
+                     path: '{{url('assets/img/story/button.json')}}' // the path to the animation json
+                 });
 
                  const htmlContent = `<p><b>Thị trấn Happiness - The Happiness City</b> luôn được biết tới là một nơi sản xuất</p>
                     <p>và phân phối hàng đầu của nhiều loại thức uống đa dạng, hợp thời và được</p>
@@ -145,6 +129,22 @@
              $("#button-frame-story").click(function() {
                  $("#story").css("display", "none");
                  $("#mission").css("display", "block");
+
+                 lottie.loadAnimation({
+                     container: document.getElementById('border-frame-mission'), // the dom element
+                     renderer: 'svg',
+                     loop: false,
+                     autoplay: true,
+                     path: '{{url('assets/img/mission/border.json')}}' // the path to the animation json
+                 });
+
+                 lottie.loadAnimation({
+                     container: document.getElementById('button-frame-mission'), // the dom element
+                     renderer: 'svg',
+                     loop: false,
+                     autoplay: true,
+                     path: '{{url('assets/img/mission/button.json')}}' // the path to the animation json
+                 });
 
                  const htmlContent = `<p>Bạn đã sẵn sàng bay tới <b class="pink">Thị trấn Happiness</b></p>
                     <p>và cùng hoàn thành những thử thách khác nhau để trở thành</p>
