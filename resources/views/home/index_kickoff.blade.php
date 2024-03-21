@@ -153,7 +153,7 @@
              });
 
              $("#button-frame-mission").click(function() {
-
+                 window.location.href = "/character"
              });
          });
     </script>

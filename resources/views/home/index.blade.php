@@ -39,8 +39,9 @@
 
            <div class="right-content">
                <!-- Right-side images -->
-               <img src="{{url('assets/img/main/score.png')}}" class="score" alt="Button 2">
-               <img src="{{url('assets/img/main/support.png')}}" class="support" alt="Button 3">
+               <img src="{{url('assets/img/main/replay.png')}}" class="replay" alt="replay">
+               <img src="{{url('assets/img/main/score.png')}}" class="score" alt="score">
+               <img src="{{url('assets/img/main/support.png')}}" class="support" alt="support">
            </div>
        </div>
 

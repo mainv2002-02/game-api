@@ -48,6 +48,7 @@ body, html {
     transform: translateX(-50%);
     width: 15vw;
     z-index: 2;
+    cursor: pointer;
 }
 
 .lottie-text {

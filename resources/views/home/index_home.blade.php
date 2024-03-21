@@ -67,6 +67,10 @@
             setTimeout(function() {
                 $("#content").css("display", "block");
             }, 2005)
+
+            $("#lottie-button").click(function() {
+                window.location.href = "/kickoff"
+            });
         });
     </script>
 @stop

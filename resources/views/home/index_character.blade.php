@@ -15,21 +15,21 @@
         <!-- Container for the first character and frame -->
         <div class="frame-container">
             <div id="lottie-frame-1" class="lottie-animation"></div>
-            <img src="{{url('assets/img/character/datamaster.png')}}" alt="Data Master" class="character-image">
+            <img src="{{url('assets/img/character/datamaster.png')}}" alt="Data Master" class="character-image" style="display: none">
             <div class="character-label">Data Master</div>
         </div>
 
         <!-- Container for the second character and frame -->
         <div class="frame-container">
             <div id="lottie-frame-2" class="lottie-animation"></div>
-            <img src="{{url('assets/img/character/problemsolver.png')}}" alt="Data Master" class="character-image">
+            <img src="{{url('assets/img/character/problemsolver.png')}}" alt="Data Master" class="character-image" style="display: none">
             <div class="character-label">Problem Solver</div>
         </div>
 
         <!-- Container for the third character and frame -->
         <div class="frame-container">
             <div id="lottie-frame-3" class="lottie-animation"></div>
-            <img src="{{url('assets/img/character/multitask.png')}}" alt="Data Master" class="character-image">
+            <img src="{{url('assets/img/character/multitask.png')}}" alt="Data Master" class="character-image" style="display: none">
             <div class="character-label">Multi Tasker</div>
         </div>
     </div>
@@ -62,6 +62,14 @@
                  autoplay: true,
                  path: '{{url('assets/img/character/border.json')}}' // the path to the animation json
              });
+
+             setTimeout(function () {
+                $(".character-image").css("display", "block");
+             }, 1000);
+
+             $(".character-image").click(function () {
+                 window.location.href = "/home"
+             })
          });
     </script>
 @stop

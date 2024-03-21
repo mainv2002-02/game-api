@@ -36,6 +36,9 @@
     margin-left: 20px; /* Spacing between images */
     cursor: pointer; /* Change the cursor on hover over the image */
 }
+.right-content .replay {
+    width: 3vw;
+}
 .right-content .score {
     width: 8vw;
 }
