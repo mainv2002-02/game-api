@@ -1,92 +1,17 @@
-.video-bg {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-}
-
-.frame-container {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-}
-
-#border-frame, #button-frame {
-    position: absolute;
-    z-index: 20;
-}
-
-#border-frame {
-    width: 65vw; /* Use viewport width for scalability */
-    height: 65vh; /* Use viewport height for scalability */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-#button-frame {
-    width: 40vw; /* Use viewport width for scalability */
-    /*min-width: 300px; !* Ensure it doesn't get too small *!*/
-    height: 8vh; /* Use viewport height for scalability */
-    bottom: 10vh;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#button-frame svg {
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-}
-
-#button-text {
-    position: relative;
-    z-index: 2;
-    color: #19FFE1;
-    /*font-size: 2vw; !* Use viewport width for scalable font size *!*/
-    font-size: 26px; /* Ensures font size doesn't get too small */
-    bottom: 0.5vh;
-    cursor: pointer;
-}
-
-@media screen and (max-width: 1024px) and (orientation: landscape) {
-    #border-frame, #button-frame {
-        width: 80vw; /* Increase width in landscape */
-    }
-
-    #button-frame {
-        bottom: 5%; /* Adjust position for better visibility */
-        height: 12vh; /* Adjust height in landscape */
-    }
-
-    #button-text {
-        /*font-size: 4vw; !* Increase font size in landscape *!*/
-    }
-}
-
 .full-page-background {
-    background: url('../../img/story/background.jpg') no-repeat center center fixed;
+    background: url('../../img/mission/background.jpg') no-repeat center center fixed;
     background-size: cover;
     position: fixed;
     width: 100%;
     height: 100%;
     z-index: -1; /* Keep the background behind contents */
-    /*opacity: 0.5;*/
+}
+
+.full-page-opacity {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.5;
 }
 
 #border-frame-story, #button-frame-story {
@@ -103,9 +28,8 @@
 }
 
 #button-frame-story {
-    width: 40vw; /* Use viewport width for scalability */
-    /*min-width: 300px; !* Ensure it doesn't get too small *!*/
-    height: 8vh; /* Use viewport height for scalability */
+    width: 40vw;
+    height: 8vh;
     bottom: 15vh;
     left: 50%;
     transform: translateX(-50%);
@@ -126,12 +50,15 @@
     position: fixed;
     z-index: 2;
     font-size: 26px; /* Ensures font size doesn't get too small */
-    top: 29%;
-    left: 25%;
-    text-align: justify;
+    top: 22%;
+    left: 20%;
+    width: 61vw;
+    text-align: left;
 }
 
-.typewriter > p {
+#story-content2 { margin-left: 10vw;; }
+
+.typewriter > div > p {
     margin-bottom: 0;
 }
 
@@ -143,11 +70,9 @@
     color: #F565AF;
 }
 
-.center {
-    text-align: left;
-    margin-left: 20%;
+#mission-content {
+    width: 55vw;
 }
-
 
 /* Typewriter effect for the text */
 .typewriter h1 {

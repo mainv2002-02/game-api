@@ -16,21 +16,21 @@
         <div class="frame-container">
             <div id="lottie-frame-1" class="lottie-animation"></div>
             <img src="{{url('assets/img/character/datamaster.png')}}" alt="Data Master" class="character-image" style="display: none">
-            <div class="character-label">Data Master</div>
+            <div class="character-label" style="display: none">Data Master</div>
         </div>
 
         <!-- Container for the second character and frame -->
         <div class="frame-container">
             <div id="lottie-frame-2" class="lottie-animation"></div>
             <img src="{{url('assets/img/character/problemsolver.png')}}" alt="Data Master" class="character-image" style="display: none">
-            <div class="character-label">Problem Solver</div>
+            <div class="character-label" style="display: none">Problem Solver</div>
         </div>
 
         <!-- Container for the third character and frame -->
         <div class="frame-container">
             <div id="lottie-frame-3" class="lottie-animation"></div>
             <img src="{{url('assets/img/character/multitask.png')}}" alt="Data Master" class="character-image" style="display: none">
-            <div class="character-label">Multi Tasker</div>
+            <div class="character-label" style="display: none">Multi Tasker</div>
         </div>
     </div>
 @stop
@@ -38,33 +38,13 @@
 @section('scripts')
      <script>
          $(document).ready(function() {
-            // Initialize Lottie animations for borders and buttons using the JSON data
-            lottie.loadAnimation({
-                container: document.getElementById('lottie-frame-1'), // the dom element
-                renderer: 'svg',
-                loop: false,
-                autoplay: true,
-                path: '{{url('assets/img/character/border.json')}}' // the path to the animation json
-            });
-
-             lottie.loadAnimation({
-                 container: document.getElementById('lottie-frame-2'), // the dom element
-                 renderer: 'svg',
-                 loop: false,
-                 autoplay: true,
-                 path: '{{url('assets/img/character/border.json')}}' // the path to the animation json
-             });
-
-             lottie.loadAnimation({
-                 container: document.getElementById('lottie-frame-3'), // the dom element
-                 renderer: 'svg',
-                 loop: false,
-                 autoplay: true,
-                 path: '{{url('assets/img/character/border.json')}}' // the path to the animation json
-             });
+             loadLottieAnimation('lottie-frame-1', '{{url('assets/img/character/border.json')}}');
+             loadLottieAnimation('lottie-frame-2', '{{url('assets/img/character/border.json')}}');
+             loadLottieAnimation('lottie-frame-3', '{{url('assets/img/character/border.json')}}');
 
              setTimeout(function () {
-                $(".character-image").css("display", "block");
+                $(".character-image").fadeIn(3000);
+                 $(".character-label").fadeIn(3000);
              }, 1000);
 
              $(".character-image").click(function () {

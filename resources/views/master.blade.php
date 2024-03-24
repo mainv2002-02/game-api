@@ -32,6 +32,7 @@
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js" defer></script>
     <script src="{{ url('assets/js/jquery.typer.js') }}"></script>
+    <script src="{{ url('assets/js/app.js') }}"></script>
     {{--Scripts link to file or js custom--}}
     @yield('scripts')
 </body>

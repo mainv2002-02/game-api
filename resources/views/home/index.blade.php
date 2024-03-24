@@ -71,15 +71,6 @@
                  // video.removeEventListener('ended', arguments.callee);
              });
 
-             function loadLottieAnimation(elementId, path) {
-                 lottie.loadAnimation({
-                     container: document.getElementById(elementId), // the DOM element that will contain the animation
-                     renderer: 'svg',
-                     loop: false,
-                     autoplay: true,
-                     path: path // the path to your Lottie file
-                 });
-             }
 
              // Initialize all your Lottie animations here
              loadLottieAnimation('lottie-button-1', '{{url('assets/img/main/gift.json')}}');

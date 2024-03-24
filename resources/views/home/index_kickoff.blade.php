@@ -13,7 +13,7 @@
 @stop
 
 @section('content')
-    <div id="kickoff">
+    <div class="kickoff" id="kickoff">
         <div class="video-bg" id="bg01">
             <video playsinline autoplay muted id="myVideo">
                 <source src="{{url('assets/img/kickoff/background1.mp4')}}" type="video/mp4">
@@ -30,30 +30,37 @@
 
         <div class="frame-container">
             <div id="border-frame"></div>
-            <div id="button-frame">
-                <div id="button-text">Tiếp theo</div>
-            </div>
+            <div id="button-frame"></div>
         </div>
     </div>
-    <div id="story" style="display: none">
-        <div class="full-page-background"></div>
+
+    <div class="story" id="story" style="display: none">
+        <div class="full-page-background">
+            <div class="full-page-opacity"></div>
+        </div>
         <div class="frame-container">
             <div id="border-frame-story">
                 <div class="typewriter green" id="story-content">
-
+                    <div id="story-content1"></div>
+                    <div id="story-content2"></div>
                 </div>
             </div>
-            <div id="button-frame-story">
-            </div>
+            <div id="button-frame-story"></div>
         </div>
     </div>
 
-    <div id="mission" style="display: none">
-        <div class="full-page-background"></div>
+    <div class="mission" id="mission" style="display: none">
+        <div class="full-page-background">
+            <div class="full-page-opacity"></div>
+        </div>
         <div class="frame-container">
             <div id="border-frame-mission">
                 <div class="typewriter green" >
-                    <div id="mission-content"></div>
+                    <div id="mission-content">
+                        <div id="mission-content1"></div>
+                        <div id="mission-content2"></div>
+                        <div id="mission-content3"></div>
+                    </div>
                 </div>
             </div>
             <div id="button-frame-mission">
@@ -67,89 +74,58 @@
 @section('scripts')
      <script>
          $(document).ready(function() {
-            // Initialize Lottie animations for borders and buttons using the JSON data
-            lottie.loadAnimation({
-                container: document.getElementById('border-frame'), // the dom element
-                renderer: 'svg',
-                loop: false,
-                autoplay: true,
-                path: '{{url('assets/img/kickoff/border01.json')}}' // the path to the animation json
-            });
-
-            lottie.loadAnimation({
-                container: document.getElementById('button-frame'), // the dom element
-                renderer: 'svg',
-                loop: false,
-                autoplay: true,
-                path: '{{url('assets/img/kickoff/button.json')}}' // the path to the animation json
-            });
+             loadLottieAnimation('border-frame', '{{url('assets/img/kickoff/border01.json')}}');
+             loadLottieAnimation('button-frame', '{{url('assets/img/kickoff/button.json')}}');
 
              var video = document.getElementById('myVideo');
 
              video.addEventListener('ended', function() {
                  $("#bg01").css("display", "none");
                  $("#bg02").css("display", "block");
-
-                 // Remove the event listener if you only want to change the video once
-                 // video.removeEventListener('ended', arguments.callee);
              });
 
              $("#button-frame").click(function() {
-                 $("#kickoff").css("display", "none");
-                 $("#story").css("display", "block");
+                 $("#kickoff").fadeOut(2000);
+                 $("#story").fadeIn(2000, function (){
+                     loadLottieAnimation('border-frame-story', '{{url('assets/img/story/border.json')}}');
+                     loadLottieAnimation('button-frame-story', '{{url('assets/img/story/button.json')}}');
 
-                 lottie.loadAnimation({
-                     container: document.getElementById('border-frame-story'), // the dom element
-                     renderer: 'svg',
-                     loop: false,
-                     autoplay: true,
-                     path: '{{url('assets/img/story/border.json')}}' // the path to the animation json
+                     const htmlContent1 = `<p><b>Thị trấn Happiness - The Happiness City</b> luôn được biết tới là một nơi sản xuất
+                        và phân phối hàng đầu của nhiều loại thức uống đa dạng, hợp thời và được
+                        yêu thích bởi hàng triệu người tiêu dùng trên khắp Vương quốc. Tuy vậy, Thị trấn
+                        đang bước vào tương lai với rất nhiều thách thức đang chờ đón như sự thay đổi
+                        thói quen liên tục của người tiêu dùng, sự cạnh tranh mạnh mẽ của các thị trấn
+                        đối thủ, hay những xu hướng và nhu cầu vô cùng mới của tương lai công việc.</p>
+                        <br>
+                        <p>Hơn bao giờ hết, thị trấn đang cần tìm kiếm những <b class="pink">Người hùng Dẫn đầu Tương</b>
+                        <b class="pink">lai - Growth Shapers</b> để cùng nhau vượt qua những thách thức của tương lai</p>`;
+                    const htmlContent2 = `<p class="center">và dẫn dắt Thị trấn tới những thành công mới</p>`;
+
+                     $('#story-content1').typer([htmlContent1]);
+                     setTimeout(function (){
+                         $('#story-content2').typer([htmlContent2])
+                     }, 6900)
                  });
-
-                 lottie.loadAnimation({
-                     container: document.getElementById('button-frame-story'), // the dom element
-                     renderer: 'svg',
-                     loop: false,
-                     autoplay: true,
-                     path: '{{url('assets/img/story/button.json')}}' // the path to the animation json
-                 });
-
-                 const htmlContent = `<p><b>Thị trấn Happiness - The Happiness City</b> luôn được biết tới là một nơi sản xuất</p>
-                    <p>và phân phối hàng đầu của nhiều loại thức uống đa dạng, hợp thời và được</p>
-                    <p>yêu thích bởi hàng triệu người tiêu dùng, sự cạnh tranh mạnh mẽ của các thị trấn</p>
-                    <p>đối thủ, hay những xu hướng và nhu cầu vô cùng mới của tương lai công việc.</p>
-                    <br>
-                    <p>Hơn bao giờ hết, thị trấn đang cần tìm kiếm những <b class="pink">Người hùng Dẫn đầu Tương</b></p>
-                    <p> <b class="pink">lai - Growth Shapers</b> để cùng nhau vượt qua những thách thức của tương lai</p>
-                    <p class="center">và dẫn dắt Thị trấn tới những thành công mới</p>`;
-
-                 $('#story-content').typer([htmlContent])
              });
 
              $("#button-frame-story").click(function() {
-                 $("#story").css("display", "none");
-                 $("#mission").css("display", "block");
+                 $("#story").fadeOut(2000);
+                 $("#mission").fadeIn(2000, function (){
+                     loadLottieAnimation('border-frame-mission', '{{url('assets/img/mission/border.json')}}');
+                     loadLottieAnimation('button-frame-mission', '{{url('assets/img/mission/button.json')}}');
 
-                 lottie.loadAnimation({
-                     container: document.getElementById('border-frame-mission'), // the dom element
-                     renderer: 'svg',
-                     loop: false,
-                     autoplay: true,
-                     path: '{{url('assets/img/mission/border.json')}}' // the path to the animation json
+                     const htmlContent1 = `<p>Bạn đã sẵn sàng bay tới <b class="pink">Thị trấn Happiness</b></p>`
+                     const htmlContent2 = `<p>và cùng hoàn thành những thử thách khác nhau để trở thành</p>`
+                     const htmlContent3 = `<p>Người hùng dẫn đầu  <b class="pink">Tương lai - Growth Shapers?</b></p>`;
+
+                     $('#mission-content1').typer([htmlContent1]);
+                     setTimeout(function (){
+                         $('#mission-content2').typer([htmlContent2])
+                     }, 1000)
+                     setTimeout(function (){
+                         $('#mission-content3').typer([htmlContent3])
+                     }, 2000)
                  });
-
-                 lottie.loadAnimation({
-                     container: document.getElementById('button-frame-mission'), // the dom element
-                     renderer: 'svg',
-                     loop: false,
-                     autoplay: true,
-                     path: '{{url('assets/img/mission/button.json')}}' // the path to the animation json
-                 });
-
-                 const htmlContent = `<p>Bạn đã sẵn sàng bay tới <b class="pink">Thị trấn Happiness</b></p>
-                    <p>và cùng hoàn thành những thử thách khác nhau để trở thành</p>
-                    <p>Người hùng dẫn đầu  <b class="pink">Tương lai - Growth Shapers?</b></p>`;
-                 $('#mission-content').typer([htmlContent])
              });
 
              $("#button-frame-mission").click(function() {
