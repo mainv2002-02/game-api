@@ -61,11 +61,10 @@
 #border-frame > .typewriter {
     position: absolute;
     z-index: 2;
-    font-size: 21px;
+    font-size: 24px;
     top: 40%;
     /* left: 0%; */
     text-align: left;
-    text-transform: uppercase;
     padding: 0 40px;
 }
 
@@ -105,8 +104,9 @@
 .score-text {
     color: #00F4F1;
     font-size: 130px;
-    font-weight: 500;
-    font-style: normal;
+    -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: #00F4F1;
 }
 
  .score-animation {
