@@ -11,7 +11,7 @@
 @stop
 
 @section('content')
-    <div class="background">
+    <div class="background" id="bg-character">
         <!-- Container for the first character and frame -->
         <div class="frame-container">
             <div id="lottie-frame-1" class="lottie-animation"></div>
@@ -33,6 +33,13 @@
             <div class="character-label" style="display: none">Multi Tasker</div>
         </div>
     </div>
+
+    <div class="video-bg" id="bg01" style="display: none">
+        <video playsinline autoplay muted id="myVideo">
+            <source src="{{url('assets/img/character/animation.mp4')}}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
 @stop
 
 @section('scripts')
@@ -48,8 +55,15 @@
              }, 1000);
 
              $(".character-image").click(function () {
-                 window.location.href = "/home"
+                 $("#bg-character").fadeOut(3000);
+                 $("#bg01").fadeIn(2000);
              })
+
+             var video = document.getElementById('myVideo');
+
+             video.addEventListener('ended', function() {
+                 window.location.href = "/home"
+             });
          });
     </script>
 @stop
