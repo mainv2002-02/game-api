@@ -29,14 +29,7 @@
 @font-face {
     font-family: 'SVN-Poppins';
     src: url('../fonts/SVN-Poppins-Medium.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'SVN-Poppins';
-    src: url('../fonts/SVN-Poppins-Medium.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: 500;
     font-style: normal;
 }
 

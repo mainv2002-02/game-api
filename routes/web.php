@@ -14,6 +14,7 @@ $router->group([
     $router->get('/kickoff', 'HomeController@indexKickoff');
     $router->get('/character', 'HomeController@indexCharacter');
     $router->get('/home', 'HomeController@index');
+    $router->get('/gift', 'HomeController@gift');
 
     $router->get('/login', 'AuthController@login');
     $router->post('/login', 'AuthController@doLogin');

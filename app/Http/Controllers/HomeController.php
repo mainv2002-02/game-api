@@ -26,4 +26,9 @@ class HomeController extends Controller
     {
         return view('home.index');
     }
+
+    public function gift(): View
+    {
+        return view('home.gift');
+    }
 }

@@ -1,0 +1,132 @@
+ .video-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+
+.video-bg > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+ .frame-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.frame-score-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    z-index: 10;
+}
+
+#border-frame,  #button-frame {
+    position: absolute;
+    z-index: 20;
+}
+
+#border-frame {
+    width: 47vw;
+    height: 52vh;
+    top: 36%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#border-frame svg {
+ position: absolute;
+ z-index: 1;
+ width: 100%;
+ height: 100%;
+}
+
+#border-frame > .typewriter {
+    position: absolute;
+    z-index: 2;
+    font-size: 21px;
+    top: 40%;
+    /* left: 0%; */
+    text-align: left;
+    text-transform: uppercase;
+    padding: 0 40px;
+}
+
+ .typewriter > div > p {
+     margin-bottom: 0;
+ }
+
+ #gift-content1 { position: relative; }
+ #gift-content2 {
+     position: relative;
+     left: 35%;
+ }
+
+ #button-frame {
+     position: fixed;
+     width: 40vw;
+     height: 8vh;
+     top: 12%;
+}
+
+ .green {
+     color: #56FF9E;
+ }
+
+ .pink {
+     color: #F565AF;
+ }
+
+#score-frame {
+    position: fixed;
+    width: 40vw;
+    height: 8vh;
+    top: 28%;
+    left: 65%;
+}
+
+.score-text {
+    color: #00F4F1;
+    font-size: 130px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+ .score-animation {
+     position: fixed;
+     bottom: 26vh;
+     right: 9%;
+     top: 10%;
+ }
+
+ @media screen and (max-width: 1024px) and (orientation: landscape) {
+    #border-frame, #button-frame {
+        width: 80vw; /* Increase width in landscape */
+    }
+
+    #button-frame {
+        bottom: 5%; /* Adjust position for better visibility */
+        height: 12vh; /* Adjust height in landscape */
+    }
+
+    #button-text {
+        /*font-size: 4vw; !* Increase font size in landscape *!*/
+    }
+}

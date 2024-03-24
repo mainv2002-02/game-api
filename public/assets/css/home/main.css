@@ -111,6 +111,6 @@
     bottom: 9vh;
     cursor: pointer;
 }
-#lottie-button-1, #lottie-button-2 {
+.lottie {
     cursor: pointer;
 }

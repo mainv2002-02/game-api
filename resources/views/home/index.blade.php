@@ -31,9 +31,9 @@
                <!-- Your left-side content goes here -->
                <div class="user-info">
                    <img src="{{url('assets/img/main/avata.png')}}" alt="Tony Nguyen" />
-                   <span class="name">Tony Nguyen abc ax sssssss</span>
+                   <span class="name">Tony Nguyen</span>
                </div>
-               <div id="lottie-button-1" class="lottie"></div>
+               <div id="button-gift" class="lottie"></div>
                <div id="lottie-button-2" class="lottie"></div>
            </div>
 
@@ -73,8 +73,12 @@
 
 
              // Initialize all your Lottie animations here
-             loadLottieAnimation('lottie-button-1', '{{url('assets/img/main/gift.json')}}');
+             loadLottieAnimation('button-gift', '{{url('assets/img/main/gift.json')}}');
              loadLottieAnimation('lottie-button-2', '{{url('assets/img/main/agenda.json')}}');
+
+             $("#button-gift").click(function () {
+                window.open('/gift', '_blank');
+             })
          });
     </script>
 @stop
