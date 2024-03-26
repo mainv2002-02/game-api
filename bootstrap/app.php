@@ -4,18 +4,24 @@ use App\Console\Kernel;
 use App\Exceptions\Handler;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\EncryptCookies;
+use App\Http\Middleware\ResolveTenant;
 use App\Providers\AppServiceProvider;
 use App\Providers\AuthServiceProvider;
 use App\Providers\EventServiceProvider;
 use App\Providers\Saml2;
+use Illuminate\Contracts\Console\Kernel as ConsoleKernel;
+use Illuminate\Contracts\Cookie\QueueingFactory;
 use Illuminate\Contracts\Debug\ExceptionHandler;
+use Illuminate\Cookie\CookieServiceProvider;
 use Illuminate\Redis\RedisServiceProvider;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Session\SessionManager;
+use Illuminate\Session\SessionServiceProvider;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Laravel\Lumen\Application;
 use Laravel\Lumen\Bootstrap\LoadEnvironmentVariables;
 use Slides\Saml2\Facades\Auth;
-use App\Http\Middleware\ResolveTenant;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -54,21 +60,23 @@ $app->withEloquent();
 | your own bindings here if you like or you can make another file.
 |
 */
-
-$app->singleton(
-    ExceptionHandler::class,
-    Handler::class
-);
-
-$app->singleton(
-    \Illuminate\Contracts\Console\Kernel::class,
-    Kernel::class
-);
-$app->singleton('cookie', function () use ($app) {
-    return $app->loadComponent('session', 'Illuminate\Cookie\CookieServiceProvider', 'cookie');
+$app->singleton(SessionManager::class, function () use ($app) {
+    return $app->loadComponent('session', SessionServiceProvider::class, 'session');
 });
 
-$app->bind('Illuminate\Contracts\Cookie\QueueingFactory', 'cookie');
+$app->singleton('session.store', function () use ($app) {
+    return $app->loadComponent('session', SessionServiceProvider::class, 'session.store');
+});
+
+$app->singleton('cookie', function () use ($app) {
+    return $app->loadComponent('session', CookieServiceProvider::class, 'cookie');
+});
+
+$app->singleton(ExceptionHandler::class, Handler::class);
+
+$app->singleton(ConsoleKernel::class, Kernel::class);
+
+$app->bind(QueueingFactory::class, 'cookie');
 
 $configs = [
     'app',
@@ -95,16 +103,16 @@ foreach ($configs as $value) {
 | route or middleware that'll be assigned to some specific routes.
 |
 */
-
+$app->middleware([
+                     StartSession::class,
+                 ]);
 
 $app->routeMiddleware([
-                          StartSession::class,
-                          ShareErrorsFromSession::class,
-                          'auth'            => Authenticate::class,
-                          'start_session'   => StartSession::class,
-                          'session_errors'  => ShareErrorsFromSession::class,
-                          'encrypt_cookies' => EncryptCookies::class,
-                          //                          'cookies_response' => \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
+                          'auth'             => Authenticate::class,
+                          'start_session'    => StartSession::class,
+                          'session_errors'   => ShareErrorsFromSession::class,
+                          'encrypt_cookies'  => EncryptCookies::class,
+                          'cookies_response' => AddQueuedCookiesToResponse::class,
                       ]);
 $app->alias(ResolveTenant::class, 'saml2.resolveTenant');
 $app->alias(Auth::class, 'Saml2');

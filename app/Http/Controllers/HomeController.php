@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\View\View;
-use Laravel\Socialite\Facades\Socialite;
 
 class HomeController extends Controller
 {

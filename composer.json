@@ -10,6 +10,7 @@
         "illuminate/cookie": "^10.47",
         "illuminate/redis": "^10.43",
         "illuminate/routing": "^10.47",
+        "illuminate/session": "^10.48",
         "laravel/lumen-framework": "^10.0",
         "predis/predis": "^2.2",
         "urameshibr/lumen-form-request": "^1.6"
