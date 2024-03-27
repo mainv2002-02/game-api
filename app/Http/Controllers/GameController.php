@@ -3,13 +3,37 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BaseRequest;
+use App\Logic\BaseLogic;
+use App\Logic\GameLogic;
 use App\Models\Hero;
 use App\Models\Question;
 use App\Models\Track;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class GameController extends Controller
 {
+    protected BaseLogic $logic;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->logic = GameLogic::getInstance();
+    }
+
+    public function getQuestion(): View
+    {
+        $questionInstance = $this->logic->getCurrentQuestion();
+        $trackInstance = $questionInstance->track;
+        $heroInstance = Hero::getInstance(Auth::user()->current_hero);
+
+        return view('game.question-detail')
+            ->with('track', $trackInstance)
+            ->with('hero', $heroInstance)
+            ->with('question', $questionInstance);
+    }
+
+
     public function heroList(): View
     {
         return view('game.hero-list')->with('heros', Hero::get());
@@ -28,17 +52,6 @@ class GameController extends Controller
             ->with('hero', $trackInstance->hero)
             ->with('track', $trackInstance)
             ->with('questions', $trackInstance->questions);
-    }
-
-    public function questionDetail(int $questionId, string $questionSlug): View
-    {
-        $questionInstance = Question::getInstance($questionId);
-        $trackInstance = $questionInstance->track;
-
-        return view('game.question-detail')
-            ->with('hero', $trackInstance->hero)
-            ->with('track', $trackInstance)
-            ->with('question', $questionInstance);
     }
 
     public function show(int $questionId, string $slug): View

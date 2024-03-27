@@ -15,21 +15,21 @@
         <!-- Container for the first character and frame -->
         <div class="frame-container">
             <div id="lottie-frame-1" class="lottie-animation"></div>
-            <img src="{{url('assets/img/character/datamaster.png')}}" alt="Data Master" class="character-image" style="display: none">
+            <img src="{{url('assets/img/character/datamaster.png')}}" alt="Data Master" hero-id="1" class="character-image" style="display: none">
             <div class="character-label" style="display: none">Data Master</div>
         </div>
 
         <!-- Container for the second character and frame -->
         <div class="frame-container">
             <div id="lottie-frame-2" class="lottie-animation"></div>
-            <img src="{{url('assets/img/character/problemsolver.png')}}" alt="Data Master" class="character-image" style="display: none">
+            <img src="{{url('assets/img/character/problemsolver.png')}}" alt="Data Master" hero-id="1" class="character-image" style="display: none">
             <div class="character-label" style="display: none">Problem Solver</div>
         </div>
 
         <!-- Container for the third character and frame -->
         <div class="frame-container">
             <div id="lottie-frame-3" class="lottie-animation"></div>
-            <img src="{{url('assets/img/character/multitask.png')}}" alt="Data Master" class="character-image" style="display: none">
+            <img src="{{url('assets/img/character/multitask.png')}}" alt="Data Master" hero-id="1" class="character-image" style="display: none">
             <div class="character-label" style="display: none">Multi Tasker</div>
         </div>
     </div>
@@ -53,8 +53,9 @@
                 $(".character-image").fadeIn(3000);
                  $(".character-label").fadeIn(3000);
              }, 1000);
-
+             heroId = 1;
              $(".character-image").click(function () {
+                 heroId = $(this).attr('hero-id');
                  $("#bg-character").fadeOut(3000);
                  $("#bg01").fadeIn(2000);
              })
@@ -62,7 +63,7 @@
              var video = document.getElementById('myVideo');
 
              video.addEventListener('ended', function() {
-                 window.location.href = "/home"
+                 window.location.href = "/home/" + heroId;
              });
          });
     </script>

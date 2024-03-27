@@ -13,8 +13,13 @@ $router->group([
     $router->get('/', 'HomeController@indexHome');
     $router->get('/kickoff', 'HomeController@indexKickoff');
     $router->get('/character', 'HomeController@indexCharacter');
-    $router->get('/home', 'HomeController@index');
+    $router->get('/home/{heroId}', 'HomeController@index');
     $router->get('/gift', 'HomeController@gift');
+
+    $router->get('/game/question', 'GameController@getQuestion');
+
+
+
 
     $router->get('/login', 'AuthController@login');
     $router->post('/login', 'AuthController@doLogin');

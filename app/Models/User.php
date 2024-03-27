@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Laravel\Lumen\Auth\Authorizable;
 
@@ -20,7 +21,7 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
      */
     protected $fillable = [
         'name',
-        'wp_id',
+        'azure_id',
         'token',
         'full_name',
         'phone',
@@ -30,6 +31,7 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         'area',
         'avatar',
         'current_hero',
+        'data',
     ];
 
     /**
@@ -40,4 +42,12 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
     protected $hidden = [
         'password',
     ];
+
+    protected function data(): Attribute
+    {
+        return Attribute::make(
+            get: fn(?string $value) => json_decode($value, true),
+            set: fn(?array $value) => json_encode($value)
+        );
+    }
 }

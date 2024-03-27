@@ -2,10 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Logic\BaseLogic;
+use App\Logic\GameLogic;
 use Illuminate\View\View;
 
 class HomeController extends Controller
 {
+    protected BaseLogic $logic;
+
+    public function __construct()
+    {
+        parent::__construct();
+        $this->logic = GameLogic::getInstance();
+    }
+
     public function indexHome(): View
     {
         return view('home.index_home');
@@ -21,8 +31,9 @@ class HomeController extends Controller
         return view('home.index_character');
     }
 
-    public function index(): View
+    public function index(int $heroId): View
     {
+        $this->logic->setHero($heroId);
         return view('home.index');
     }
 

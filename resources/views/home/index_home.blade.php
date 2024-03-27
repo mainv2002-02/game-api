@@ -1,3 +1,4 @@
+@php use Illuminate\Support\Facades\Auth; @endphp
 @extends('master')
 
 @section('title', 'Home Page')
@@ -22,19 +23,20 @@
 
             <div class="form-container">
                 <div id="lottie-input-1" class="lottie-input">
-                    <div class="lottie-text" style="display: none">Họ Tên</div>
+                    <div class="lottie-text"
+                         style="display: none">{{Auth::user()->name}}</div>
                 </div>
                 <div id="lottie-input-2" class="lottie-input">
-                    <div class="lottie-text" style="display: none">Số điện thoại</div>
+                    <div class="lottie-text" style="display: none">{{Auth::user()->phone}}</div>
                 </div>
                 <div id="lottie-input-3" class="lottie-input">
-                    <div class="lottie-text" style="display: none">Chức danh</div>
+                    <div class="lottie-text" style="display: none">{{Auth::user()->title}}</div>
                 </div>
                 <div id="lottie-input-4" class="lottie-input">
-                    <div class="lottie-text" style="display: none">Bộ Phận</div>
+                    <div class="lottie-text" style="display: none">{{Auth::user()->department}}</div>
                 </div>
                 <div id="lottie-input-5" class="lottie-input">
-                    <div class="lottie-text" style="display: none">Vùng miền</div>
+                    <div class="lottie-text" style="display: none">{{Auth::user()->area}}</div>
                 </div>
                 <div id="lottie-button" class="lottie-button"></div>
             </div>
