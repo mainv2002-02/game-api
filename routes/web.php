@@ -17,6 +17,7 @@ $router->group([
     $router->get('/gift', 'HomeController@gift');
 
     $router->get('/game/question', 'GameController@getQuestion');
+    $router->post('/game/answer', 'GameController@postAnswer');
 
 
 

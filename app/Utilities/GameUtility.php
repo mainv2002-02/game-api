@@ -35,23 +35,25 @@ class GameUtility extends Utility
         if (self::finishAllTracks()) {
             return null;
         }
-        $maxQuestionId = Record::query()
-                               ->where('user_id', Auth::id())
-                               ->whereNested(function ($query) {
-                                   return $query->where('point', '>=', 1)
-                                                ->orWhere('times', 2);
-                               })
-                               ->max('question_id');
-
+        $lastQuestion = Question::getLastQuestion();
+        $maxId = $lastQuestion ? $lastQuestion->getKey() : 0;
+        $trackId = $lastQuestion ? $lastQuestion->getAttribute('track_id') : 0;
         /** @var Builder $query */
         $query = Question::query()
-                         ->where('id', '>', (int)$maxQuestionId)
+                         ->where('id', '>', $maxId)
                          ->orderBy('id');
-        if (!empty($maxQuestionId)) {
-            $lastQuestion = Question::getInstance($maxQuestionId);
-            $query->where('track_id', $lastQuestion->getAttribute('track_id'));
+        if ($trackId) {
+            $query->where('track_id', $trackId);
         }
-        return $query->first();
+        $currentQuestion = $query->first();
+        if (!$currentQuestion) {
+            $currentQuestion = Question::query()
+                                       ->where('id', '>', $maxId)
+                                       ->where('track_id', $trackId + 1)
+                                       ->orderBy('id')
+                                       ->first();
+        }
+        return $currentQuestion;
     }
 
     public static function calculatePoint(User $currentUser, Question $currentQuestion,)

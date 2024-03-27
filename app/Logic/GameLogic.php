@@ -28,8 +28,31 @@ class GameLogic extends BaseLogic
         return false;
     }
 
-    public function getCurrentQuestion() : Question
+    public function getCurrentQuestion(): ?Question
     {
         return GameUtility::currentQuestion();
+    }
+
+    public function answer(array $params): Record
+    {
+        $currentQuestion = $this->getCurrentQuestion();
+        $diff = array_diff($params, $currentQuestion->answer ?? []);
+        $exist = Record::query()
+                       ->where([
+                                   'user_id'     => Auth::id(),
+                                   'hero_id'     => Auth::user()->current_hero,
+                                   'track_id'    => $currentQuestion->getAttribute('track_id'),
+                                   'question_id' => $currentQuestion->getKey(),
+                               ])
+                       ->count();
+        return Record::create([
+                                  'user_id'     => Auth::id(),
+                                  'hero_id'     => Auth::user()->current_hero,
+                                  'track_id'    => $currentQuestion->getAttribute('track_id'),
+                                  'question_id' => $currentQuestion->getKey(),
+                                  'answer'      => $params,
+                                  'times'       => $exist + 1,
+                                  'point'       => !empty($diff) ? 0 : (2 - $exist),
+                              ]);
     }
 }
