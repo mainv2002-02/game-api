@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Logic\BaseLogic;
 use App\Logic\GameLogic;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class HomeController extends Controller

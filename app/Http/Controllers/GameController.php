@@ -19,7 +19,6 @@ class GameController extends Controller
     {
         parent::__construct();
         $this->logic = GameLogic::getInstance();
-
     }
 
     public function getQuestion(): View

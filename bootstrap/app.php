@@ -13,6 +13,7 @@ use Illuminate\Contracts\Console\Kernel as ConsoleKernel;
 use Illuminate\Contracts\Cookie\QueueingFactory;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Cookie\CookieServiceProvider;
+use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Redis\RedisServiceProvider;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Session\SessionManager;
@@ -21,7 +22,6 @@ use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Laravel\Lumen\Application;
 use Laravel\Lumen\Bootstrap\LoadEnvironmentVariables;
 use Slides\Saml2\Facades\Auth;
-use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -104,7 +104,11 @@ foreach ($configs as $value) {
 |
 */
 $app->middleware([
+                     EncryptCookies::class,
+                     AddQueuedCookiesToResponse::class,
                      StartSession::class,
+                     ShareErrorsFromSession::class,
+                     //\Laravel\Lumen\Http\Middleware\VerifyCsrfToken::class,
                  ]);
 
 $app->routeMiddleware([
