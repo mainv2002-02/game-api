@@ -34,13 +34,15 @@ class Question extends BaseModel
 
     public static function getLastQuestion(): ?Question
     {
-        $maxQuestionId = Record::query()
-                               ->where('user_id', Auth::id())
-                               ->whereNested(function ($query) {
-                                   return $query->where('point', '>=', 1)
-                                                ->orWhere('times', 2);
-                               })
-                               ->max('question_id');
-        return !empty($maxQuestionId) ? Question::getInstance($maxQuestionId) : null;
+        $lastRecord = Record::query()
+                            ->select(['question_id'])
+                            ->where('user_id', Auth::id())
+                            ->whereNested(function ($query) {
+                                return $query->where('point', '>=', 1)
+                                             ->orWhere('times', '>=', 2);
+                            })
+                            ->orderByDesc('id')
+                            ->first();
+        return !empty($lastRecord) ? Question::getInstance($lastRecord->question_id) : null;
     }
 }

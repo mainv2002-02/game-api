@@ -14,15 +14,20 @@ class GameLogic extends BaseLogic
         if (Auth::user()->current_hero == $heroId) {
             return true;
         }
-        if (empty(Auth::user()->current_hero) || GameUtility::finishAllTracks()) {
+        $heroes = Auth::user()->heroes;
+        if (empty(Auth::user()->current_hero) || GameUtility::finishAllTracks() || !in_array($heroId, $heroes)) {
             Auth::user()->current_hero = $heroId;
             if ($heroId == 3) {
                 Auth::user()->data = [
-                    'track_1' => ((rand() % 2) + 1) * 100 + 1,
-                    'track_2' => ((rand() % 2) + 1) * 100 + 2,
-                    'track_3' => ((rand() % 2) + 1) * 100 + 3,
+                    'hero_3' => [
+                        'track_1' => ((rand() % 2) + 1) * 100 + 1,
+                        'track_2' => ((rand() % 2) + 1) * 100 + 2,
+                        'track_3' => ((rand() % 2) + 1) * 100 + 3,
+                    ]
                 ];
             }
+            $heroes[] = $heroId;
+            Auth::user()->heroes = $heroes;
             return Auth::user()->save();
         }
         return false;

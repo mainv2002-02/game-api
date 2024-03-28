@@ -54,6 +54,14 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         );
     }
 
+    protected function heroes(): Attribute
+    {
+        return Attribute::make(
+            get: fn(?string $value) => json_decode($value, true),
+            set: fn(?array $value) => json_encode($value)
+        );
+    }
+
     public function getRecords(): Collection
     {
         return Record::query()
@@ -61,7 +69,7 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
                      ->addSelect(DB::raw('SUM(point) as points'))
                      ->where('user_id', Auth::id())
                      ->groupBy('question_id')
-                     ->orderBy('question_id')
+                     ->orderBy('id')
                      ->get();
     }
 }

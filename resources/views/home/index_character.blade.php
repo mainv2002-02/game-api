@@ -22,14 +22,14 @@
         <!-- Container for the second character and frame -->
         <div class="frame-container">
             <div id="lottie-frame-2" class="lottie-animation"></div>
-            <img src="{{url('assets/img/character/problemsolver.png')}}" alt="Data Master" hero-id="1" class="character-image" style="display: none">
+            <img src="{{url('assets/img/character/problemsolver.png')}}" alt="Data Master" hero-id="2" class="character-image" style="display: none">
             <div class="character-label" style="display: none">Problem Solver</div>
         </div>
 
         <!-- Container for the third character and frame -->
         <div class="frame-container">
             <div id="lottie-frame-3" class="lottie-animation"></div>
-            <img src="{{url('assets/img/character/multitask.png')}}" alt="Data Master" hero-id="1" class="character-image" style="display: none">
+            <img src="{{url('assets/img/character/multitask.png')}}" alt="Data Master" hero-id="3" class="character-image" style="display: none">
             <div class="character-label" style="display: none">Multi Tasker</div>
         </div>
     </div>
