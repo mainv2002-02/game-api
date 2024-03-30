@@ -33,7 +33,7 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         'department',
         'area',
         'avatar',
-        'current_hero',
+        'state',
         'data',
     ];
 
@@ -59,6 +59,24 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         return Attribute::make(
             get: fn(?string $value) => json_decode($value, true),
             set: fn(?array $value) => json_encode($value)
+        );
+    }
+
+    protected function state(): Attribute
+    {
+        return Attribute::make(
+            get: fn(?string $value) => json_decode($value, true),
+            set: fn(?array $value) => json_encode($value)
+        );
+    }
+
+    protected function heroId(): Attribute
+    {
+        return Attribute::make(
+            get: function (?string $value, array $attributes) {
+                $state = json_decode($attributes['state'] ?? '', true);
+                return (!empty($state) && !empty($state['hero_id'])) ? $state['hero_id'] : null;
+            }
         );
     }
 

@@ -6,6 +6,7 @@ use App\Http\Requests\BaseRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 use Laravel\Lumen\Http\Redirector;
 
@@ -65,6 +66,9 @@ class AuthController extends Controller
     public function callback(BaseRequest $request)
     {
         var_dump($request->all());
+        var_dump($_REQUEST);
+        Log::info($_REQUEST);
+        Log::info($_GET);
         exit();
     }
 }

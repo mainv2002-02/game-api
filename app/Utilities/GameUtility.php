@@ -14,7 +14,7 @@ class GameUtility extends Utility
 
     public static function finishAllTracks(): bool
     {
-        $heroId = Auth::user()->current_hero;
+        $heroId = Auth::user()->hero_id;
         if ($heroId == 3) {
             $data = Auth::user()->data;
             $maxTrackId = $data['hero_3']['track_3'];
@@ -44,7 +44,7 @@ class GameUtility extends Utility
         $maxId = $lastQuestion ? $lastQuestion->getKey() : 0;
         $trackId = $lastQuestion ? $lastQuestion->getAttribute('track_id') : 0;
         if (!$trackId) {
-            $trackId = match (Auth::user()->current_hero) {
+            $trackId = match (Auth::user()->hero_id) {
                 1 => 101,
                 2 => 201,
                 3 => Auth::user()->data['hero_3']['track_1'],
@@ -60,7 +60,7 @@ class GameUtility extends Utility
         $currentQuestion = $query->first();
 
         if (!$currentQuestion) {
-            if (Auth::user()->current_hero == 3) {
+            if (Auth::user()->hero_id == 3) {
                 $key = $trackId % 100 + 1;
                 $trackId = Auth::user()->data['hero_3']["track_{$key}"];
             } else {

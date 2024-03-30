@@ -11,12 +11,15 @@ class GameLogic extends BaseLogic
 {
     public function setHero(int $heroId): bool
     {
-        if (Auth::user()->current_hero == $heroId) {
+        if (Auth::user()->hero_id == $heroId) {
             return true;
         }
         $heroes = Auth::user()->heroes;
-        if (empty(Auth::user()->current_hero) || GameUtility::finishAllTracks() || !in_array($heroId, $heroes)) {
-            Auth::user()->current_hero = $heroId;
+        if (empty(Auth::user()->hero_id) || GameUtility::finishAllTracks() || !in_array($heroId, $heroes)) {
+            Auth::user()->state = [
+                'hero_id'     => $heroId,
+                'question_id' => null,
+            ];
             if ($heroId == 3) {
                 Auth::user()->data = [
                     'hero_3' => [
@@ -45,14 +48,14 @@ class GameLogic extends BaseLogic
         $exist = Record::query()
                        ->where([
                                    'user_id'     => Auth::id(),
-                                   'hero_id'     => Auth::user()->current_hero,
+                                   'hero_id'     => Auth::user()->hero_id,
                                    'track_id'    => $currentQuestion->getAttribute('track_id'),
                                    'question_id' => $currentQuestion->getKey(),
                                ])
                        ->count();
         return Record::create([
                                   'user_id'     => Auth::id(),
-                                  'hero_id'     => Auth::user()->current_hero,
+                                  'hero_id'     => Auth::user()->hero_id,
                                   'track_id'    => $currentQuestion->getAttribute('track_id'),
                                   'question_id' => $currentQuestion->getKey(),
                                   'answer'      => $params,

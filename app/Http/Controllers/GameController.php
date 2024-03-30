@@ -30,7 +30,7 @@ class GameController extends Controller
                 ->with('records', $records);
         } else {
             $trackInstance = $currentQuestion->track;
-            $heroInstance = Hero::getInstance(Auth::user()->current_hero);
+            $heroInstance = Hero::getInstance(Auth::user()->hero_id);
 
             return view('game.question-detail')
                 ->with('track', $trackInstance)

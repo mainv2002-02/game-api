@@ -104,19 +104,19 @@ foreach ($configs as $value) {
 |
 */
 $app->middleware([
-                     EncryptCookies::class,
-                     AddQueuedCookiesToResponse::class,
+//                     EncryptCookies::class,
+//                     AddQueuedCookiesToResponse::class,
                      StartSession::class,
-                     ShareErrorsFromSession::class,
+//                     ShareErrorsFromSession::class,
                      //\Laravel\Lumen\Http\Middleware\VerifyCsrfToken::class,
                  ]);
 
 $app->routeMiddleware([
-                          'auth'             => Authenticate::class,
-                          'start_session'    => StartSession::class,
-                          'session_errors'   => ShareErrorsFromSession::class,
-                          'encrypt_cookies'  => EncryptCookies::class,
-                          'cookies_response' => AddQueuedCookiesToResponse::class,
+//                          'auth'             => Authenticate::class,
+//                          'start_session'    => StartSession::class,
+//                          'session_errors'   => ShareErrorsFromSession::class,
+//                          'encrypt_cookies'  => EncryptCookies::class,
+//                          'cookies_response' => AddQueuedCookiesToResponse::class,
                       ]);
 $app->alias(ResolveTenant::class, 'saml2.resolveTenant');
 $app->alias(Auth::class, 'Saml2');
