@@ -16,6 +16,34 @@ class BaseModel extends Model
     public $timestamps = false;
 
     protected $dateFormat = 'U';
+    public static function boot(): void
+    {
+        parent::boot();
+
+        self::creating(function($model){
+            // ... code here
+        });
+
+        self::created(function($model){
+            // ... code here
+        });
+
+        self::updating(function($model){
+            // ... code here
+        });
+
+        self::updated(function($model){
+            ModelCache::forgetInstance($model);
+        });
+
+        self::deleting(function($model){
+            // ... code here
+        });
+
+        self::deleted(function($model){
+            ModelCache::forgetInstance($model);
+        });
+    }
 
     /**
      * @param mixed $id

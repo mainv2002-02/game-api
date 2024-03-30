@@ -23,6 +23,9 @@ class GameController extends Controller
 
     public function getQuestion(): View
     {
+        if (empty(Auth::user()->question_id)) {
+            Auth::user()->initState();
+        }
         $currentQuestion = $this->logic->getCurrentQuestion();
         if (!$currentQuestion) {
             $records = Auth::user()->getRecords();

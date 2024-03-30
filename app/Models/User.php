@@ -80,6 +80,42 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         );
     }
 
+    protected function questionId(): Attribute
+    {
+        return Attribute::make(
+            get: function (?string $value, array $attributes) {
+                $state = json_decode($attributes['state'] ?? '', true);
+                return (!empty($state) && !empty($state['question_id'])) ? $state['question_id'] : null;
+            }
+        );
+    }
+
+    public function initState()
+    {
+
+    }
+
+    public function getCurrentQuestion(): ?Question
+    {
+        return (!empty($this->question_id)) ?
+            Question::getInstance($this->question_id) :
+            Question::query()
+                    ->where('hero_id', $this->hero_id)
+                    ->orderBy('id')
+                    ->first();
+    }
+
+    public function getNextQuestion(): ?Question
+    {
+        //next track
+        if ($this->hero_id == 3) {
+
+        }
+        if ($this->question_id == null) {
+
+        }
+    }
+
     public function getRecords(): Collection
     {
         return Record::query()
