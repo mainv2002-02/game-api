@@ -33,6 +33,7 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         'department',
         'area',
         'avatar',
+        'heroes',
         'state',
         'data',
     ];
@@ -90,30 +91,20 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         );
     }
 
-    public function initState()
+    public function currentQuestion(): ?Question
     {
-
+        return Question::getInstance($this->question_id);
     }
 
-    public function getCurrentQuestion(): ?Question
+    public function currentRecord(): Record
     {
-        return (!empty($this->question_id)) ?
-            Question::getInstance($this->question_id) :
-            Question::query()
-                    ->where('hero_id', $this->hero_id)
-                    ->orderBy('id')
-                    ->first();
-    }
-
-    public function getNextQuestion(): ?Question
-    {
-        //next track
-        if ($this->hero_id == 3) {
-
-        }
-        if ($this->question_id == null) {
-
-        }
+        $currentQuestion = $this->currentQuestion();
+        return Record::firstOrCreate([
+                                         'user_id'     => Auth::id(),
+                                         'hero_id'     => Auth::user()->hero_id,
+                                         'track_id'    => $currentQuestion->getAttribute('track_id'),
+                                         'question_id' => $currentQuestion->getKey(),
+                                     ]);
     }
 
     public function getRecords(): Collection

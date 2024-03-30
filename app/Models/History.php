@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class History extends BaseModel
@@ -13,6 +14,7 @@ class History extends BaseModel
         'option_id',
         'hero_id',
         'description',
+        'answer',
     ];
 
     public function user(): BelongsTo
@@ -25,9 +27,16 @@ class History extends BaseModel
         return $this->belongsTo(Question::class);
     }
 
-
     public function hero(): BelongsTo
     {
         return $this->belongsTo(Track::class);
+    }
+
+    protected function answer(): Attribute
+    {
+        return Attribute::make(
+            get: fn(?string $value) => json_decode($value, true),
+            set: fn(?array $value) => json_encode($value)
+        );
     }
 }

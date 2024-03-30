@@ -21,32 +21,48 @@ class GameController extends Controller
         $this->logic = GameLogic::getInstance();
     }
 
-    public function getQuestion(): View
+    public function question(BaseRequest $request): View|Redirector|RedirectResponse
     {
         if (empty(Auth::user()->question_id)) {
-            Auth::user()->initState();
+            return redirect('/character');
         }
-        $currentQuestion = $this->logic->getCurrentQuestion();
-        if (!$currentQuestion) {
-            $records = Auth::user()->getRecords();
-            return view('game.record')
-                ->with('records', $records);
-        } else {
-            $trackInstance = $currentQuestion->track;
-            $heroInstance = Hero::getInstance(Auth::user()->hero_id);
+        $currentQuestion = Auth::user()->currentQuestion();
+        $currentRecord = Auth::user()->currentRecord();
+        $trackInstance = $currentQuestion->track;
+        $heroInstance = Hero::getInstance(Auth::user()->hero_id);
+        $result = [
+            'canAnswer' => true,
+            'msg'       => '',
+        ];
+        if ($request->getMethod() == 'POST') {
+            $params = $request->all();
+            if (!empty($params['answer'])) {
+                $result = $this->logic->answer($params);
+            } else if (!empty($params['next_question'])) {
+                $nextQuestion = $this->logic->nextQuestion();
+                if (!$nextQuestion) {
+                    return redirect('game/records');
+                }
+                return redirect('/game/question');
+            }
 
-            return view('game.question-detail')
-                ->with('track', $trackInstance)
-                ->with('hero', $heroInstance)
-                ->with('question', $currentQuestion);
         }
+        $result['canAnswer'] = $currentRecord->point == 0 && $currentRecord->times < 2;
+        if (!$result['canAnswer'] && empty($result['msg'])) {
+            $result['msg'] = 'Câu hỏi đã hoàn thành!';
+        }
+
+        return view('game.question-detail')
+            ->with('result', $result)
+            ->with('track', $trackInstance)
+            ->with('hero', $heroInstance)
+            ->with('question', $currentQuestion);
     }
 
-    public function postAnswer(BaseRequest $request): RedirectResponse|Redirector
+    public function getRecords()
     {
-        $record = $this->logic->answer($_POST);
-//        Session::flash('message', $record->point ? "Chuc mung ban duoc {$record->point} diem" : 'Sai cau tra loi');
-//        Session::flash('alert-class', 'alert-danger');
-        return redirect('/game/question');
+
+        return view('game.record')
+            ->with('records', Auth::user()->getRecords());
     }
 }

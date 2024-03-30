@@ -33,5 +33,4 @@ class Record extends BaseModel
             set: fn(?array $value) => json_encode($value)
         );
     }
-
 }

@@ -16,31 +16,32 @@ class BaseModel extends Model
     public $timestamps = false;
 
     protected $dateFormat = 'U';
+
     public static function boot(): void
     {
         parent::boot();
 
-        self::creating(function($model){
+        self::creating(function ($model) {
             // ... code here
         });
 
-        self::created(function($model){
+        self::created(function ($model) {
             // ... code here
         });
 
-        self::updating(function($model){
+        self::updating(function ($model) {
             // ... code here
         });
 
-        self::updated(function($model){
+        self::updated(function ($model) {
             ModelCache::forgetInstance($model);
         });
 
-        self::deleting(function($model){
+        self::deleting(function ($model) {
             // ... code here
         });
 
-        self::deleted(function($model){
+        self::deleted(function ($model) {
             ModelCache::forgetInstance($model);
         });
     }
@@ -65,7 +66,8 @@ class BaseModel extends Model
             if ($id !== null) {
                 $instance = ModelCache::retrieveInstance($instance, $id);
                 if (empty($instance)) {
-                    throw new Exception("Fail to create new instance: {$class}  id: $id");
+                    return null;
+//                    throw new Exception("Fail to create new instance: {$class}  id: $id");
                 }
             }
 

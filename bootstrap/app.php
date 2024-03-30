@@ -138,6 +138,7 @@ $app->register(AppServiceProvider::class);
 $app->register(AuthServiceProvider::class);
 $app->register(EventServiceProvider::class);
 $app->register(RedisServiceProvider::class);
+$app->register(\Urameshibr\Providers\LumenFormRequestServiceProvider::class);
 $app->register(Saml2::class);
 
 /*
