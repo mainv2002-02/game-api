@@ -65,4 +65,9 @@ class GameController extends Controller
         return view('game.record')
             ->with('records', Auth::user()->getRecords());
     }
+
+    public function track2(): View
+    {
+        return view('home.gift');
+    }
 }

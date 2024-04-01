@@ -13,7 +13,7 @@
 @stop
 
 @section('content')
-    <div class="kickoff" id="kickoff">
+    <div class="kickoff" id="kickoff" >
         <div class="video-bg" id="bg01">
             <video playsinline autoplay muted id="myVideo">
                 <source src="{{url('assets/img/kickoff/background1.mp4')}}" type="video/mp4">
@@ -74,7 +74,7 @@
 @section('scripts')
      <script>
          $(document).ready(function() {
-             loadLottieAnimation('border-frame', '{{url('assets/img/kickoff/border01.json')}}');
+             loadLottieAnimation('border-frame', '{{url('assets/img/kickoff/border.json')}}');
              loadLottieAnimation('button-frame', '{{url('assets/img/kickoff/button.json')}}');
 
              var video = document.getElementById('myVideo');

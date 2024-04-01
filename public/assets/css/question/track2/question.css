@@ -1,0 +1,116 @@
+.video-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+.video-bg > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.stream-container {
+    position: relative; /* This ensures that the container is above the video background */
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 1; /* Above the video */
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+}
+.header .left-content {
+    display: flex;
+    align-items: center;
+}
+.header .right-content {
+    display: flex;
+    align-items: center;
+    margin-right: 5%;
+}
+.header img {
+    margin-left: 20px; /* Spacing between images */
+    cursor: pointer; /* Change the cursor on hover over the image */
+}
+.right-content .replay {
+    width: 3vw;
+}
+.right-content .score {
+    width: 8vw;
+}
+.right-content .support {
+    width: 3vw;
+}
+.header {
+    height: 10%; /* Adjust the height as needed */
+}
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lottie {
+    /* placeholder for Lottie animations */
+    width: 15vw; /* Set a fixed width */
+    height: 15vh; /* Set a fixed height */
+    margin: 0 25px; /* Spacing between items */
+}
+.user-info {
+    display: flex;
+    align-items: center;
+}
+.user-info img {
+    /*border-radius: 50%; !* Circular image *!*/
+    width: 50px;
+    margin-right: 10px;
+}
+.user-info .name {
+    color: #6BD7FF; /* Adjust the color as needed */
+    font-size: 1.2em; /* Adjust the font size as needed */
+}
+.track1 {
+    position: fixed;
+    width: 12vw;
+    height: 18vh;
+    left: 14vw;
+    bottom: 18vh;
+    cursor: pointer;
+}
+.track2 {
+    position: fixed;
+    width: 14vw;
+    height: 14vh;
+    left: 55vw;
+    bottom: 28vh;
+    cursor: pointer;
+}
+.track3 {
+    position: fixed;
+    width: 14vw;
+    height: 20vh;
+    left: 76vw;
+    bottom: 13vh;
+    cursor: pointer;
+}
+.livestream {
+    position: fixed;
+    width: 17vw;
+    height: 20vh;
+    left: 42vw;
+    bottom: 9vh;
+    cursor: pointer;
+}
+.lottie {
+    cursor: pointer;
+}

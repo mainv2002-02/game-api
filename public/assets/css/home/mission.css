@@ -1,18 +1,20 @@
-.full-page-background {
-    background: url('../../img/mission/background.jpg') no-repeat center center fixed;
-    background-size: cover;
+.mission > .lottie > .lottie-text {
     position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Keep the background behind contents */
+    top: 14%;
+    left: 47%;
+    transform: translate(-10%, -50%);
+    font-size: 29px;
+    font-weight: bold;
+    color: #F565AF;
 }
 
-#border-frame-mission, #button-frame-mission {
+.mission > .frame-container > #border-frame-mission,
+.mission > .frame-container > #button-frame-mission {
     position: absolute;
     z-index: 20;
 }
 
-#border-frame-mission {
+.mission > .frame-container > #border-frame-mission {
     width: 100%; /* Use viewport width for scalability */
     height: 100%; /* Use viewport height for scalability */
     top: 50%;
@@ -20,7 +22,7 @@
     transform: translate(-50%, -50%);
 }
 
-#button-frame-mission {
+.mission > .frame-container > #button-frame-mission {
     width: 40vw; /* Use viewport width for scalability */
     /*min-width: 300px; !* Ensure it doesn't get too small *!*/
     height: 11vh; /* Use viewport height for scalability */
@@ -33,7 +35,7 @@
     cursor: pointer;
 }
 
-#border-frame-mission svg {
+.mission > .frame-container > #border-frame-mission svg {
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -43,9 +45,9 @@
 #border-frame-mission > .typewriter {
     position: fixed;
     z-index: 2;
-    font-size: 26px; /* Ensures font size doesn't get too small */
+    font-size: 20px; /* Ensures font size doesn't get too small */
     top: 29%;
-    left: 22%;
+    left: 28%;
     text-align: justify;
     text-transform: uppercase;
 }
@@ -54,9 +56,9 @@
     margin-bottom: 0;
 }
 
-#mission-content1 { margin-left: 10vw;; }
-#mission-content2 { margin-left: 3vw;; }
-#mission-content3 { margin-left: 10vw; }
+#mission-content > p:nth-child(1) { margin-left: 9vw;; }
+#mission-content > p:nth-child(2)  { margin-left: 4vw; }
+#mission-content > p:nth-child(3)  { margin-left: 7vw; }
 
 .green {
     color: #56FF9E;
@@ -68,6 +70,8 @@
 
 #mission-content {
     width: 55vw;
+    max-height: 27vh;
+    overflow: auto;
 }
 
 /* The typing effect */

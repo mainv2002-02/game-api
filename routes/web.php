@@ -18,6 +18,7 @@ $router->group([
     $router->get('/character', 'HomeController@indexCharacter');
     $router->get('/home/{heroId}', 'HomeController@index');
     $router->get('/gift', 'HomeController@gift');
+    $router->get('/track2', 'GameController@track2');
 
     $router->get('/game/question', 'GameController@question');
     $router->post('/game/question', 'GameController@question');

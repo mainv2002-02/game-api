@@ -13,12 +13,7 @@
 
 @section('content')
     <div id="page-home" class="page-home">
-        <video autoplay muted id="bg-video" class="video-background">
-            <source src="{{url('assets/img/home/background01.mp4')}}" type="video/mp4">
-            Your browser does not support HTML5 video.
-        </video>
-
-        <div id="content" style="display: none">
+        <div id="content">
             <div id="lottie-background" class="lottie"></div>
 
             <div class="form-container">

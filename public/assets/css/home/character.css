@@ -1,45 +1,61 @@
-.background {
-    background-image: url('../../img/character/background.jpg'); /* Replace with your image path */
-    background-size: cover;
-    background-position: center;
-    height: 100vh;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
 }
-.frame-container {
-    position: relative;
-    width: 80vw;
+.character > .background > .frame-container {
+    position: absolute;
+    width: 20vw;
     height: 65vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: 14vh;
 }
-.frame-container > img {
+.character > .background > .frame-container:nth-child(1) {
+    left: 10vw;
+}
+.character > .background > .frame-container:nth-child(2) {
+    left: 41vw;
+}
+.character > .background > .frame-container:nth-child(3) {
+    left: 72vw;;
+}
+.character > .background > .frame-container > img {
     cursor: pointer;
 }
-.character-image {
-    position: absolute;
+.character > .background > .frame-container > .character-image {
+    position: relative;
     width: 15vw; /* Set the width of the character image */
     height: 40vh;
-    bottom: 18vh;
+    top: 6vh;
+    left: 2vw;
     z-index: 2;
+    animation: moveUpDown 2s infinite ease-in-out;
 }
-.lottie-animation {
+.character > .background > .frame-container > .lottie-animation {
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: 1;
 }
-.character-label {
+.character > .background > .frame-container > .character-label {
     position: absolute;
-    color: #19FF7A; /* Adjust text color as needed */
-    font-size: 30px; /* Adjust font size as needed */
+    color: #19FF7A;
+    font-size: 1.7rem;
     z-index: 2;
-    bottom: 10vh;
+    bottom: 10.5vh;
 }
-
-.video-bg {
+.character > .background > .frame-container:nth-child(1) > .character-label {
+    left: 5.5vw;
+}
+.character > .background > .frame-container:nth-child(2) > .character-label {
+    left: 4.5vw;
+}
+.character > .background > .frame-container:nth-child(3) > .character-label {
+    left: 6vw;
+}
+.character > .video-bg {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -50,8 +66,35 @@
     height: auto;
 }
 
-.video-bg > video {
+.character > .video-bg > video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+.character > .background > .frame-container > .select-character {
+    position: absolute;
+    width: 8vw;
+    height: 4vh;
+    bottom: 4vh;
+    z-index: 2;
+    cursor: pointer;
+    left: 7.5vw;
+}
+.character > .background > .frame-container > .left-character {
+    position: absolute;
+    width: 4vw;
+    height: 4vh;
+    bottom: 11vh;
+    z-index: 2;
+    cursor: pointer;
+    left: 1.5vw;
+}
+.character > .background > .frame-container > .right-character {
+    position: absolute;
+    width: 3vw;
+    height: 4vh;
+    bottom: 11vh;
+    z-index: 2;
+    cursor: pointer;
+    left: 15.5vw;
 }

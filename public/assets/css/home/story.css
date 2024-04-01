@@ -1,25 +1,20 @@
-.full-page-background {
-    background: url('../../img/mission/background.jpg') no-repeat center center fixed;
-    background-size: cover;
+.story > .lottie > .lottie-text {
     position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Keep the background behind contents */
+    top: 14%;
+    left: 47%;
+    transform: translate(-10%, -50%);
+    font-size: 29px;
+    font-weight: bold;
+    color: #F565AF;
 }
 
-.full-page-opacity {
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    opacity: 0.5;
-}
-
-#border-frame-story, #button-frame-story {
+.story > .frame-container  > #border-frame-story,
+.story > .frame-container > #button-frame-story {
     position: absolute;
     z-index: 20;
 }
 
-#border-frame-story {
+.story > .frame-container > #border-frame-story {
     width: 100%; /* Use viewport width for scalability */
     height: 100%; /* Use viewport height for scalability */
     top: 50%;
@@ -27,7 +22,7 @@
     transform: translate(-50%, -50%);
 }
 
-#button-frame-story {
+.story > .frame-container > #button-frame-story {
     width: 40vw;
     height: 8vh;
     bottom: 15vh;
@@ -39,7 +34,7 @@
     cursor: pointer;
 }
 
-#border-frame-story svg {
+.story > .frame-container > #border-frame-story svg {
     position: absolute;
     z-index: 1;
     width: 100%;
@@ -49,14 +44,14 @@
 #border-frame-story > .typewriter {
     position: fixed;
     z-index: 2;
-    font-size: 26px; /* Ensures font size doesn't get too small */
+    font-size: 20px; /* Ensures font size doesn't get too small */
     top: 22%;
     left: 20%;
     width: 61vw;
     text-align: left;
+    max-height: 50vh;
+    overflow: auto;
 }
-
-#story-content2 { margin-left: 10vw;; }
 
 .typewriter > div > p {
     margin-bottom: 0;
