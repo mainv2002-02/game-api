@@ -30,8 +30,8 @@
            <div class="left-content">
                <!-- Your left-side content goes here -->
                <div class="user-info">
-                   <img src="{{url('assets/img/main/avata.png')}}" alt="Tony Nguyen" />
-                   <span class="name">Tony Nguyen</span>
+                   <img src="{{url('assets/img/main/avata.png')}}" alt="{{Auth::user()->name}}"/>
+                   <span class="name">{{Auth::user()->name}}</span>
                </div>
                <div id="button-gift" class="lottie"></div>
                <div id="lottie-button-2" class="lottie"></div>
@@ -47,9 +47,9 @@
 
        <div class="main-content">
            <!-- Lottie Animations for content will be placed here -->
-           <div class="track1"></div>
-           <div class="track2"></div>
-           <div class="track3"></div>
+           <div class="track1 track"></div>
+           <div class="track2 track"></div>
+           <div class="track3 track"></div>
            <div class="livestream"></div>
        </div>
    </div>
