@@ -26,12 +26,27 @@
 }
 .character > .background > .frame-container > .character-image {
     position: relative;
+    z-index: 2;
+    animation: moveUpDown 2s infinite ease-in-out;
+}
+
+.character > .background > .frame-container:nth-child(1) > .character-image {
     width: 15vw; /* Set the width of the character image */
     height: 40vh;
     top: 6vh;
     left: 2vw;
-    z-index: 2;
-    animation: moveUpDown 2s infinite ease-in-out;
+}
+.character > .background > .frame-container:nth-child(2) > .character-image {
+    width: 15vw;
+    height: 35vh;
+    top: 10vh;
+    left: 2vw;
+}
+.character > .background > .frame-container:nth-child(3) > .character-image {
+    width: 15vw;
+    height: 40vh;
+    top: 7vh;
+    left: 2vw;
 }
 .character > .background > .frame-container > .lottie-animation {
     position: absolute;
@@ -54,22 +69,6 @@
 }
 .character > .background > .frame-container:nth-child(3) > .character-label {
     left: 6vw;
-}
-.character > .video-bg {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-}
-
-.character > .video-bg > video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
 }
 .character > .background > .frame-container > .select-character {
     position: absolute;
@@ -97,4 +96,19 @@
     z-index: 2;
     cursor: pointer;
     left: 15.5vw;
+}
+.video-bg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+.video-bg > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }

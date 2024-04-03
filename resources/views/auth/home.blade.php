@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=0.1') }}">
     <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=0.1') }}">
     <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=0.1') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=0.1') }}">
 @stop
 
 @section('content')
-    <div id="page-home" class="page-home" style="display: none">
+    <div id="page-home" class="page-home">
         <div id="lottie-background" class="lottie"></div>
         <div class="form-container">
             <div id="lottie-input-1" class="lottie-input">
@@ -81,7 +82,7 @@
         </div>
     </div>
 
-    <div class="character" id="character">
+    <div class="character" id="character" style="display: none">
         <div class="background" id="bg-character">
             <!-- Container for the first character and frame -->
             <div class="frame-container">
@@ -113,13 +114,33 @@
                 <div class="select-character" onclick="selectCharacter('3')"></div>
             </div>
         </div>
+    </div>
 
-        <div class="video-bg" id="bg01" style="display: none">
-            <video playsinline autoplay muted id="myVideo">
-                <source src="{{url('assets/img/character/animation.mp4')}}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
+    <div class="character-info" id="character-info" style="display: none">
+        <div id="character-info-background" class="lottie"></div>
+        <div class="background" id="bg-character">
+            <!-- Container for the first character and frame -->
+            <div class="frame-container">
+                <div id="character-info-title">Thông Tin Nhân Vật</div>
+                <div id="character-info-des">
+                    <p>Giới Tính: Không xác định</p>
+                    <p>Đặc điểm: Không xác định</p>
+                </div>
+                <div id="lottie-frame-info" class="lottie-animation"></div>
+                <img id="character-info-image" src="{{url('assets/img/nv/nv01-01.png')}}" alt="Data Master" hero-id="1" class="character-image" style="display: none">
+                <div id="character-info-name" class="character-label" style="display: none">Data Master</div>
+{{--                <div id="button-frame-back"></div>--}}
+{{--                <div id="button-frame-next"></div>--}}
+            </div>
         </div>
+    </div>
+
+
+    <div class="video-bg" id="bg01" style="display: none">
+        <video playsinline autoplay muted id="myVideo">
+            <source src="{{url('assets/img/character/animation.mp4')}}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
 @stop
 
@@ -193,29 +214,14 @@
                         $(".character-image").fadeIn(3000);
                         $(".character-label").fadeIn(3000);
                     }, 1000);
-                    heroId = 1;
-                    $(".character-image").click(function () {
-                        heroId = $(this).attr('hero-id');
-                        $("#bg-character").fadeOut(3000);
-                        $("#bg01").fadeIn(2000);
-                    })
-
-                    var video = document.getElementById('myVideo');
-
-                    video.addEventListener('ended', function() {
-                        window.location.href = "/home/" + heroId;
-                    });
                 });
             });
 
-            loadLottieAnimation('lottie-frame-1', '{{url('assets/img/character/border.json')}}');
-            loadLottieAnimation('lottie-frame-2', '{{url('assets/img/character/border.json')}}');
-            loadLottieAnimation('lottie-frame-3', '{{url('assets/img/character/border.json')}}');
+            loadLottieAnimation('character-info-background', '{{url('assets/img/character-info/border.json')}}');
+            loadLottieAnimation('lottie-frame-info', '{{url('assets/img/character-info/frame.json')}}');
+            {{--loadLottieAnimation('button-frame-back', '{{url('assets/img/character-info/back.json')}}');--}}
+            {{--loadLottieAnimation('button-frame-next', '{{url('assets/img/character-info/back.json')}}');--}}
 
-            setTimeout(function () {
-                $(".character-image").fadeIn(3000);
-                $(".character-label").fadeIn(3000);
-            }, 1000);
             heroId = 1;
             $(".character-image").click(function () {
                 heroId = $(this).attr('hero-id');
@@ -282,8 +288,8 @@
             char[newIndex].selected = true;
 
             var newURL = char[newIndex].url;
-            var id = "nv" + num;
-            changeImage(id, newURL);
+            var id = "nv0" + num;
+            changeImage(id, newURL, false);
         }
 
         function prevCharacter(num) {
@@ -316,8 +322,8 @@
             char[newIndex].selected = true;
 
             var newURL = char[newIndex].url;
-            var id = "nv" + num;
-            changeImage(id, newURL);
+            var id = "nv0" + num;
+            changeImage(id, newURL, true);
         }
 
         function selectCharacter(num) {
@@ -339,15 +345,21 @@
             var currentIndex = char.findIndex(item => item.selected === true);
 
             var newURL = char[currentIndex].url;
-            var id = "nv" + num;
+            var id = "nv0" + num;
             changeImage(id, newURL);
-            window.location.href = "/home/" + num;
+            $("#character-info").attr("src", newURL).on('load', function() {
+                $(this).fadeIn('slow');
+                // $(this).removeAttr('style');
+            });
         }
 
-        function changeImage(id, newImageUrl) {
-            $("#" + id).fadeOut("slow", function() {
+        function changeImage(id, newImageUrl, isLeft) {
+            var leftStr = isLeft ? '-5vw': '5vw';
+            $("#" + id).animate({left: leftStr, opacity: 0}, 700, function() {
+                $(this).removeAttr('style');
                 $(this).attr("src", newImageUrl).on('load', function() {
-                    $(this).fadeIn("slow");
+                    $(this).fadeIn('slow');
+                    // $(this).removeAttr('style');
                 });
             });
         }

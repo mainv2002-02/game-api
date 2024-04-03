@@ -1,0 +1,91 @@
+@keyframes moveUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.character-info > .lottie {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; /* Set to the width of your lottie animation */
+    height: auto; /* Set to the height of your lottie animation */
+    z-index: 0;
+}
+.character-info > .background > .frame-container {
+    position: absolute;
+    width: 20vw;
+    height: 65vh;
+    top: 14vh;
+}
+.character-info > .background > .frame-container:nth-child(1) {
+    left: 10vw;
+}
+.character-info > .background > .frame-container:nth-child(2) {
+    left: 41vw;
+}
+.character-info > .background > .frame-container:nth-child(3) {
+    left: 72vw;;
+}
+.character-info > .background > .frame-container > img {
+    cursor: pointer;
+}
+.character-info > .background > .frame-container > .character-image {
+    position: relative;
+    z-index: 2;
+    animation: moveUpDown 2s infinite ease-in-out;
+}
+
+.character-info > .background > .frame-container:nth-child(1) > .character-image {
+    width: 15vw; /* Set the width of the character image */
+    height: 40vh;
+    top: 6vh;
+    left: 2vw;
+}
+.character-info > .background > .frame-container > .lottie-animation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+.character-info > .background > .frame-container > .character-label {
+    position: absolute;
+    color: #19FF7A;
+    font-size: 1.7rem;
+    z-index: 2;
+    bottom: 10.5vh;
+}
+.character-info > .background > .frame-container > .character-label {
+    left: 5.5vw;
+}
+.character-info > .background > .frame-container > .select-character {
+    position: absolute;
+    width: 8vw;
+    height: 4vh;
+    bottom: 4vh;
+    z-index: 2;
+    cursor: pointer;
+    left: 7.5vw;
+}
+.character-info > .background > .frame-container > .left-character {
+    position: absolute;
+    width: 4vw;
+    height: 4vh;
+    bottom: 11vh;
+    z-index: 2;
+    cursor: pointer;
+    left: 1.5vw;
+}
+.character-info > .background > .frame-container > .right-character {
+    position: absolute;
+    width: 3vw;
+    height: 4vh;
+    bottom: 11vh;
+    z-index: 2;
+    cursor: pointer;
+    left: 15.5vw;
+}
