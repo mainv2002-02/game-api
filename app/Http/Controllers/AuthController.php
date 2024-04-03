@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BaseRequest;
-use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
@@ -16,21 +15,10 @@ class AuthController extends Controller
     {
     }
 
-    public function home(): View
+    public function home(): View|RedirectResponse|Redirector
     {
         if (!Auth::check()) {
-            // Will replace by SSO
-            $time = time();
-            $user = User::create([
-                                     'azure_id'   => $time,
-                                     'name'       => "User{$time}",
-                                     'email'      => "mail{$time}@mail.com",
-                                     'phone'      => $time,
-                                     'title'      => 'Ms/Mr',
-                                     'department' => 'Supply Chain',
-                                     'area'       => 'HCM',
-                                 ]);
-            Auth::login($user);
+            return redirect('/saml2/sso/login');
         }
         return view('auth.home');
     }
@@ -40,7 +28,7 @@ class AuthController extends Controller
         return view('auth.login');
     }
 
-    public function doLogin():RedirectResponse|Redirector
+    public function doLogin(): RedirectResponse|Redirector
     {
         return redirect('/update-profile');
     }
