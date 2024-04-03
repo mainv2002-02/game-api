@@ -6,13 +6,13 @@
     "type": "project",
     "require": {
         "php": "^8.1",
-        "24slides/laravel-saml2": "^2.3",
         "illuminate/cookie": "^10.47",
         "illuminate/redis": "^10.43",
         "illuminate/routing": "^10.47",
         "illuminate/session": "^10.48",
         "laravel/lumen-framework": "^10.0",
         "predis/predis": "^2.2",
+        "socialiteproviders/saml2": "^4.7",
         "urameshibr/lumen-form-request": "^1.6"
     },
     "require-dev": {

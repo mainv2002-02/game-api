@@ -2,11 +2,9 @@
 
 namespace App\Providers;
 
-use App\Listeners\Login;
-use App\Listeners\Logout;
 use Laravel\Lumen\Providers\EventServiceProvider as ServiceProvider;
-use Slides\Saml2\Events\SignedIn;
-use Slides\Saml2\Events\SignedOut;
+use SocialiteProviders\Manager\SocialiteWasCalled;
+use SocialiteProviders\Saml2\Saml2ExtendSocialite;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -16,11 +14,8 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        SignedIn::class  => [
-            Login::class . '@handle',
-        ],
-        SignedOut::class => [
-            Logout::class . '@handle',
+        SocialiteWasCalled::class => [
+            Saml2ExtendSocialite::class . '@handle',
         ],
     ];
 
@@ -29,7 +24,7 @@ class EventServiceProvider extends ServiceProvider
      *
      * @return bool
      */
-    public function shouldDiscoverEvents():bool
+    public function shouldDiscoverEvents(): bool
     {
         return false;
     }

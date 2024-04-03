@@ -24,12 +24,9 @@ $router->group([
     $router->post('/game/question', 'GameController@question');
     $router->get('/game/records', 'GameController@getRecords');
 
-
-    $router->get('/login', 'AuthController@login');
-    $router->post('/login', 'AuthController@doLogin');
-
-    $router->get('/logout', 'AuthController@logout');
-    $router->get('/auth/callback', 'AuthController@callback');
-    $router->post('/auth/callback', 'AuthController@callback');
+//SSO
+    $router->get('/saml2/sso/login', 'AuthController@login');
+    $router->post('/saml2/sso/acs', 'AuthController@acs');
+    $router->post('/auth/callback', 'AuthController@acs');
 });
 
