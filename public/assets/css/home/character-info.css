@@ -34,13 +34,13 @@
 .character-info > .background > .frame-container > img {
     cursor: pointer;
 }
-.character-info > .background > .frame-container > .character-image {
+.character-info > .background > .frame-container > .character-info-image {
     position: relative;
     z-index: 2;
     animation: moveUpDown 2s infinite ease-in-out;
 }
 
-.character-info > .background > .frame-container:nth-child(1) > .character-image {
+.character-info > .background > .frame-container:nth-child(1) > .character-info-image {
     width: 15vw; /* Set the width of the character image */
     height: 40vh;
     top: 6vh;
@@ -52,15 +52,36 @@
     height: 100%;
     z-index: 1;
 }
-.character-info > .background > .frame-container > .character-label {
+.character-info > .background > .frame-container > .character-info-label {
     position: absolute;
     color: #19FF7A;
     font-size: 1.7rem;
     z-index: 2;
     bottom: 10.5vh;
+    width: 10vw;
+    text-align: center;
 }
-.character-info > .background > .frame-container > .character-label {
-    left: 5.5vw;
+.character-info > .background > .frame-container > .character-info-label {
+    left: 4.5vw;
+}
+.character-info > .background > .frame-container > .character-info-title {
+    position: absolute;
+    color: #F565AF;
+    font-size: 1.8rem;
+    left: 46vw;
+    top: 6.5vh;
+    font-weight: bold;
+    width: 16vw;
+}
+.character-info > .background > .frame-container > .character-info-des {
+    position: absolute;
+    color: #19FF7A;
+    font-size: 1.7rem;
+    left: 34vw;
+    width: 40vw;
+    max-height: 40vh;
+    top: 17vh;
+    overflow: auto;
 }
 .character-info > .background > .frame-container > .select-character {
     position: absolute;
@@ -88,4 +109,24 @@
     z-index: 2;
     cursor: pointer;
     left: 15.5vw;
+}
+.character-info > .background > .frame-container > #button-frame-back,
+.character-info > .background > .frame-container > #button-frame-next
+{
+    position: absolute;
+    z-index: 20;
+}
+.character-info > .background > .frame-container > #button-frame-back {
+    width: 14vw;
+    height: 7vh;
+    top: 64vh;
+    left: 47vw;
+    cursor: pointer;
+}
+.character-info > .background > .frame-container > #button-frame-next {
+    width: 14vw;
+    height: 7vh;
+    top: 64vh;
+    left: 65vw;
+    cursor: pointer;
 }

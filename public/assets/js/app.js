@@ -1,31 +1,36 @@
-function changePage(url) {
-    $.ajax({
-        url: url,
-        success: function(data) {
-            // Assuming the entire page content you wish to replace is within <div id="content">...</div>
-            var nextPageContent = $(data).find('#content').html();
-
-            // Optionally, animate the current content out
-            $('#content').fadeOut('slow', function() {
-                // Set the new content
-                $('#content').html(nextPageContent);
-
-                // Optionally, animate the new content in
-                $('#content').fadeIn('slow');
-
-                // Update the browser's URL to reflect the new page
-                window.history.pushState({path:url}, '', url);
-            });
-        }
-    });
-}
-
-function loadLottieAnimation(elementId, path) {
-    lottie.loadAnimation({
+var allAnimations = [];
+function loadLottieAnimation(elementId, path, isRepeat = false) {
+    var animation = lottie.loadAnimation({
         container: document.getElementById(elementId), // the DOM element that will contain the animation
         renderer: 'svg',
         loop: false,
         autoplay: true,
-        path: path // the path to your Lottie file
+        path: path,
+        name: elementId
     });
+    allAnimations.push(animation);
+    // if (isRepeat) {
+    //     $("#" + elementId).hover(
+    //         function() {
+    //             // Sự kiện mouse enter
+    //             animation.playSegments([50, 100], true);
+    //         },
+    //         function() {
+    //             // Sự kiện mouse leave nếu cần
+    //             animation.goToAndStop(100, true);
+    //         }
+    //     );
+    // }
+}
+
+function destroyLottieAnimation(elementId){
+    const index = allAnimations.findIndex(animation => animation.name === elementId);
+    if (index !== -1) {
+        console.log(elementId +  " : "  + index);
+        allAnimations[index].destroy();
+        allAnimations.splice(index, 1);
+    }
+}
+function findAnimationByName(name) {
+    return allAnimations.find(animation => animation.name === name);
 }

@@ -19,7 +19,7 @@
     left: 41vw;
 }
 .character > .background > .frame-container:nth-child(3) {
-    left: 72vw;;
+    left: 72vw;
 }
 .character > .background > .frame-container > img {
     cursor: pointer;
@@ -60,15 +60,9 @@
     font-size: 1.7rem;
     z-index: 2;
     bottom: 10.5vh;
-}
-.character > .background > .frame-container:nth-child(1) > .character-label {
-    left: 5.5vw;
-}
-.character > .background > .frame-container:nth-child(2) > .character-label {
+    width: 11vw;
+    text-align: center;
     left: 4.5vw;
-}
-.character > .background > .frame-container:nth-child(3) > .character-label {
-    left: 6vw;
 }
 .character > .background > .frame-container > .select-character {
     position: absolute;

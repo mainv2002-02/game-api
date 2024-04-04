@@ -119,18 +119,16 @@
     <div class="character-info" id="character-info" style="display: none">
         <div id="character-info-background" class="lottie"></div>
         <div class="background" id="bg-character">
-            <!-- Container for the first character and frame -->
             <div class="frame-container">
-                <div id="character-info-title">Thông Tin Nhân Vật</div>
-                <div id="character-info-des">
-                    <p>Giới Tính: Không xác định</p>
-                    <p>Đặc điểm: Không xác định</p>
+                <div id="character-info-title" class="character-info-title" style="display: none">Thông Tin Nhân Vật</div>
+                <div id="character-info-des" class="character-info-des" style="display: none">
+
                 </div>
                 <div id="lottie-frame-info" class="lottie-animation"></div>
-                <img id="character-info-image" src="{{url('assets/img/nv/nv01-01.png')}}" alt="Data Master" hero-id="1" class="character-image" style="display: none">
-                <div id="character-info-name" class="character-label" style="display: none">Data Master</div>
-{{--                <div id="button-frame-back"></div>--}}
-{{--                <div id="button-frame-next"></div>--}}
+                <img id="character-info-image" alt="Data Master" hero-id="1" class="character-info-image" style="display: none" />
+                <div id="character-info-name" class="character-info-label" style="display: none"></div>
+                <div id="button-frame-back"></div>
+                <div id="button-frame-next"></div>
             </div>
         </div>
     </div>
@@ -206,26 +204,22 @@
             $("#button-frame-mission").click(function() {
                 $("#mission").fadeOut(2000);
                 $("#character").fadeIn(2000, function (){
-                    loadLottieAnimation('lottie-frame-1', '{{url('assets/img/character/border.json')}}');
-                    loadLottieAnimation('lottie-frame-2', '{{url('assets/img/character/border.json')}}');
-                    loadLottieAnimation('lottie-frame-3', '{{url('assets/img/character/border.json')}}');
-
-                    setTimeout(function () {
-                        $(".character-image").fadeIn(3000);
-                        $(".character-label").fadeIn(3000);
-                    }, 1000);
+                addAnimationCharacter();
                 });
             });
 
-            loadLottieAnimation('character-info-background', '{{url('assets/img/character-info/border.json')}}');
-            loadLottieAnimation('lottie-frame-info', '{{url('assets/img/character-info/frame.json')}}');
-            {{--loadLottieAnimation('button-frame-back', '{{url('assets/img/character-info/back.json')}}');--}}
-            {{--loadLottieAnimation('button-frame-next', '{{url('assets/img/character-info/back.json')}}');--}}
-
             heroId = 1;
-            $(".character-image").click(function () {
-                heroId = $(this).attr('hero-id');
-                $("#bg-character").fadeOut(3000);
+
+            $("#button-frame-back").click(function () {
+                $("#character-info").fadeOut(3000);
+                $("#bg-character").fadeIn(2000, function (){
+                    destroyAnimationCharacterInfo();
+                    addAnimationCharacter();
+                });
+            })
+
+            $("#button-frame-next").click(function () {
+                $("#character-info").fadeOut(3000);
                 $("#bg01").fadeIn(2000);
             })
 
@@ -259,20 +253,8 @@
         ]
 
         function nextCharacter(num) {
-            var char = [];
-            switch (num) {
-                case '1':
-                    char = char1;
-                    break;
-                case '2':
-                    char = char2;
-                    break;
-                case '3':
-                    char = char3;
-                    break;
-                default:
-                    break;
-            }
+            var obj = getChar(num);
+            var char = obj.char;
 
             var currentIndex = char.findIndex(item => item.selected === true);
 
@@ -293,20 +275,8 @@
         }
 
         function prevCharacter(num) {
-            var char = [];
-            switch (num) {
-                case '1':
-                    char = char1;
-                    break;
-                case '2':
-                    char = char2;
-                    break;
-                case '3':
-                    char = char3;
-                    break;
-                default:
-                    break;
-            }
+            var obj = getChar(num);
+            var char = obj.char;
 
             var currentIndex = char.findIndex(item => item.selected === true);
 
@@ -327,41 +297,106 @@
         }
 
         function selectCharacter(num) {
-            var char = [];
-            switch (num) {
-                case '1':
-                    char = char1;
-                    break;
-                case '2':
-                    char = char2;
-                    break;
-                case '3':
-                    char = char3;
-                    break;
-                default:
-                    break;
-            }
-
+            heroId = num;
+            var obj = getChar(num);
+            var char = obj.char;
             var currentIndex = char.findIndex(item => item.selected === true);
 
             var newURL = char[currentIndex].url;
-            var id = "nv0" + num;
-            changeImage(id, newURL);
-            $("#character-info").attr("src", newURL).on('load', function() {
-                $(this).fadeIn('slow');
-                // $(this).removeAttr('style');
-            });
+            $("#character-info-name").html(obj.name);
+            $("#character-info-des").html(obj.des);
+
+            $("#character-info-image").attr("src", newURL);
+            setTimeout(function () {
+                $("#bg-character").fadeOut(2000);
+                $("#character-info").fadeIn(1000, function() {
+                    destroyAnimationCharacter();
+                    addAnimationCharacterInfo();
+                });
+            }, 500)
+        }
+
+        function addAnimationCharacter() {
+            loadLottieAnimation('lottie-frame-1', '{{url('assets/img/character/border.json')}}');
+            loadLottieAnimation('lottie-frame-2', '{{url('assets/img/character/border.json')}}');
+            loadLottieAnimation('lottie-frame-3', '{{url('assets/img/character/border.json')}}');
+
+            setTimeout(function () {
+                $(".character-image").fadeIn(3000);
+                $(".character-label").fadeIn(3000);
+            }, 1000);
+        }
+
+        function destroyAnimationCharacter() {
+            destroyLottieAnimation('lottie-frame-1');
+            destroyLottieAnimation('lottie-frame-2');
+            destroyLottieAnimation('lottie-frame-3');
+            $(".character-image").fadeOut("slow");
+            $(".character-label").fadeOut("slow");
+        }
+
+        function addAnimationCharacterInfo() {
+            loadLottieAnimation('character-info-background', '{{url('assets/img/character-info/border.json')}}');
+            loadLottieAnimation('lottie-frame-info', '{{url('assets/img/character-info/frame.json')}}');
+            loadLottieAnimation('button-frame-back', '{{url('assets/img/character-info/back.json')}}', true);
+            loadLottieAnimation('button-frame-next', '{{url('assets/img/character-info/next.json')}}', true);
+            $("#character-info-title").fadeIn("slow");
+            $("#character-info-des").fadeIn("slow");
+            $("#character-info-image").fadeIn("slow");
+            $("#character-info-name").fadeIn("slow");
+        }
+
+        function destroyAnimationCharacterInfo() {
+            destroyLottieAnimation('character-info-background');
+            destroyLottieAnimation('lottie-frame-info');
+            destroyLottieAnimation('button-frame-back');
+            destroyLottieAnimation('button-frame-next');
+            $("#character-info-title").fadeOut("slow");
+            $("#character-info-des").fadeOut("slow");
+            $("#character-info-image").fadeOut("slow");
+            $("#character-info-name").fadeOut("slow");
         }
 
         function changeImage(id, newImageUrl, isLeft) {
             var leftStr = isLeft ? '-5vw': '5vw';
             $("#" + id).animate({left: leftStr, opacity: 0}, 700, function() {
                 $(this).removeAttr('style');
-                $(this).attr("src", newImageUrl).on('load', function() {
-                    $(this).fadeIn('slow');
+                $(this).attr("src", newImageUrl);
+                setTimeout(function () {
+                    $("#" + id).fadeIn('slow');
+                }, 500);
                     // $(this).removeAttr('style');
-                });
             });
+        }
+
+        function getChar(num) {
+            var char = [];
+            var name = '';
+            var des = '';
+            switch (num) {
+                case '1':
+                    char = char1;
+                    name = 'Data Master';
+                    des = `<p>Giới Tính: Không xác định</p>
+                    <p>Đặc điểm: Không xác định</p>`;
+                    break;
+                case '2':
+                    char = char2;
+                    name = 'Problem Solver';
+                    des = `<p>Giới Tính: Không xác định</p>
+                    <p>Đặc điểm: Không xác định</p>`;
+                    break;
+                case '3':
+                    char = char3;
+                    name = 'Multitasker';
+                    des = `<p>Giới Tính: Không xác định</p>
+                    <p>Đặc điểm: Không xác định</p>`;
+                    break;
+                default:
+                    break;
+            }
+
+            return {char: char, name: name, des: des};
         }
     </script>
 @stop
