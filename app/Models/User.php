@@ -25,7 +25,8 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
     protected $fillable = [
         'name',
         'azure_id',
-        'token',
+        'token', //tenantid
+        'refresh', //objectidentifier
         'full_name',
         'phone',
         'email',
