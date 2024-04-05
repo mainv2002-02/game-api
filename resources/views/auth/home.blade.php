@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=1.1') }}">
     <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=1.1') }}">
     <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.1') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.1') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.2') }}">
     <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.1') }}">
 @stop
 
