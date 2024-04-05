@@ -57,7 +57,7 @@
 .character > .background > .frame-container > .character-label {
     position: absolute;
     color: #19FF7A;
-    font-size: 1.7rem;
+    font-size: 25px;
     z-index: 2;
     bottom: 12.5vh;
     width: 11vw;
