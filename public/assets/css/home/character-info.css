@@ -69,7 +69,7 @@
     color: #F565AF;
     font-size: 1.8rem;
     left: 46vw;
-    top: 6.5vh;
+    top: 9vh;
     font-weight: bold;
     width: 16vw;
 }
@@ -80,7 +80,7 @@
     left: 34vw;
     width: 40vw;
     max-height: 40vh;
-    top: 17vh;
+    top: 19vh;
     overflow: auto;
 }
 .character-info > .background > .frame-container > .select-character {

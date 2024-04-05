@@ -33,8 +33,8 @@
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.5/lottie.min.js" defer></script>
-    <script src="{{ url('assets/js/jquery.typer.js') }}"></script>
-    <script src="{{ url('assets/js/app.js') }}"></script>
+    <script src="{{ url('assets/js/jquery.typer.js?v=1.0') }}"></script>
+    <script src="{{ url('assets/js/app.js?v=1.0') }}"></script>
     {{--Scripts link to file or js custom--}}
     @yield('scripts')
 </body>
