@@ -55,7 +55,7 @@
 .character-info > .background > .frame-container > .character-info-label {
     position: absolute;
     color: #19FF7A;
-    font-size: 1.7rem;
+    font-size: 25px;
     z-index: 2;
     bottom: 10.5vh;
     width: 10vw;
@@ -67,7 +67,7 @@
 .character-info > .background > .frame-container > .character-info-title {
     position: absolute;
     color: #F565AF;
-    font-size: 1.8rem;
+    font-size: 25px;
     left: 46vw;
     top: 9vh;
     font-weight: bold;
@@ -76,7 +76,7 @@
 .character-info > .background > .frame-container > .character-info-des {
     position: absolute;
     color: #19FF7A;
-    font-size: 1.7rem;
+    font-size: 20px;
     left: 34vw;
     width: 40vw;
     max-height: 40vh;
