@@ -71,6 +71,26 @@ class GameController extends Controller
         return view('home.gift');
     }
 
+    public function track1nv11(): View
+    {
+        return view('game.track1.nv1.question1');
+    }
+
+    public function track1nv12(): View
+    {
+        return view('game.track1.nv1.question2');
+    }
+
+    public function track1nv13(): View
+    {
+        return view('game.track1.nv1.question3');
+    }
+
+    public function track1nv14(): View
+    {
+        return view('game.track1.nv1.question4');
+    }
+
     public function track2nv11(): View
     {
         return view('game.track2.nv1.question1');
@@ -89,5 +109,25 @@ class GameController extends Controller
     public function track2nv14(): View
     {
         return view('game.track2.nv1.question4');
+    }
+
+    public function track3nv11(): View
+    {
+        return view('game.track3.nv1.question1');
+    }
+
+    public function track3nv12(): View
+    {
+        return view('game.track3.nv1.question2');
+    }
+
+    public function track3nv13(): View
+    {
+        return view('game.track3.nv1.question3');
+    }
+
+    public function track3nv14(): View
+    {
+        return view('game.track3.nv1.question4');
     }
 }

@@ -34,7 +34,7 @@
                 <div class="title">Câu số 1</div>
                 <div id="question" class="question">
                     <div class="question-content">
-                        Question answer
+
                     </div>
                 </div>
                 <!-- Lottie Animations for content will be placed here -->

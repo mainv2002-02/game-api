@@ -18,7 +18,7 @@
                 <div class="left-content">
                     <!-- Your left-side content goes here -->
                     <div id="button-track" class="button-track">
-                        <div class="button-track-label">Track 02</div>
+                        <div class="button-track-label">Track 01</div>
                     </div>
                 </div>
 
@@ -34,7 +34,7 @@
                 <div class="title">Câu số 1</div>
                 <div id="question" class="question">
                     <div class="question-content">
-                        Question answer
+
                     </div>
                 </div>
                 <!-- Lottie Animations for content will be placed here -->
@@ -127,7 +127,7 @@
                 })
             })
             $("#button-frame-next").click(function () {
-                window.location.href = '/1/track2/2';
+                window.location.href = '/1/track1/2';
             })
 
             $(window).click(function(event) {

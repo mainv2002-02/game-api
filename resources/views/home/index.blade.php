@@ -3,7 +3,7 @@
 @section('title', 'Home Page')
 
 @section('style-libraries')
-    <link rel="stylesheet" href="{{ url('assets/css/home/main.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/main.css?v=1.0') }}">
 @stop
 
 @section('styles')
@@ -40,8 +40,12 @@
            <div class="right-content">
                <!-- Right-side images -->
                <img src="{{url('assets/img/main/replay.png')}}" class="replay" alt="replay">
-               <img src="{{url('assets/img/main/score.png')}}" class="score" alt="score">
-               <img src="{{url('assets/img/main/support.png')}}" class="support" alt="support">
+               <div class="background-image-div">
+                   <p class="centered-text">100</p>
+               </div>
+               <a href="tel:123456789">
+                    <img src="{{url('assets/img/main/support.png')}}" class="support" alt="support">
+               </a>
            </div>
        </div>
 
@@ -76,8 +80,14 @@
              $("#button-gift").click(function () {
                 window.open('/gift', '_blank');
              })
-             $(".track").click(function () {
-                window.location.href = '/game/question';
+             $(".track1").click(function () {
+                 window.open('/1/track1/1', '_blank');
+             })
+             $(".track2").click(function () {
+                 window.open('/1/track2/1', '_blank');
+             })
+             $(".track3").click(function () {
+                 window.open('/1/track3/1', '_blank');
              })
          });
     </script>

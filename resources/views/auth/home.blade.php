@@ -8,12 +8,12 @@
 @stop
 
 @section('styles')
-    <link rel="stylesheet" href="{{ url('assets/css/home/home.css?v=0.1') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=0.1') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=0.1') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=0.1') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=0.1') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=0.1') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/home.css?v=1.1') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=1.1') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=1.1') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.1') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.1') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.1') }}">
 @stop
 
 @section('content')
@@ -172,7 +172,7 @@
                     loadLottieAnimation('border-frame-story', '{{url('assets/img/story/border.json')}}');
                     loadLottieAnimation('button-frame-story', '{{url('assets/img/story/button.json')}}');
 
-                    const htmlContent1 = `<p><b>Thị trấn Happiness - The Happiness City</b> luôn được biết tới là một nơi sản xuất
+                    const htmlContent1 = `<p><b>Thị trấn Hạnh Phúc - The Happiness City</b> luôn được biết tới là một nơi sản xuất
                         và phân phối hàng đầu của nhiều loại thức uống đa dạng, hợp thời và được
                         yêu thích bởi hàng triệu người tiêu dùng trên khắp Vương quốc. Tuy vậy, Thị trấn
                         đang bước vào tương lai với rất nhiều thách thức đang chờ đón như sự thay đổi
@@ -193,7 +193,7 @@
                     loadLottieAnimation('border-frame-mission', '{{url('assets/img/story/border.json')}}');
                     loadLottieAnimation('button-frame-mission', '{{url('assets/img/mission/button.json')}}');
 
-                    const htmlContent1 = `<p>Bạn đã sẵn sàng bay tới <b class="pink">Thị trấn Happiness</b></p>
+                    const htmlContent1 = `<p>Bạn đã sẵn sàng bay tới <b class="pink">Thị trấn Hạnh Phúc</b></p>
                                           <p>và cùng hoàn thành những thử thách khác nhau để trở thành</p>
                                           <p>Người hùng dẫn đầu  <b class="pink">Tương lai - Growth Shapers?</b></p>`;
 

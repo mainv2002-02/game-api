@@ -11,14 +11,14 @@
 @stop
 
 @section('content')
-    <div class="body-question" style="background-image: url({{url('assets/img/track2/visualize/01.jpg')}})">
+    <div class="body-question" style="background-image: url({{url('assets/img/track3/visualize/03.jpg')}})">
         <div class="bg-opacity-10"></div>
         <div class="stream-container">
             <div class="header">
                 <div class="left-content">
                     <!-- Your left-side content goes here -->
                     <div id="button-track" class="button-track">
-                        <div class="button-track-label">Track 02</div>
+                        <div class="button-track-label">Track 03</div>
                     </div>
                 </div>
 
@@ -31,10 +31,10 @@
             </div>
 
             <div class="main-content">
-                <div class="title">Câu số 1</div>
+                <div class="title">Câu số 3</div>
                 <div id="question" class="question">
                     <div class="question-content">
-                        Question answer
+
                     </div>
                 </div>
                 <!-- Lottie Animations for content will be placed here -->
@@ -127,7 +127,7 @@
                 })
             })
             $("#button-frame-next").click(function () {
-                window.location.href = '/1/track2/2';
+                window.location.href = '/1/track3/4';
             })
 
             $(window).click(function(event) {

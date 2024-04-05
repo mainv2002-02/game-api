@@ -11,7 +11,7 @@
 @stop
 
 @section('content')
-    <div class="body-question" style="background-image: url({{url('assets/img/track2/visualize/01.jpg')}})">
+    <div class="body-question" style="background-image: url({{url('assets/img/track2/visualize/04.jpg')}})">
         <div class="bg-opacity-10"></div>
         <div class="stream-container">
            <div class="header">
@@ -31,10 +31,10 @@
            </div>
 
            <div class="main-content">
-               <div class="title">Câu số 1</div>
+               <div class="title">Câu số 4</div>
                <div id="question" class="question">
                    <div class="question-content">
-                       Question answer
+
                    </div>
                </div>
                <!-- Lottie Animations for content will be placed here -->
@@ -127,7 +127,7 @@
                  })
              })
              $("#button-frame-next").click(function () {
-                window.location.href = '/1/track2/2';
+                window.location.href = '/1/track3/1';
              })
 
              $(window).click(function(event) {
