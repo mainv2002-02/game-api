@@ -359,8 +359,7 @@
 
         function changeImage(id, newImageUrl, isLeft) {
             var leftStr = isLeft ? '-5vw': '5vw';
-            $("#" + id).animate({left: leftStr, opacity: 0}, 700, function() {
-                $(this).removeAttr('style');
+            $("#" + id).fadeOut("slow", function() {
                 $(this).attr("src", newImageUrl);
                 setTimeout(function () {
                     $("#" + id).fadeIn('slow');

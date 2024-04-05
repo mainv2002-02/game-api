@@ -3,7 +3,7 @@
 @section('title', 'Home Page')
 
 @section('style-libraries')
-    <link rel="stylesheet" href="{{ url('assets/css/home/main.css?v=1.0') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/main.css?v=1.1') }}">
 @stop
 
 @section('styles')
@@ -48,7 +48,8 @@
                </a>
            </div>
        </div>
-
+       <div id="chat-frame" class=""></div>
+       <div id="livestream-frame" class=""></div>
        <div class="main-content">
            <!-- Lottie Animations for content will be placed here -->
            <div class="track1 track"></div>
@@ -76,6 +77,8 @@
              // Initialize all your Lottie animations here
              loadLottieAnimation('button-gift', '{{url('assets/img/main/gift.json')}}');
              loadLottieAnimation('lottie-button-2', '{{url('assets/img/main/agenda.json')}}');
+             loadLottieAnimation('chat-frame', '{{url('assets/img/main/border.json')}}');
+             loadLottieAnimation('livestream-frame', '{{url('assets/img/main/livestream.json')}}');
 
              $("#button-gift").click(function () {
                 window.open('/gift', '_blank');
