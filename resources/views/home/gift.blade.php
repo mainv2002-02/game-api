@@ -3,7 +3,7 @@
 @section('title', 'Home Page')
 
 @section('style-libraries')
-    <link rel="stylesheet" href="{{ url('assets/css/home/gift.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/gift.css') }}?v=0.1">
 @stop
 
 @section('styles')
@@ -24,16 +24,22 @@
         <div id="border-frame">
             <div class="typewriter green">
                 <div id="gift-content1"></div>
-                <div id="gift-content2"></div>
             </div>
         </div>
     </div>
+    <img src="{{url('assets/img/gift/logo.png')}}" alt="Celerating You" class="image-logo"/>
+    <div id="convert-frame" class="convert-frame">
+        <div class="convert-text green">
+            Đổi quà tại đây
+        </div>
+    </div>
 
+    <div id="gift-frame"></div>
     <div id="number" class="score-animation score-text">
         100
     </div>
     <div id="score-frame"></div>
-
+    <div id="back-frame"></div>
     <!-- Your content here -->
 @stop
 
@@ -42,8 +48,10 @@
          $(document).ready(function() {
              loadLottieAnimation('border-frame', '{{url('assets/img/gift/border.json')}}');
              loadLottieAnimation('button-frame', '{{url('assets/img/gift/gift.json')}}');
-
+             loadLottieAnimation('back-frame', '{{url('assets/img/gift/back.json')}}');
+             loadLottieAnimation('gift-frame', '{{url('assets/img/gift/border-logo.json')}}');
              loadLottieAnimation('score-frame', '{{url('assets/img/gift/score.json')}}');
+             loadLottieAnimation('convert-frame', '{{url('assets/img/gift/border2.json')}}');
 
              var $number = $('#number'),
                  numberFromText = parseInt($number.text(), 10);
@@ -59,13 +67,17 @@
              });
 
              const htmlContent1 = `<p>Điểm tích lũy của bạn sẽ được tải lên hệ thống trong vòng 48h
-                tiếp theo, khi có điểm, hãy cùng lên ứng dụng <b class="pink">Celebrating You<b></p>`
-            const htmlContent2 = `<p>để đổi quà bạn nhé!</p>`;
+                tiếp theo, khi có điểm, hãy cùng lên ứng dụng <b class="pink">Celebrating You</b> để đổi quà bạn nhé!</p>`;
 
              $('#gift-content1').typer([htmlContent1]);
-             setTimeout(function (){
-                 $('#gift-content2').typer([htmlContent2])
-             }, 3000);
+
+             $("#button-frame").click(function() {
+                 window.location.href = '/gift2';
+             })
+
+             $("#back-frame").click(function() {
+                 window.location.href = 'home/2';
+             })
          });
     </script>
 @stop

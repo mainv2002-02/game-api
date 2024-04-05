@@ -43,4 +43,9 @@ class HomeController extends Controller
     {
         return view('home.gift');
     }
+
+    public function gift2(): View
+    {
+        return view('home.gift2');
+    }
 }

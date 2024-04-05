@@ -1,27 +1,25 @@
-.video-bg {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+body {
+    overflow: hidden;
 }
-
-.video-bg > video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.stream-container {
-    position: relative; /* This ensures that the container is above the video background */
+.body-question {
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    z-index: 1; /* Above the video */
+    position: relative;
+}
+
+.body-question::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Black background with 50% opacity */
+    /*z-index: 1; !* Ensures the content is above the background *!*/
 }
 .header {
     display: flex;
@@ -48,69 +46,190 @@
 .right-content .score {
     width: 8vw;
 }
+.background-image-div {
+    position: relative; /* Establishes a positioning context for inner elements */
+    width: 6vw;
+    height: 5vh;
+    background-image: url('../../../img/main/score.png');
+    background-size: 100% 100%;
+    background-position: center;
+}
+
+.centered-text {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    color: #F565AF;
+    font-size: 22px; /* Adjust font size as needed */
+    text-align: center;
+    /*font-weight: bold;*/
+}
 .right-content .support {
     width: 3vw;
 }
 .header {
-    height: 10%; /* Adjust the height as needed */
+    height: 10vh;
+    margin-left: 6vw;
+    margin-top: 20px;
+    margin-right: 20px;
 }
 .main-content {
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 90vh;
 }
-.lottie {
-    /* placeholder for Lottie animations */
-    width: 15vw; /* Set a fixed width */
-    height: 15vh; /* Set a fixed height */
-    margin: 0 25px; /* Spacing between items */
+.button-track {
+    position: relative; /* Establishes a positioning context for inner elements */
+    width: 13vw;
+    height: 8vh;
 }
-.user-info {
+.button-track > .button-track-label {
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    color: #6BD7FF;
+    font-size: 22px; /* Adjust font size as needed */
+    text-align: center;
+    z-index: 2;
+    width: 10vw;
+    font-weight: bold;
+}
+
+.question, .answer, .next {
+    position: absolute;
+    z-index: 20;
+}
+.answer, .next {
+    cursor: pointer;
+}
+
+.next {
+    width: 45vw;
+    height: 7vh;
+    top: 90vh;
+}
+
+#question {
+    width: 70vw;
+    height: 65vh;
+    top: 5vh;
+    left: 17vw;
+}
+
+#kickoff-button-frame {
+    width: 16vw; /* Use viewport width for scalability */
+    /*min-width: 300px; !* Ensure it doesn't get too small *!*/
+    height: 8vh; /* Use viewport height for scalability */
+    bottom: 26vh;
+    left: 60vw;
+    transform: translateX(-50%);
     display: flex;
+    justify-content: center;
     align-items: center;
 }
-.user-info img {
-    /*border-radius: 50%; !* Circular image *!*/
-    width: 50px;
-    margin-right: 10px;
+.answer {
+    width: 26vw;
 }
-.user-info .name {
-    color: #6BD7FF; /* Adjust the color as needed */
-    font-size: 1.2em; /* Adjust the font size as needed */
+#answer1 {
+    left: 20vw;
+    top:  65vh;
 }
-.track1 {
-    position: fixed;
-    width: 12vw;
-    height: 18vh;
-    left: 14vw;
-    bottom: 18vh;
-    cursor: pointer;
+#answer2 {
+    left: 59vw;
+    top: 65vh;
 }
-.track2 {
-    position: fixed;
-    width: 14vw;
+#answer3 {
+    left: 20vw;
+    top: 77vh;
+}
+#answer4 {
+    left: 59vw;
+    top: 77vh;
+}
+.title {
+    position: absolute;
+    top: 12vh;
+    font-size: 2rem;
+    color: #FF5ED3;
+    z-index: 2;
+    left: 49vw;
+}
+.question-content {
+    position: absolute;
+    font-size: 1rem;
+    color: #35FF86;
+    width: 50vw;
+    max-height: 100vh;
+    top: 12vh;
+    left: 49vw;
+}
+.answer-content {
+    position: relative;
+}
+#answer1 > .answer-content {
+    left: 20vw;
+    top:  67vh;
+}
+#answer2 > .answer-content {
+    left: 59vw;
+    top: 67vh;
+}
+#answer3 > .answer-content {
+    left: 20vw;
+    top: 79vh;
+}
+#answer4 > .answer-content {
+    left: 59vw;
+    top: 79vh;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 100; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+}
+
+/* Modal Content */
+.modal-game-content {
+    position: absolute;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    margin: auto; /* Not strictly necessary with flexbox, but kept for fallback */
+    padding: 20px;
+    width: 80vw;
+    /* Remove absolute positioning and use flexbox for centering */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19); /* Optional: Adds a shadow for better aesthetics */
+}
+
+.modal-game-text {
+    position: absolute;
+    top: 14vh;
+    left: 17vw;
+    font-size: 18px;
+    color: #35FF86;
+    width: 46vw;
     height: 14vh;
-    left: 55vw;
-    bottom: 28vh;
-    cursor: pointer;
+    overflow: auto;
+    word-wrap: break-word; /* Older property name, supported in IE */
+    overflow-wrap: break-word; /* Standard property name */
+    white-space: normal;
 }
-.track3 {
-    position: fixed;
-    width: 14vw;
-    height: 20vh;
-    left: 76vw;
-    bottom: 13vh;
-    cursor: pointer;
-}
-.livestream {
-    position: fixed;
-    width: 17vw;
-    height: 20vh;
-    left: 42vw;
-    bottom: 9vh;
-    cursor: pointer;
-}
-.lottie {
-    cursor: pointer;
+
+#ducrut-content > .modal-game-text {
+    top: 11vh;
+    left: 10vw;
 }

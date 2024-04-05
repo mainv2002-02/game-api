@@ -70,4 +70,24 @@ class GameController extends Controller
     {
         return view('home.gift');
     }
+
+    public function track2nv11(): View
+    {
+        return view('game.track2.nv1.question1');
+    }
+
+    public function track2nv12(): View
+    {
+        return view('game.track2.nv1.question2');
+    }
+
+    public function track2nv13(): View
+    {
+        return view('game.track2.nv1.question3');
+    }
+
+    public function track2nv14(): View
+    {
+        return view('game.track2.nv1.question4');
+    }
 }

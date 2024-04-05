@@ -38,15 +38,15 @@
     z-index: 10;
 }
 
-#border-frame,  #button-frame {
+#border-frame,  #button-frame, #convert-frame {
     position: absolute;
     z-index: 20;
 }
 
 #border-frame {
     width: 47vw;
-    height: 52vh;
-    top: 36%;
+    height: 17vh;
+    top: 31%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -62,7 +62,7 @@
     position: absolute;
     z-index: 2;
     font-size: 23px;
-    top: 40%;
+    top: 21%;
     /* left: 0%; */
     text-align: left;
     padding: 0 35px;
@@ -95,15 +95,15 @@
 
 #score-frame {
     position: fixed;
-    width: 40vw;
     height: 8vh;
-    top: 28%;
-    left: 65%;
+    top: 17vh;
+    left: 79vw;
+    width: 16vw;
 }
 
 .score-text {
     color: #00F4F1;
-    font-size: 130px;
+    font-size: 80px;
     -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: #00F4F1;
@@ -111,9 +111,53 @@
 
  .score-animation {
      position: fixed;
-     bottom: 26vh;
      right: 9%;
-     top: 10%;
+     top: 6vh;
+ }
+
+ #back-frame {
+     position: fixed;
+     top: 88vh;
+     left: 80vw;
+     width: 13vw;
+     z-index: 2;
+ }
+ #gift-frame {
+     position: absolute;
+     left: 1vw;
+     width: 97vw;
+ }
+
+ .image-logo {
+     width: 80px;
+     position: fixed;
+     top: 44%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
+ #convert-frame {
+     top: 52%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     width: 13vw;
+     cursor: pointer;
+ }
+
+ .convert-text {
+     position: absolute;
+     top: 52%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+     font-size: 15px;
+     font-weight: bold;
+     text-transform: uppercase;
+     width: 8vw;
+     text-align: center;
+ }
+
+ #button-frame, #back-frame {
+     cursor: pointer;
+     z-index: 50;
  }
 
  @media screen and (max-width: 1024px) and (orientation: landscape) {
