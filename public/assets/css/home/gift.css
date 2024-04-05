@@ -125,7 +125,8 @@
  #gift-frame {
      position: absolute;
      left: 1vw;
-     width: 97vw;
+     top: 2vh;
+     width: 98vw;
  }
 
  .image-logo {
