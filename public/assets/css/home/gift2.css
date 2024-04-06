@@ -35,9 +35,10 @@
     top: 20%;
     left: 50%;
     transform: translate(-50%, -50%);
+    height: 11vh;
 }
 #button-frame {
-    top: 78%;
+    top: 81%;
     left: 50%;
     transform: translate(-50%, -50%);
     cursor: pointer;

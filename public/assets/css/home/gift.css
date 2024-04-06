@@ -46,11 +46,10 @@
 #border-frame {
     width: 47vw;
     height: 17vh;
-    top: 31%;
+    top: 28%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-
 #border-frame svg {
  position: absolute;
  z-index: 1;
@@ -80,9 +79,9 @@
 
  #button-frame {
      position: fixed;
-     width: 40vw;
+     width: 35vw;
      height: 8vh;
-     top: 12%;
+     top: 9%;
 }
 
  .green {
@@ -130,14 +129,15 @@
  }
 
  .image-logo {
-     width: 80px;
+     width: 100px;
      position: fixed;
-     top: 44%;
+     top: 41%;
      left: 50%;
      transform: translate(-50%, -50%);
  }
+
  #convert-frame {
-     top: 52%;
+     top: 50%;
      left: 50%;
      transform: translate(-50%, -50%);
      width: 13vw;
@@ -161,17 +161,17 @@
      z-index: 50;
  }
 
- @media screen and (max-width: 1024px) and (orientation: landscape) {
-    #border-frame, #button-frame {
-        width: 80vw; /* Increase width in landscape */
-    }
+/* @media screen and (max-width: 1024px) and (orientation: landscape) {*/
+/*    #border-frame, #button-frame {*/
+/*        width: 80vw; !* Increase width in landscape *!*/
+/*    }*/
 
-    #button-frame {
-        bottom: 5%; /* Adjust position for better visibility */
-        height: 12vh; /* Adjust height in landscape */
-    }
+/*    #button-frame {*/
+/*        bottom: 5%; !* Adjust position for better visibility *!*/
+/*        height: 12vh; !* Adjust height in landscape *!*/
+/*    }*/
 
-    #button-text {
-        /*font-size: 4vw; !* Increase font size in landscape *!*/
-    }
-}
+/*    #button-text {*/
+/*        !*font-size: 4vw; !* Increase font size in landscape *!*!*/
+/*    }*/
+/*}*/

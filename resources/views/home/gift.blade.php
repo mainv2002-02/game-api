@@ -13,7 +13,7 @@
 @section('content')
     <div class="video-bg" id="bg01">
         <video playsinline autoplay muted id="myVideo">
-            <source src="{{url('assets/img/gift/background.mp4')}}" type="video/mp4">
+            <source src="{{url('assets/img/gift/background01.mp4')}}" type="video/mp4">
             Your browser does not support the video tag.
         </video>
     </div>
@@ -34,7 +34,7 @@
         </div>
     </div>
 
-    <div id="gift-frame"></div>
+{{--    <div id="gift-frame"></div>--}}
     <div id="number" class="score-animation score-text">
         100
     </div>
