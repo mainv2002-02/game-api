@@ -1,3 +1,7 @@
+body {
+    aspect-ratio: 16 / 9;
+}
+
 .video-bg {
     position: fixed;
     top: 50%;
@@ -7,6 +11,7 @@
     min-height: 100%;
     width: auto;
     height: auto;
+    aspect-ratio: 16 / 9;
 }
 
 .video-bg > video {
