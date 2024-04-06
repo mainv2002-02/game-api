@@ -8,12 +8,12 @@
 @stop
 
 @section('styles')
-    <link rel="stylesheet" href="{{ url('assets/css/home/home.css?v=1.1') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=1.1') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=1.1') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.1') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.2') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.3') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/home.css?v=1.2') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=1.2') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=1.2') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.2') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.3') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.4') }}">
 @stop
 
 @section('content')
@@ -40,19 +40,17 @@
     </div>
 
     <div class="kickoff" id="kickoff" style="display: none">
-        <div id="kickoff-background" class="lottie">
-            <div class="lottie-text kickoff-text" style="display: none">CHÀO MỪNG BẠN TỚI VỚI EXPERIENCE DAY</div>
-        </div>
+        <div id="kickoff-background" class="lottie"></div>
         <div class="frame-container">
             <div id="kickoff-border-frame"></div>
             <div id="kickoff-button-frame"></div>
-            <div id="kickoff-fullscreen-frame"></div>
+{{--            <div id="kickoff-fullscreen-frame"></div>--}}
         </div>
     </div>
 
     <div class="story" id="story" style="display: none">
         <div id="story-background" class="lottie">
-            <div class="lottie-text story-text" style="display: none">Bối cảnh</div>
+            <div class="lottie-text story-text" style="display: none">BỐI CẢNH</div>
         </div>
         <div class="frame-container">
             <div id="border-frame-story">
@@ -67,7 +65,7 @@
 
     <div class="mission" id="mission" style="display: none">
         <div id="story-background" class="lottie">
-            <div class="lottie-text mission-text" style="display: none">Nhiệm vụ</div>
+            <div class="lottie-text mission-text" style="display: none">NHIỆM VỤ</div>
         </div>
         <div class="frame-container">
             <div id="border-frame-mission">
@@ -87,7 +85,8 @@
             <!-- Container for the first character and frame -->
             <div class="frame-container">
                 <div id="lottie-frame-1" class="lottie-animation"></div>
-                <img id="nv01" src="{{url('assets/img/nv/nv01-01.png')}}" alt="Data Master" hero-id="1" class="character-image" style="display: none">
+                <img id="nv01" src="{{url('assets/img/nv/nv01-01.png')}}"
+                     alt="Data Master" hero-id="1" class="character-image" style="display: none" onclick="selectCharacter('1')">
                 <div class="character-label" style="display: none">Data Master</div>
                 <div class="left-character" onclick="prevCharacter('1')"></div>
                 <div class="right-character" onclick="nextCharacter('1')"></div>
@@ -97,7 +96,8 @@
             <!-- Container for the second character and frame -->
             <div class="frame-container">
                 <div id="lottie-frame-2" class="lottie-animation"></div>
-                <img id="nv02" src="{{url('assets/img/nv/nv02-01.png')}}" alt="Data Master" hero-id="2" class="character-image" style="display: none">
+                <img id="nv02" src="{{url('assets/img/nv/nv02-01.png')}}"
+                     alt="Data Master" hero-id="2" class="character-image" style="display: none" onclick="selectCharacter('2')">
                 <div class="character-label" style="display: none;">Problem Solver</div>
                 <div class="left-character" onclick="prevCharacter('2')"></div>
                 <div class="right-character" onclick="nextCharacter('2')"></div>
@@ -107,7 +107,8 @@
             <!-- Container for the third character and frame -->
             <div class="frame-container">
                 <div id="lottie-frame-3" class="lottie-animation"></div>
-                <img id="nv03" src="{{url('assets/img/nv/nv03-01.png')}}" alt="Data Master" hero-id="3" class="character-image" style="display: none">
+                <img id="nv03" src="{{url('assets/img/nv/nv03-01.png')}}"
+                     alt="Data Master" hero-id="3" class="character-image" style="display: none" onclick="selectCharacter('3')">
                 <div class="character-label" style="display: none">Multitasker</div>
                 <div class="left-character" onclick="prevCharacter('3')"></div>
                 <div class="right-character" onclick="nextCharacter('3')"></div>
@@ -120,7 +121,6 @@
         <div id="character-info-background" class="lottie"></div>
         <div class="background" id="bg-character">
             <div class="frame-container">
-                <div id="character-info-title" class="character-info-title" style="display: none">Thông Tin Nhân Vật</div>
                 <div id="character-info-des" class="character-info-des" style="display: none">
 
                 </div>
@@ -322,8 +322,8 @@
             loadLottieAnimation('lottie-frame-3', '{{url('assets/img/character/border.json')}}');
 
             setTimeout(function () {
-                $(".character-image").fadeIn(3000);
-                $(".character-label").fadeIn(3000);
+                $(".character-image").fadeIn(4000);
+                $(".character-label").fadeIn(4000);
             }, 1000);
         }
 
@@ -341,7 +341,7 @@
             loadLottieAnimation('button-frame-back', '{{url('assets/img/character-info/back.json')}}', true);
             loadLottieAnimation('button-frame-next', '{{url('assets/img/character-info/next.json')}}', true);
             $("#character-info-title").fadeIn("slow");
-            $("#character-info-des").fadeIn("slow");
+            $("#character-info-des").fadeIn(2000);
             $("#character-info-image").fadeIn("slow");
             $("#character-info-name").fadeIn("slow");
         }

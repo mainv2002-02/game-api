@@ -1,10 +1,15 @@
+.kickoff > #kickoff-background {
+    width: 100vw;
+    height: 100vh;
+}
 .kickoff > .lottie > .lottie-text {
     position: fixed;
-    top: 14vh;
-    left: 36vw;
+    top: 13vh;
+    left: 34vw;
     font-size: 24px;
     font-weight: bold;
     color: #F565AF;
+    font-family: 'SVN-Zelda';
 }
 
 .kickoff > .frame-container > #kickoff-border-frame,

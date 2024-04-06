@@ -2,8 +2,8 @@
     $.fn.typer = function(text, options){
         options = $.extend({}, {
             char: '',
-            delay: 10,
-            duration: 7,
+            delay: 1,
+            duration: 0,
             endless: true,
             onType: $.noop,
             afterAll: $.noop,

@@ -33,6 +33,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'SVN-Zelda';
+    src: url('../fonts/SVN-Zelda-Sans.otf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
 :root {
   --bs-blue: #0d6efd;
   --bs-indigo: #6610f2;
