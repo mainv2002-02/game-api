@@ -15,8 +15,8 @@
           rel="stylesheet"
           integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
           crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ url('assets/css/app.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/styles.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/app.css?v=1.1') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/styles.css?v=1.1') }}">
     @yield('style-libraries')
     {{--Styles custom--}}
     @yield('styles')

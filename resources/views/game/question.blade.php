@@ -3,7 +3,7 @@
 @section('title', 'Question')
 
 @section('style-libraries')
-    <link rel="stylesheet" href="{{ url('assets/css/question/track2/question.css') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/question/track2/question.css?v=1.1') }}">
 @stop
 
 @section('styles')
@@ -22,7 +22,7 @@
             <div class="left-content">
                 <!-- Your left-side content goes here -->
                 <div id="button-gift" class="lottie">
-                    <p>Track 2</p>
+                    <p>TRACK2</p>
                 </div>
             </div>
 

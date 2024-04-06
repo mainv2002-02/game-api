@@ -67,6 +67,7 @@ body {
 }
 .right-content .support {
     width: 3vw;
+    z-index: 10;
 }
 .header {
     height: 10vh;
