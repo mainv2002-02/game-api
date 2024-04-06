@@ -34,28 +34,35 @@
                 <div class="title">Câu số 2</div>
                 <div id="question" class="question">
                     <div class="question-content">
-
+                        Tìm Doanh thu Beverage 9 cần đạt của vùng Hà Nội trong năm 2024, biết:
+                        <ol>
+                          <li>Doanh thu trung bình mỗi UC sản phẩm của 2023: 12,000 VND</li>
+                            <li>Mục tiêu tăng trưởng Doanh thu/UC của 2024 so với 2023: 1%</li>
+                            <li>Sản lượng đã bán trong năm 2023 là: 471.48 UC</li>
+                            <li>Mục tiêu tăng trưởng sản lượng của 2024 so với 2023 là: 5%</li>
+                        </ol>
+                        -> Doanh thu cần đạt của vùng Hà Nội trong năm 2024 là? (USD)
                     </div>
                 </div>
                 <!-- Lottie Animations for content will be placed here -->
                 <div id="answer1" class="answer">
                     <div class="answer-content">
-                        answer1
+                        6,000,000
                     </div>
                 </div>
                 <div id="answer2" class="answer">
                     <div class="answer-content">
-                        answer2
+                        1,000,000
                     </div>
                 </div>
                 <div id="answer3" class="answer">
                     <div class="answer-content">
-                        answer3
+                        10,000,000
                     </div>
                 </div>
                 <div id="answer4" class="answer">
                     <div class="answer-content">
-                        answer4
+                        3,000,000
                     </div>
                 </div>
                 <div id="button-frame-next" class="next"></div>
@@ -67,7 +74,7 @@
         <!-- Modal content -->
         <div id="hint-content" class="modal-game-content">
             <div id="hint-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Hãy bắt đầu bằng việc tính mục tiêu tăng trưởng Doanh thu/UC và sản lượng của 2024, sau đó suy ra Doanh thu của Beverage 9.</p>
             </div>
         </div>
 
@@ -78,7 +85,9 @@
         <!-- Modal content -->
         <div id="explain-content" class="modal-game-content">
             <div id="explain-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Mục tiêu tăng trưởng Doanh thu/UC của 2024 = (Doanh thu trung bình mỗi UC sản phẩm của 2023)*(100+ Mục tiêu tăng trưởng Doanh thu/UC của 2024 so với 2023)% (VND)</p>
+                <p>Mục tiêu tăng trưởng sản lượng của 2024 = (Sản lượng đã bán trong năm 2023) * (100+ Mục tiêu tăng trưởng sản lượng của 2024 so với 2023)% (UC)</p>
+                <p>Doanh thu cần đạt năm 2024 = (Mục tiêu tăng trưởng Doanh thu/UC của 2024)*(Mục tiêu tăng trưởng sản lượng của 2024) (VND)</p>
             </div>
         </div>
 
@@ -87,7 +96,7 @@
         <!-- Modal content -->
         <div id="ducrut-content" class="modal-game-content">
             <div id="ducrut-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Từ kế hoạch kinh doanh dài hạn, việc lên kế hoạch nhu cầu ngắn hạn là vô cùng quan trọng, cập nhật các xu hướng của thị trường, sử dụng các công cụ phân tích, đo lường các chỉ số bán hàng quá khứ để lập chiến lược cung cầu, đảm bảo đáp ứng nhu cầu của khách hàng một cách hiệu quả nhất. Việc lên kế hoạch nhu cầu cần hết sức cẩn trọng, chi tiết, tỉ mỉ tính toán từ những con số lớn hàng năm cho đến những con số nhỏ nhất hàng ngày để đảm bảo phản ánh đúng nhu cầu thị trường!</p>
             </div>
         </div>
 

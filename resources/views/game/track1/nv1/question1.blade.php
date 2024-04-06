@@ -18,7 +18,7 @@
                 <div class="left-content">
                     <!-- Your left-side content goes here -->
                     <div id="button-track" class="button-track">
-                        <div class="button-track-label">TRACK01</div>
+                        <div class="button-track-label">TRACK 01</div>
                     </div>
                 </div>
 
@@ -34,28 +34,31 @@
                 <div class="title">Câu số 1</div>
                 <div id="question" class="question">
                     <div class="question-content">
-
+                        Dựa vào bảng trên, hãy cho biết ngành hàng nào sẽ đóng góp nhiều nhất vào sự tăng trưởng của NARTD trong những năm tiếp theo?
+                        <p style="text-align: center">
+                            <img src="{{url('assets/img/track1/question1/dashboard.png')}}" class="support" alt="support" style="width: 70%"/>
+                        </p>
                     </div>
                 </div>
                 <!-- Lottie Animations for content will be placed here -->
                 <div id="answer1" class="answer">
                     <div class="answer-content">
-                        answer1
+                        Beverage 5
                     </div>
                 </div>
                 <div id="answer2" class="answer">
                     <div class="answer-content">
-                        answer2
+                        Beverage 11
                     </div>
                 </div>
                 <div id="answer3" class="answer">
                     <div class="answer-content">
-                        answer3
+                        Beverage 7
                     </div>
                 </div>
                 <div id="answer4" class="answer">
                     <div class="answer-content">
-                        answer4
+                        Beverage 9
                     </div>
                 </div>
                 <div id="button-frame-next" class="next"></div>
@@ -67,7 +70,7 @@
         <!-- Modal content -->
         <div id="hint-content" class="modal-game-content">
             <div id="hint-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Để biết được ngành hàng đóng góp nhiều nhất, chúng ta nhìn vào số tuyệt đối được dự báo sẽ đóng góp của ngành hàng đó.</p>
             </div>
         </div>
 
@@ -78,7 +81,7 @@
         <!-- Modal content -->
         <div id="explain-content" class="modal-game-content">
             <div id="explain-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Beverage 9 được dự đoán đóng góp 61bn đến năm 2026, lớn nhất vào sự tăng trưởng của NARTD</p>
             </div>
         </div>
 
@@ -86,8 +89,9 @@
     <div id="ducrut" class="modal">
         <!-- Modal content -->
         <div id="ducrut-content" class="modal-game-content">
-            <div id="ducrut-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+            <div id="ducrut-text" class="modal-game-text" style="width: 60vw; display: none">
+                <p>Phòng Kế hoạch và Hoạch định chiến lược, kết hợp với Phòng Thương mại sẽ dựa vào các báo cáo,
+                    dữ liệu về ngành hàng, khách hàng, thị trường kinh tế để đưa ra chiến lược dài hạn cho công ty</p>
             </div>
         </div>
 

@@ -110,13 +110,14 @@ body {
 
 .next {
     width: 45vw;
-    height: 7vh;
-    top: 90vh;
+    height: 6vh;
+    top: 88vh;
+    left: 29%;
 }
 
 #question {
     width: 70vw;
-    height: 65vh;
+    height: 55vh;
     top: 5vh;
     left: 17vw;
 }
@@ -136,24 +137,24 @@ body {
     width: 26vw;
 }
 #answer1 {
-    left: 20vw;
-    top:  65vh;
+    left: 22vw;
+    top: 58vh;
 }
 #answer2 {
-    left: 59vw;
-    top: 65vh;
+    left: 56vw;
+    top: 58vh;
 }
 #answer3 {
-    left: 20vw;
-    top: 77vh;
+    left: 22vw;
+    top: 71vh;
 }
 #answer4 {
-    left: 59vw;
-    top: 77vh;
+    left: 56vw;
+    top: 71vh;
 }
 .title {
     position: absolute;
-    top: 12vh;
+    top: 11vh;
     font-size: 2rem;
     color: #FF5ED3;
     z-index: 2;
@@ -161,31 +162,34 @@ body {
 }
 .question-content {
     position: absolute;
-    font-size: 1rem;
+    font-size: 20px;
     color: #35FF86;
-    width: 50vw;
+    width: 42vw;
     max-height: 100vh;
     top: 12vh;
-    left: 49vw;
+    left: 14vw;
 }
 .answer-content {
     position: relative;
+    font-size: 20px;
+    color: #35FF86;
+    width: 80%;
 }
 #answer1 > .answer-content {
-    left: 20vw;
-    top:  67vh;
+    top:  7vh;
+    left: 5%;
 }
 #answer2 > .answer-content {
-    left: 59vw;
-    top: 67vh;
+    top: 7vh;
+    left: 5%;
 }
 #answer3 > .answer-content {
-    left: 20vw;
-    top: 79vh;
+    top: 7vh;
+    left: 5%;
 }
 #answer4 > .answer-content {
-    left: 59vw;
-    top: 79vh;
+    top: 7vh;
+    left: 5%;
 }
 
 /* The Modal (background) */
@@ -220,7 +224,7 @@ body {
     position: absolute;
     top: 14vh;
     left: 17vw;
-    font-size: 18px;
+    font-size: 22px;
     color: #35FF86;
     width: 46vw;
     height: 14vh;
