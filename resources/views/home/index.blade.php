@@ -3,7 +3,7 @@
 @section('title', 'Home Page')
 
 @section('style-libraries')
-    <link rel="stylesheet" href="{{ url('assets/css/home/main.css?v=1.1') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/main.css?v=1.2') }}">
 @stop
 
 @section('styles')

@@ -8,12 +8,12 @@
 @stop
 
 @section('styles')
-    <link rel="stylesheet" href="{{ url('assets/css/home/home.css?v=1.2') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=1.2') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=1.2') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.2') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.3') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.4') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/home.css?v=1.3') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=1.3') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=1.3') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.3') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.4') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.5') }}">
 @stop
 
 @section('content')
@@ -158,7 +158,7 @@
                 $("#page-home").fadeOut(2000);
                 $("#kickoff").fadeIn(2000, function () {
                     displayLottieText('kickoff-text');
-                    loadLottieAnimation('kickoff-background', '{{url('assets/img/kickoff/border.json')}}');
+                    loadLottieAnimation('kickoff-background', '{{url('assets/img/kickoff/borderNew.json')}}');
                     loadLottieAnimation('kickoff-border-frame', '{{url('assets/img/kickoff/border01.json')}}');
                     loadLottieAnimation('kickoff-button-frame', '{{url('assets/img/kickoff/button.json')}}');
                     loadLottieAnimation('kickoff-fullscreen-frame', '{{url('assets/img/kickoff/fullscreen.json')}}');
