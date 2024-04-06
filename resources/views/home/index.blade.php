@@ -35,6 +35,7 @@
                </div>
                <div id="button-gift" class="lottie"></div>
                <div id="lottie-button-2" class="lottie"></div>
+               <div id="button-dc" class="lottie"></div>
            </div>
 
            <div class="right-content">
@@ -79,6 +80,7 @@
              loadLottieAnimation('lottie-button-2', '{{url('assets/img/main/agenda.json')}}');
              loadLottieAnimation('chat-frame', '{{url('assets/img/main/border.json')}}');
              loadLottieAnimation('livestream-frame', '{{url('assets/img/main/livestream.json')}}');
+             loadLottieAnimation('button-dc', '{{url('assets/img/main/dc.json')}}');
 
              $("#button-gift").click(function () {
                 window.open('/gift', '_blank');

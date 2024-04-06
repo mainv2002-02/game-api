@@ -24,19 +24,19 @@ body {
 }
 .page-home > .form-container > .lottie-input {
     position: fixed;
-    width: 24vw; /* Adjust width based on your design */
-    left: 38%;
+    width: 20vw; /* Adjust width based on your design */
+    left: 40%;
 }
 
-.page-home > .form-container > .lottie-input:nth-child(1) { top: 16%; }
-.page-home > .form-container > .lottie-input:nth-child(2) { top: 30%; }
-.page-home > .form-container > .lottie-input:nth-child(3) { top: 44%; }
-.page-home > .form-container > .lottie-input:nth-child(4) { bottom: 30%; }
-.page-home > .form-container > .lottie-input:nth-child(5) { bottom: 16%; }
+.page-home > .form-container > .lottie-input:nth-child(1) { top: 19%; }
+.page-home > .form-container > .lottie-input:nth-child(2) { top: 33%; }
+.page-home > .form-container > .lottie-input:nth-child(3) { top: 47%; }
+.page-home > .form-container > .lottie-input:nth-child(4) { bottom: 29%; }
+.page-home > .form-container > .lottie-input:nth-child(5) { bottom: 15%; }
 .page-home > .form-container > .lottie-button {
     position: fixed;
     bottom: 15%;
-    right: 13%;
+    right: 11%;
     width: 14vw;
     z-index: 2;
     cursor: pointer;

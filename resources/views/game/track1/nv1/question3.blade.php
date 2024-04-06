@@ -18,7 +18,7 @@
                 <div class="left-content">
                     <!-- Your left-side content goes here -->
                     <div id="button-track" class="button-track">
-                        <div class="button-track-label">TRACK01</div>
+                        <div class="button-track-label">TRACK 01</div>
                     </div>
                 </div>
 
@@ -34,28 +34,31 @@
                 <div class="title">Câu số 3</div>
                 <div id="question" class="question">
                     <div class="question-content">
-
+                        Với 6,000,000 USD đã tính phía trên sẽ được tiếp tục lên kế hoạch theo quý và tính toán kỹ từng SKU. Sau đó, bộ phận Kế hoạch Cung Ứng sẽ tính nguyên vật liệu cần để sản xuất đáp ứng được nhu cầu của thị trường. Hãy nhìn vào ví dụ nhỏ dưới đây và điền vào ô xanh lá để hiểu một cách cơ bản nhất về công việc của Phòng Kế hoạch.
+                        <p style="text-align: center">
+                            <img src="{{url('assets/img/track1/question3/dashboard.png')}}" class="support" alt="support" style="width: 70%"/>
+                        </p>
                     </div>
                 </div>
                 <!-- Lottie Animations for content will be placed here -->
                 <div id="answer1" class="answer">
                     <div class="answer-content">
-                        answer1
+                        2
                     </div>
                 </div>
                 <div id="answer2" class="answer">
                     <div class="answer-content">
-                        answer2
+                        2.6
                     </div>
                 </div>
                 <div id="answer3" class="answer">
                     <div class="answer-content">
-                        answer3
+                        1.7
                     </div>
                 </div>
                 <div id="answer4" class="answer">
                     <div class="answer-content">
-                        answer4
+                        3
                     </div>
                 </div>
                 <div id="button-frame-next" class="next"></div>

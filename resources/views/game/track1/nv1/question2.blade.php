@@ -18,7 +18,7 @@
                 <div class="left-content">
                     <!-- Your left-side content goes here -->
                     <div id="button-track" class="button-track">
-                        <div class="button-track-label">TRACK01</div>
+                        <div class="button-track-label">TRACK 01</div>
                     </div>
                 </div>
 
