@@ -28,11 +28,11 @@ body {
     left: 40%;
 }
 
-.page-home > .form-container > .lottie-input:nth-child(1) { top: 19%; }
+.page-home > .form-container > .lottie-input:nth-child(1) { top: 20%; }
 .page-home > .form-container > .lottie-input:nth-child(2) { top: 33%; }
 .page-home > .form-container > .lottie-input:nth-child(3) { top: 47%; }
-.page-home > .form-container > .lottie-input:nth-child(4) { bottom: 29%; }
-.page-home > .form-container > .lottie-input:nth-child(5) { bottom: 15%; }
+.page-home > .form-container > .lottie-input:nth-child(4) { bottom: 30%; }
+.page-home > .form-container > .lottie-input:nth-child(5) { bottom: 17%; }
 .page-home > .form-container > .lottie-button {
     position: fixed;
     bottom: 15%;
