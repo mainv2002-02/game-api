@@ -31,11 +31,12 @@
             </div>
 
             <div class="main-content">
-                <div class="title">Câu số 1</div>
+                <div class="title">Câu số 4</div>
                 <div id="question" class="question">
                     <div class="question-content">
-                        Đề bài: Giả sử tệp khách hàng NKA OFF có 2 khách hàng là Công ty A và Công ty B
-                        <p>Theo kế hoạch đề ra từ đầu tháng (Tháng 1/2023), doanh thu gộp (GSR) mà sales cam kết đặt được là 50 tỷ VND với mức phân bổ như ở bảng bên</p>
+                        <p>Từ việc phân tích thực trạng nguồn cung lao động nội bộ và bên ngoài, bộ phận HR sẽ tư vấn bộ
+                            phận đối tác các giải pháp nhân tài phù hợp để đảm bảo nguồn cung lao động phù hợp với nhu cầu nhân lực,
+                            phù hợp với chi phí và tạo điều kiện phát triển sự nghiệp bền vững tại CCBV.</p>
                         <p style="text-align: center">(Ấn vào <b>HIỆN BẢNG</b> để xem câu hỏi đầy đủ)</p>
                     </div>
                     <div class="background-full-question" onclick="openFullQuestion()">
@@ -43,32 +44,24 @@
                     </div>
                 </div>
                 <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer"  onclick="answer(this, false, true)">
-                    <div class="answer-content two">
-                        %DFR/GSR: 18.00%
-                        <br/>
-                        %DFR: 19.10%
+                <div id="answer1" class="answer"  onclick="answer(this, true, true)">
+                    <div class="answer-content">
+                        Đáp án: 1C 2B 3E 3D 4A
                     </div>
                 </div>
-                <div id="answer2" class="answer"  onclick="answer(this, true, true)">
-                    <div class="answer-content two">
-                        %DFR/GSR: 18.20%
-                        <br/>
-                        %DFR: 19.10%
+                <div id="answer2" class="answer"  onclick="answer(this, false, true)">
+                    <div class="answer-content">
+                        Đáp án: 1A 2B 3E 3C 4D
                     </div>
                 </div>
                 <div id="answer3" class="answer"  onclick="answer(this, false, true)">
-                    <div class="answer-content two">
-                        %DFR/GSR: 18.20%
-                        <br/>
-                        %DFR: 19.00%
+                    <div class="answer-content">
+                        Đáp án: 1C 2B 3E 3A 4D
                     </div>
                 </div>
                 <div id="answer4" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content two">
-                        %DFR/GSR: 18.00%
-                        <br/>
-                        %DFR: 19.00%
+                    <div class="answer-content">
+                        Đáp án: 1B 2C 3E 3D 4A
                     </div>
                 </div>
                 <div id="button-frame-next" class="next"></div>
@@ -79,12 +72,14 @@
     <div id="full-question" class="modal">
         <!-- Modal content -->
         <div id="full-question-content" class="modal-game-content" style="display: none">
-            Đề bài: Giả sử tệp khách hàng NKA OFF có 2 khách hàng là Công ty A và Công ty B
-            <p>Theo kế hoạch đề ra từ đầu tháng (Tháng 1/2023), doanh thu gộp (GSR) mà sales cam kết đặt được là 50 tỷ VND với mức phân bổ như ở bảng bên</p>
+            CCBV đang lên kế hoạch mở rộng hoạt động bằng cách xây dựng một nhà máy mới tại Việt Nam. Nhà máy mới dự kiến sẽ đi vào hoạt động trong vòng 12 tháng tới với công suất sản xuất gấp 2 lần nhà máy hiện tại. Sau khi trao đổi, thống kê và phân tích nguồn nhân lực sẵn có theo 4 kỹ năng cần thiết nhất cho đội Phát triển Hệ thống Phân phối số, dưới đây là kết quả đánh giá theo trạng thái năng lực của 4 nhân viên (Đạt, Chưa đạt và Nghỉ việc).
             <p style="text-align: center">
-                <img src="{{url('assets/img/track3/question1/dashboard.png')}}" class="support" alt="support" style="width: 70%"/>
+                <img src="{{url('assets/img/track3/question6/table.png')}}" class="support" alt="support" style="width: 80%"/>
             </p>
-            <b>Câu hỏi</b>: Tính thông tin %DFR/GSR mix theo kế hoạch dự kiến
+            <p><b>Câu hỏi</b>: Hãy sắp xếp các giải pháp nhân sự có khả năng phù hợp để cung cấp nguồn cung nhân lực tương ứng với các kỹ năng :</p>
+            <p style="text-align: center">
+                <img src="{{url('assets/img/track3/question6/mapping.png')}}" class="support" alt="support" style="width: 70%"/>
+            </p>
         </div>
     </div>
 
@@ -92,8 +87,7 @@
         <!-- Modal content -->
         <div id="hint-content" class="modal-game-content">
             <div id="hint-text" class="modal-game-text" style="display: none">
-                <p>Chưa chính xác
-                </p>
+                <p>Kỹ năng 1: Đào tạo phát triển nội bộ, nâng cao năng lực nhân viên A hơn nữa</p>
             </div>
         </div>
 
@@ -104,9 +98,7 @@
         <!-- Modal content -->
         <div id="explain-content" class="modal-game-content">
             <div id="explain-text" class="modal-game-text" style="display: none">
-                %DFR/GSR: 18.20%
-                <br/>
-                %DFR: 19.10%
+                <p>Đáp án đúng: 1C 2B 3E 3D 4A</p>
             </div>
         </div>
 
@@ -115,7 +107,7 @@
         <!-- Modal content -->
         <div id="ducrut-content" class="modal-game-content">
             <div id="ducrut-text" class="modal-game-text" style="display: none">
-                <p>Trên thực tế, GSR của kênh NKA OFF đã về đúng như kế hoạch (50 tỷ VND). Tuy nhiên, tỉ lệ đóng góp vào GSR của 2 cty A và B có sự khác biệt, dẫn đến sự chênh lệch ở số NSR thực tế so với kế hoạch dự kiến (zoom in 2 số 40.9 và 40.45)
+                <p>Chính xác
                 </p>
             </div>
         </div>
@@ -128,7 +120,7 @@
     <script>
         $(document).ready(function() {
             $("#button-frame-next").click(function () {
-                window.location.href = '/1/track3/2';
+                window.location.href = '/home/2';
             })
         });
     </script>

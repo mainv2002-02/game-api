@@ -18,7 +18,7 @@
                 <div class="left-content">
                     <!-- Your left-side content goes here -->
                     <div id="button-track" class="button-track">
-                        <div class="button-track-label">TRACK 01</div>
+                        <div class="button-track-label">TRACK 02</div>
                     </div>
                 </div>
 
@@ -31,34 +31,39 @@
             </div>
 
             <div class="main-content">
-                <div class="title">Câu số 3</div>
+                <div class="title">Câu số 5</div>
                 <div id="question" class="question">
                     <div class="question-content">
-                        Với 6,000,000 USD đã tính phía trên sẽ được tiếp tục lên kế hoạch theo quý và tính toán kỹ từng SKU. Sau đó, bộ phận Kế hoạch Cung Ứng sẽ tính nguyên vật liệu cần để sản xuất đáp ứng được nhu cầu của thị trường. Hãy nhìn vào ví dụ nhỏ dưới đây và điền vào ô xanh lá để hiểu một cách cơ bản nhất về công việc của Phòng Kế hoạch.
-                        <p style="text-align: center">
-                            <img src="{{url('assets/img/track1/question3/dashboard.png')}}" class="support" alt="support" style="width: 70%"/>
-                        </p>
+                        Tuyến thứ 2 của bạn Nhân viên Trưng bày siêu thị (Merchandiser) Nguyễn Văn A có 8 cửa hàng Minimart Vàng, và 4 cửa hàng Minimart Bạc, và 2 cửa hàng Minimart đồng.
+                        <p>Thời gian thực thi trưng bày ở mỗi lần ghé thăm cho 1 cửa hàng Minimart tương ứng là:</p>
+                        <dl>
+                            <dt>- Vàng: 30 phút</dt>
+                            <dt>- Bạc: 15 phút</dt>
+                            <dt>- Đồng: 7 phút </dt>
+                        </dl>
+                        <p>Biết rằng thời gian di chuyển đến mỗi cửa hàng là khoảng 10 phút.</p>
+                        <p>Vậy, bạn A sẽ cần bao nhiêu giờ tối thiểu để ghé thăm hết tuyến bán hàng của mình?</p>
                     </div>
                 </div>
                 <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer" onclick="answer(this, true, true)">
-                    <div class="answer-content" >
-                        2
+                <div id="answer1" class="answer" onclick="answer(this, false, true)">
+                    <div class="answer-content">
+                        6,13 giờ
                     </div>
                 </div>
                 <div id="answer2" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        2.6
+                        6,23 giờ
                     </div>
                 </div>
                 <div id="answer3" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        1.7
+                        7,13 giờ
                     </div>
                 </div>
-                <div id="answer4" class="answer" onclick="answer(this, false, true)">
+                <div id="answer4" class="answer" onclick="answer(this, true, true)">
                     <div class="answer-content">
-                        3
+                        7,23 giờ
                     </div>
                 </div>
                 <div id="button-frame-next" class="next"></div>
@@ -70,11 +75,10 @@
         <!-- Modal content -->
         <div id="hint-content" class="modal-game-content">
             <div id="hint-text" class="modal-game-text" style="display: none">
-                <p>Từ Doanh thu của Sprite CAN 320ml, bạn có thể tính được số lon CAN 320ml, từ đó quy ra dung tích ml, l và cuối cùng là UC
+                <p>Tổng thời gian ghé thăm = (số cửa hàng trong tệp X thời gian ghé thăm 1 cửa hàng tương ứng) + tổng thời gian di chuyển giữa các điểm.
                 </p>
             </div>
         </div>
-
     </div>
 
     <div id="explain" class="modal">
@@ -82,9 +86,7 @@
         <!-- Modal content -->
         <div id="explain-content" class="modal-game-content">
             <div id="explain-text" class="modal-game-text" style="display: none">
-                <p>Số lon CAN 320ml dự kiến: 350,000 / 10,000 (lon)
-                    Dung tích của lượng CAN trên: 350,000/10,000*320/1000 (L)  (UC)
-                </p>
+                Tổng thời gian ghé thăm = (30 phút x 8 CH vàng) + (15 phút x 4 CH bạc) + (7 phút x 2 CH Đồng) + ( 10 phút di chuyển x 12 CH)
             </div>
         </div>
 
@@ -92,9 +94,8 @@
     <div id="ducrut" class="modal">
         <!-- Modal content -->
         <div id="ducrut-content" class="modal-game-content">
-            <div id="ducrut-text" class="modal-game-text" style="display: none">
-                <p>Từ kế hoạch kinh doanh, bộ phận sản xuất sẽ tiến hành lên kế hoạch chi tiết kế hoạch sản xuất, trong đó bao gồm việc cần dùng bao nhiêu nguyên vật liệu để đáp ứng nhu cầu thị trường.
-
+            <div id="ducrut-text" class="modal-game-text" style="width: 60vw; display: none">
+                <p>Bộ phận Thương mại luôn cân đối và sắp xếp tuyến đường, số lượng cửa hàng phụ trách cũng như năng suất phù hợp của đội ngũ bán hàng để xây dựng kế hoạch thực thi hiệu quả trên từng ngày!
                 </p>
             </div>
         </div>
@@ -107,7 +108,7 @@
     <script>
         $(document).ready(function() {
             $("#button-frame-next").click(function () {
-                window.location.href = '/1/track1/4';
+                window.location.href = '/1/track2/6';
             })
         });
     </script>

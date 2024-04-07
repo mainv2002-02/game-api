@@ -91,6 +91,26 @@ class GameController extends Controller
         return view('game.track1.nv1.question4');
     }
 
+    public function track1nv21(): View
+    {
+        return view('game.track1.nv2.question1');
+    }
+
+    public function track1nv22(): View
+    {
+        return view('game.track1.nv2.question2');
+    }
+
+    public function track1nv23(): View
+    {
+        return view('game.track1.nv2.question3');
+    }
+
+    public function track1nv24(): View
+    {
+        return view('game.track1.nv2.question4');
+    }
+
     public function track2nv11(): View
     {
         return view('game.track2.nv1.question1');
@@ -111,6 +131,26 @@ class GameController extends Controller
         return view('game.track2.nv1.question4');
     }
 
+    public function track2nv21(): View
+    {
+        return view('game.track2.nv2.question1');
+    }
+
+    public function track2nv22(): View
+    {
+        return view('game.track2.nv2.question2');
+    }
+
+    public function track2nv23(): View
+    {
+        return view('game.track2.nv2.question3');
+    }
+
+    public function track2nv24(): View
+    {
+        return view('game.track2.nv2.question4');
+    }
+
     public function track3nv11(): View
     {
         return view('game.track3.nv1.question1');
@@ -129,5 +169,40 @@ class GameController extends Controller
     public function track3nv14(): View
     {
         return view('game.track3.nv1.question4');
+    }
+
+    public function track3nv15(): View
+    {
+        return view('game.track3.nv1.question5');
+    }
+
+    public function track3nv16(): View
+    {
+        return view('game.track3.nv1.question6');
+    }
+
+    public function track3nv21(): View
+    {
+        return view('game.track3.nv2.question1');
+    }
+
+    public function track3nv22(): View
+    {
+        return view('game.track3.nv2.question2');
+    }
+
+    public function track3nv23(): View
+    {
+        return view('game.track3.nv2.question3');
+    }
+
+    public function track3nv24(): View
+    {
+        return view('game.track3.nv2.question4');
+    }
+
+    public function track3nv25(): View
+    {
+        return view('game.track3.nv2.question5');
     }
 }

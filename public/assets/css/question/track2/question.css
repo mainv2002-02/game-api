@@ -165,32 +165,41 @@ body {
     font-size: 20px;
     color: #35FF86;
     width: 42vw;
-    max-height: 100vh;
+    max-height: 64%;
     top: 12vh;
     left: 14vw;
+    overflow: auto;
+    z-index: 21;
 }
 .answer-content {
-    position: relative;
+    position: absolute;
     font-size: 20px;
     color: #35FF86;
-    width: 80%;
-}
-#answer1 > .answer-content {
-    top:  7vh;
+    width: 90%;
+    text-align: center;
+    top:  3vh;
     left: 5%;
 }
-#answer2 > .answer-content {
-    top: 7vh;
-    left: 5%;
+
+.two {
+    top:  2vh;
 }
-#answer3 > .answer-content {
-    top: 7vh;
-    left: 5%;
-}
-#answer4 > .answer-content {
-    top: 7vh;
-    left: 5%;
-}
+    /*#answer1 > .answer-content {*/
+/*    top:  2vh;*/
+/*    left: 5%;*/
+/*}*/
+/*#answer2 > .answer-content {*/
+/*    top: 2vh;*/
+/*    left: 5%;*/
+/*}*/
+/*#answer3 > .answer-content {*/
+/*    top: 2vh;*/
+/*    left: 5%;*/
+/*}*/
+/*#answer4 > .answer-content {*/
+/*    top: 2vh;*/
+/*    left: 5%;*/
+/*}*/
 
 /* The Modal (background) */
 .modal {
@@ -222,19 +231,122 @@ body {
 
 .modal-game-text {
     position: absolute;
-    top: 14vh;
+    top: 13vh;
     left: 17vw;
     font-size: 22px;
     color: #35FF86;
     width: 46vw;
-    height: 14vh;
+    height: 13vh;
     overflow: auto;
     word-wrap: break-word; /* Older property name, supported in IE */
     overflow-wrap: break-word; /* Standard property name */
     white-space: normal;
+    z-index: 200;
 }
 
 #ducrut-content > .modal-game-text {
     top: 11vh;
     left: 10vw;
+}
+
+.correct > svg {
+    background-color: rgba(69,251,255,0.3);
+}
+
+.fail > svg {
+    background-color: rgba(255,49,49,0.3);
+}
+
+#button-full-screen {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+}
+
+.background-full-question {
+    position: absolute; /* Establishes a positioning context for inner elements */
+    width: 11vw;
+    height: 7vh;
+    background-image: url('../../../img/main/score.png');
+    background-size: 100% 100%;
+    background-position: center;
+    cursor: pointer;
+    left: 50%;
+    top: 76%;
+    transform: translate(-50%, -50%); /* Adjust position to truly center */
+    z-index: 10;
+}
+
+.background-full-question > .centered-text {
+    font-size: 24px;
+    position: relative;
+    width: 100%;
+}
+
+#full-question {
+    z-index: 1000;
+}
+
+#full-question-content {
+    position: absolute;
+    font-size: 22px;
+    color: #35FF86;
+    width: 87%;
+    height: 70%;
+    overflow: auto;
+    word-wrap: break-word; /* Older property name, supported in IE */
+    overflow-wrap: break-word; /* Standard property name */
+    white-space: normal;
+    z-index: 999;
+}
+#ducrut-text {
+    width: 60vw;
+}
+dt {
+    font-weight: normal!important;
+}
+.table-container {
+    margin: 15px 0;
+    width: 100%; /* Chiếm đầy đủ chiều rộng của .table-container */
+    border-collapse: collapse; /* Loại bỏ khoảng cách giữa các border của cell */
+    table-layout: fixed; /* Giúp các cột có chiều rộng đồng đều */
+}
+
+.table-container th, .table-container td {
+    border: 1px solid #FF5ED3; /* Đặt màu cho border */
+    text-align: left; /* Căn chỉnh văn bản */
+    padding: 8px; /* Thêm padding cho cell */
+    color: #35FF86; /* Màu chữ cho thead */
+}
+
+.table-container thead {
+    color: #35FF86; /* Màu chữ cho thead */
+    font-weight: bold;
+}
+
+.between {
+    margin: 10px 0;
+}
+
+.table-answer {
+    width: 100%; /* Chiếm đầy đủ chiều rộng của .table-container */
+    border-collapse: collapse; /* Loại bỏ khoảng cách giữa các border của cell */
+    table-layout: fixed; /* Giúp các cột có chiều rộng đồng đều */
+}
+.two-table {
+    top: 1.5vh
+}
+
+.two-long {
+    top: 2vh;
+    font-size: 16px;
+    text-align: left;
+    left: 2%;
+    width: 95%;
+}
+.two-table-long {
+    top: 2vh;
+    font-size: 16px;
+    text-align: left;
+    width: 95%;
 }

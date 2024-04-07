@@ -31,7 +31,7 @@
             </div>
 
             <div class="main-content">
-                <div class="title">Câu số 4</div>
+                <div class="title">Câu số 7</div>
                 <div id="question" class="question">
                     <div class="question-content">
                         Ngoài độ phủ, chúng ta còn có 1 khái niệm liên quan nữa là Tỷ trọng độ phủ (WTD – Weighted distribution), đo lường mức độ hiệu quả của kênh phân phối dựa trên mức độ bán hàng của điểm bán. Tiếp tục từ câu hỏi trên, giả sử biết thêm số bán của ngành hàng tương ứng tại mỗi cửa hàng như bên dưới, hãy thử tính Tỷ trọng độ phủ của Fuzetea nhé!

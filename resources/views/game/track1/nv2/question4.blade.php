@@ -31,31 +31,40 @@
             </div>
 
             <div class="main-content">
-                <div class="title">Câu số 1</div>
+                <div class="title">Câu số 4</div>
                 <div id="question" class="question">
                     <div class="question-content">
-
+                        Vào cuối ngày 20/01/2024, số lượng tồn kho của Coca-Cola lon 320ml Carton còn lại 80 000 thùng. Để đáp ứng  cho đơn hàng 120 000 thùng phát sinh cho ngày 24/01/2024, nhà máy miền Nam phải gấp rút thay đổi kế hoạch sản xuất để tập trung chạy mặt hàng này phục vụ cho nhu cầu.
+                        <p>Hãy cho biết những vấn đề cần quan tâm để đưa ra giải pháp cho tình huống trên (chọn nhiều đáp án đúng)</p>
+                        <ol>
+                            <li>Mở rộng nhà máy để sản xuất cho đơn hàng này</li>
+                            <li>Vận chuyển hàng thành phẩm từ các vùng bán hàng khác</li>
+                            <li>Đảm bảo tồn kho nguyên vật liệu (hương liệu, lon, film, carton,...) còn đủ để sản xuất cho nhu cầu này</li>
+                            <li>Đảm bảo dây chuyền sản xuất đủ công suất để sản xuất cho nhu cầu này</li>
+                            <li>Không đáp ứng đơn hàng này</li>
+                            <li>Huy động nhân lực (operator, thủ kho,...) để hỗ trợ cho tình huống này</li>
+                        </ol>
                     </div>
                 </div>
                 <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer">
+                <div id="answer1" class="answer" onclick="answer(this, true, true)">
                     <div class="answer-content">
-                        answer1
+                        Trừ đáp án số 1 tất cả đáp án đều đúng.
                     </div>
                 </div>
-                <div id="answer2" class="answer">
+                <div id="answer2" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        answer2
+                        Trừ đáp án số 5 tất cả đáp án đều đúng.
                     </div>
                 </div>
-                <div id="answer3" class="answer">
+                <div id="answer3" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        answer3
+                        Trừ đáp án số 6 tất cả đáp án đều đúng.
                     </div>
                 </div>
-                <div id="answer4" class="answer">
+                <div id="answer4" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        answer4
+                        Tất cả đáp án đều đúng.
                     </div>
                 </div>
                 <div id="button-frame-next" class="next"></div>
@@ -67,7 +76,8 @@
         <!-- Modal content -->
         <div id="hint-content" class="modal-game-content">
             <div id="hint-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Rất tiếc, hãy đọc kĩ và hiểu thấu để có câu trả lời chính xác bạn nhé! Lưu ý rằng việc đặt các nguyen vật liệu phải được tính bắt đầu từ thời điểm sản xuất, 2 tuần trước khi ra mắt sản phẩm, tức là tuần 16
+                </p>
             </div>
         </div>
 
@@ -78,7 +88,9 @@
         <!-- Modal content -->
         <div id="explain-content" class="modal-game-content">
             <div id="explain-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Rất tiếc, ắt hẳn bạn đã có chút nhầm lẫn.
+                    Việc lên kế hoạch để đảm bảo cung cầu cho đợt tung sản phẩm đòi hỏi sự cẩn thận, chi tiết đến từng tuần, thậm chí từng ngày, từng giờ.
+                </p>
             </div>
         </div>
 
@@ -87,7 +99,8 @@
         <!-- Modal content -->
         <div id="ducrut-content" class="modal-game-content">
             <div id="ducrut-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Việc lên kế hoạch để đảm bảo cung cầu cho đợt tung sản phẩm đòi hỏi sự cẩn thận, chi tiết đến từng tuần, thậm chí từng ngày, từng giờ.
+                </p>
             </div>
         </div>
 
@@ -95,55 +108,12 @@
 @stop
 
 @section('scripts')
+    <script src="{{ url('assets/js/question.js?v=1.0') }}"></script>
     <script>
         $(document).ready(function() {
-
-            // Initialize all your Lottie animations here
-            loadLottieAnimation('button-track', '{{url('assets/img/track2/breakcrum.json')}}');
-            loadLottieAnimation('question', '{{url('assets/img/track2/border.json')}}');
-            loadLottieAnimation('answer1', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer2', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer3', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer4', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('button-frame-next', '{{url('assets/img/track2/next.json')}}');
-
-            $("#answer1").click(function () {
-                $("#hint").fadeIn("slow", function() {
-                    loadLottieAnimation('hint-content', '{{url('assets/img/track2/hint.json')}}');
-                    $("#hint-text").fadeIn(2500);
-                })
-            })
-
-            $("#answer2").click(function () {
-                $("#explain").fadeIn("slow", function() {
-                    loadLottieAnimation('explain-content', '{{url('assets/img/track2/giaithich.json')}}');
-                    $("#explain-text").fadeIn(2500);
-                })
-            })
-            $("#answer3").click(function () {
-                $("#ducrut").fadeIn("slow", function() {
-                    loadLottieAnimation('ducrut-content', '{{url('assets/img/track2/ducrut.json')}}');
-                    $("#ducrut-text").fadeIn(3000);
-                })
-            })
             $("#button-frame-next").click(function () {
-                window.location.href = '/1/track2/2';
+                window.location.href = '/home/2';
             })
-
-            $(window).click(function(event) {
-                if ($(event.target).is("#hint")) {
-                    destroyLottieAnimation('hint-content')
-                    $(".modal").hide();
-                }
-                if ($(event.target).is("#explain")) {
-                    destroyLottieAnimation('explain-content')
-                    $("#explain").hide();
-                }
-                if ($(event.target).is("#ducrut")) {
-                    destroyLottieAnimation('ducrut-content')
-                    $("#ducrut").hide();
-                }
-            });
         });
     </script>
 @stop

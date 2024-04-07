@@ -18,7 +18,7 @@
                 <div class="left-content">
                     <!-- Your left-side content goes here -->
                     <div id="button-track" class="button-track">
-                        <div class="button-track-label">TRACK02</div>
+                        <div class="button-track-label">TRACK 02</div>
                     </div>
                 </div>
 
@@ -31,31 +31,35 @@
             </div>
 
             <div class="main-content">
-                <div class="title">Câu số 1</div>
+                <div class="title">Câu số 3</div>
                 <div id="question" class="question">
                     <div class="question-content">
-
+                        Độ phủ (Numeric distribution) của một sản phẩm đo lường “mức độ có mặt” của sản phẩm ấy trên tổng số điểm bán của thị trường, số này càng lớn thì tức là sản phẩm đã phủ được càng nhiều điểm bán (về mặt hiện diện). Hiểu về độ phủ là nền tảng quan trọng, hãy thử tính độ phủ của sản phẩm Green Drink trong một ví dụ sau đây nhé!
+                        <p style="text-align: center">(Ấn vào <b>HIỆN BẢNG</b> để xem câu hỏi đầy đủ)</p>
+                    </div>
+                    <div class="background-full-question" onclick="openFullQuestion()">
+                        <p class="centered-text">HIỆN BẢNG</p>
                     </div>
                 </div>
                 <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer">
+                <div id="answer1" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        answer1
+                        50
                     </div>
                 </div>
-                <div id="answer2" class="answer">
+                <div id="answer2" class="answer" onclick="answer(this, true, true)">
                     <div class="answer-content">
-                        answer2
+                        60
                     </div>
                 </div>
-                <div id="answer3" class="answer">
+                <div id="answer3" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        answer3
+                       70
                     </div>
                 </div>
-                <div id="answer4" class="answer">
+                <div id="answer4" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        answer4
+                        80
                     </div>
                 </div>
                 <div id="button-frame-next" class="next"></div>
@@ -63,14 +67,56 @@
         </div>
     </div>
 
+    <div id="full-question" class="modal">
+        <!-- Modal content -->
+        <div id="full-question-content" class="modal-game-content" style="display: none">
+            Độ phủ (Numeric distribution) của một sản phẩm đo lường “mức độ có mặt” của sản phẩm ấy trên tổng số điểm bán của thị trường, số này càng lớn thì tức là sản phẩm đã phủ được càng nhiều điểm bán (về mặt hiện diện). Hiểu về độ phủ là nền tảng quan trọng, hãy thử tính độ phủ của sản phẩm Green Drink trong một ví dụ sau đây nhé!
+            <table class="table-container">
+                <thead>
+                <tr>
+                    <td>CÁC ĐIỂM BÁN CÓ TRÊN THỊ TRƯỜNG</td>
+                    <td>SẢN PHẨM GREEN DRINK ĐÃ CÓ MẶT TẠI CỬA HÀNG</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Cửa hàng A</td>
+                    <td>&#10004;
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cửa hàng B</td>
+                    <td>&#10004;
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cửa hàng C</td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cửa hàng D</td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cửa hàng E</td>
+                    <td>&#10004;
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <b>Câu hỏi</b>: Độ phủ của FuzeTea trong tình huống này là bào nhiêu %?
+        </div>
+    </div>
+
     <div id="hint" class="modal">
         <!-- Modal content -->
         <div id="hint-content" class="modal-game-content">
             <div id="hint-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Bạn có thể tính độ phủ của sản phẩm = Tổng số cửa hàng : Số cửa hàng mà sản phẩm đã có mặt</p>
             </div>
         </div>
-
     </div>
 
     <div id="explain" class="modal">
@@ -78,7 +124,7 @@
         <!-- Modal content -->
         <div id="explain-content" class="modal-game-content">
             <div id="explain-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Hiện tại có tổng 5 cửa hàng trên thị trường. Và Fuzetea đã có mặt tại 3 cửa hàng. Khi đó, bạn có thể tính độ phủ của sản phẩm = 3:5</p>
             </div>
         </div>
 
@@ -86,8 +132,9 @@
     <div id="ducrut" class="modal">
         <!-- Modal content -->
         <div id="ducrut-content" class="modal-game-content">
-            <div id="ducrut-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+            <div id="ducrut-text" class="modal-game-text" style="width: 60vw; display: none">
+                <p>Đây là một trong những chỉ số mà phòng Thương mại đo lường để biết được độ phổ biến của nhãn hàng, để thấy hệ thống phân phối của chúng ta đã sâu rộng được tới đâu. Sản phẩm càng được phủ rộng rãi trên thị trường càng có nhiều cơ hội hơn để tiếp xúc với người tiêu dùng.
+                </p>
             </div>
         </div>
 
@@ -95,55 +142,12 @@
 @stop
 
 @section('scripts')
+    <script src="{{ url('assets/js/question.js?v=1.0') }}"></script>
     <script>
         $(document).ready(function() {
-
-            // Initialize all your Lottie animations here
-            loadLottieAnimation('button-track', '{{url('assets/img/track2/breakcrum.json')}}');
-            loadLottieAnimation('question', '{{url('assets/img/track2/border.json')}}');
-            loadLottieAnimation('answer1', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer2', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer3', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer4', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('button-frame-next', '{{url('assets/img/track2/next.json')}}');
-
-            $("#answer1").click(function () {
-                $("#hint").fadeIn("slow", function() {
-                    loadLottieAnimation('hint-content', '{{url('assets/img/track2/hint.json')}}');
-                    $("#hint-text").fadeIn(2500);
-                })
-            })
-
-            $("#answer2").click(function () {
-                $("#explain").fadeIn("slow", function() {
-                    loadLottieAnimation('explain-content', '{{url('assets/img/track2/giaithich.json')}}');
-                    $("#explain-text").fadeIn(2500);
-                })
-            })
-            $("#answer3").click(function () {
-                $("#ducrut").fadeIn("slow", function() {
-                    loadLottieAnimation('ducrut-content', '{{url('assets/img/track2/ducrut.json')}}');
-                    $("#ducrut-text").fadeIn(3000);
-                })
-            })
             $("#button-frame-next").click(function () {
-                window.location.href = '/1/track2/2';
+                window.location.href = '/2/track2/4';
             })
-
-            $(window).click(function(event) {
-                if ($(event.target).is("#hint")) {
-                    destroyLottieAnimation('hint-content')
-                    $(".modal").hide();
-                }
-                if ($(event.target).is("#explain")) {
-                    destroyLottieAnimation('explain-content')
-                    $("#explain").hide();
-                }
-                if ($(event.target).is("#ducrut")) {
-                    destroyLottieAnimation('ducrut-content')
-                    $("#ducrut").hide();
-                }
-            });
         });
     </script>
 @stop

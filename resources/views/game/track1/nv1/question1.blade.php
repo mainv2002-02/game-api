@@ -41,22 +41,22 @@
                     </div>
                 </div>
                 <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer">
+                <div id="answer1" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
                         Beverage 5
                     </div>
                 </div>
-                <div id="answer2" class="answer">
+                <div id="answer2" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
                         Beverage 11
                     </div>
                 </div>
-                <div id="answer3" class="answer">
+                <div id="answer3" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
                         Beverage 7
                     </div>
                 </div>
-                <div id="answer4" class="answer">
+                <div id="answer4" class="answer" onclick="answer(this, true, true)">
                     <div class="answer-content">
                         Beverage 9
                     </div>
@@ -73,7 +73,6 @@
                 <p>Để biết được ngành hàng đóng góp nhiều nhất, chúng ta nhìn vào số tuyệt đối được dự báo sẽ đóng góp của ngành hàng đó.</p>
             </div>
         </div>
-
     </div>
 
     <div id="explain" class="modal">
@@ -99,55 +98,12 @@
 @stop
 
 @section('scripts')
+    <script src="{{ url('assets/js/question.js?v=1.0') }}"></script>
     <script>
-        $(document).ready(function() {
-
-            // Initialize all your Lottie animations here
-            loadLottieAnimation('button-track', '{{url('assets/img/track2/breakcrum.json')}}');
-            loadLottieAnimation('question', '{{url('assets/img/track2/border.json')}}');
-            loadLottieAnimation('answer1', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer2', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer3', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer4', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('button-frame-next', '{{url('assets/img/track2/next.json')}}');
-
-            $("#answer1").click(function () {
-                $("#hint").fadeIn("slow", function() {
-                    loadLottieAnimation('hint-content', '{{url('assets/img/track2/hint.json')}}');
-                    $("#hint-text").fadeIn(2500);
-                })
-            })
-
-            $("#answer2").click(function () {
-                $("#explain").fadeIn("slow", function() {
-                    loadLottieAnimation('explain-content', '{{url('assets/img/track2/giaithich.json')}}');
-                    $("#explain-text").fadeIn(2500);
-                })
-            })
-            $("#answer3").click(function () {
-                $("#ducrut").fadeIn("slow", function() {
-                    loadLottieAnimation('ducrut-content', '{{url('assets/img/track2/ducrut.json')}}');
-                    $("#ducrut-text").fadeIn(3000);
-                })
-            })
-            $("#button-frame-next").click(function () {
-                window.location.href = '/1/track1/2';
-            })
-
-            $(window).click(function(event) {
-                if ($(event.target).is("#hint")) {
-                    destroyLottieAnimation('hint-content')
-                    $(".modal").hide();
-                }
-                if ($(event.target).is("#explain")) {
-                    destroyLottieAnimation('explain-content')
-                    $("#explain").hide();
-                }
-                if ($(event.target).is("#ducrut")) {
-                    destroyLottieAnimation('ducrut-content')
-                    $("#ducrut").hide();
-                }
-            });
-        });
+    $(document).ready(function() {
+        $("#button-frame-next").click(function () {
+            window.location.href = '/1/track1/2';
+        })
+    });
     </script>
 @stop

@@ -1,3 +1,4 @@
+
 @extends('master')
 
 @section('title', 'Home Page')
@@ -18,7 +19,7 @@
                 <div class="left-content">
                     <!-- Your left-side content goes here -->
                     <div id="button-track" class="button-track">
-                        <div class="button-track-label">TRACK03</div>
+                        <div class="button-track-label">TRACK 03</div>
                     </div>
                 </div>
 
@@ -31,31 +32,35 @@
             </div>
 
             <div class="main-content">
-                <div class="title">Câu số 1</div>
+                <div class="title">Câu số 2</div>
                 <div id="question" class="question">
                     <div class="question-content">
-
+                        <b>Lời dẫn</b>: Việc đảm bảo tính thanh khoản của công ty là một trong những nhiệm vụ vô cùng quan trọng của bộ phận Tài chính. Trong đó, nhiệm vụ thu tiền đúng hạn từ khách hàng là mắt xích không thể thiếu để đảm bảo dòng tiền của công ty.Tuy nhiên, việc khách hàng không trả nợ khi đến hạn thường xuyên xảy ra, đòi hỏi bộ phận có sự theo dõi sát sao về công nợ khách hàng và hành động ngay khi cần thiết.
+                        <p style="text-align: center">(Ấn vào <b>HIỆN BẢNG</b> để xem câu hỏi đầy đủ)</p>
+                    </div>
+                    <div class="background-full-question" onclick="openFullQuestion()">
+                        <p class="centered-text">HIỆN BẢNG</p>
                     </div>
                 </div>
                 <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer">
+                <div id="answer1" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        answer1
+                        1A   2B   3C   4D   5E
                     </div>
                 </div>
-                <div id="answer2" class="answer">
+                <div id="answer2" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        answer2
+                        1E   2A   3B   4C   5D
                     </div>
                 </div>
-                <div id="answer3" class="answer">
+                <div id="answer3" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        answer3
+                        1D   2A   3B   4C   5D
                     </div>
                 </div>
-                <div id="answer4" class="answer">
+                <div id="answer4" class="answer" onclick="answer(this, true, true)">
                     <div class="answer-content">
-                        answer4
+                        1C   2A   3B   4E   5D
                     </div>
                 </div>
                 <div id="button-frame-next" class="next"></div>
@@ -63,11 +68,29 @@
         </div>
     </div>
 
+    <div id="full-question" class="modal">
+        <!-- Modal content -->
+        <div id="full-question-content" class="modal-game-content" style="display: none">
+            <b>Lời dẫn</b>: Việc đảm bảo tính thanh khoản của công ty là một trong những nhiệm vụ vô cùng quan trọng của bộ phận Tài chính. Trong đó, nhiệm vụ thu tiền đúng hạn từ khách hàng là mắt xích không thể thiếu để đảm bảo dòng tiền của công ty.Tuy nhiên, việc khách hàng không trả nợ khi đến hạn thường xuyên xảy ra, đòi hỏi bộ phận có sự theo dõi sát sao về công nợ khách hàng và hành động ngay khi cần thiết.
+            <p>
+                <b>Tình huống</b>: A là một khách hàng LKA (Local Key Account) của thành phố chúng ta với hạn mức tín dụng 30 triệu, kỳ hạn thanh toán 15 ngày.
+            </p>
+            <p>Ngày 15.03.2024 là tới kì hạn thanh toán 25 triệu tiền hàng của khách hàng A. Tuy nhiên, hôm nay (13.03) khách hàng A vẫn chưa thanh toán. Bạn hãy đưa ra các hành động đúng nhất để giải quyết tình huống này nhé:</p>
+            <p style="text-align: center">(Ấn vào <b>HIỆN BẢNG</b> để xem câu hỏi đầy đủ)</p>
+            <p><b>Câu hỏi</b>: Nối đáp án đúng nhất.</p>
+            <p>Trong trường hợp Phòng tài chính đã nhắc nhở và đốc thúc nhưng khách hàng không chịu trả nợ, phòng Tài chính cần có hành động gì ở từng khoảng thời gian sau
+            <p style="text-align: center">
+                <img src="{{url('assets/img/track3/question4/dashboard.png')}}" class="support" alt="support" style="width: 70%"/>
+            </p>
+        </div>
+    </div>
+
     <div id="hint" class="modal">
         <!-- Modal content -->
         <div id="hint-content" class="modal-game-content">
             <div id="hint-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Hãy sắp xếp theo thứ tự mức độ hình phạt theo thời gian
+                </p>
             </div>
         </div>
 
@@ -78,7 +101,7 @@
         <!-- Modal content -->
         <div id="explain-content" class="modal-game-content">
             <div id="explain-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                1C   2A   3B   4E   5D
             </div>
         </div>
 
@@ -87,7 +110,8 @@
         <!-- Modal content -->
         <div id="ducrut-content" class="modal-game-content">
             <div id="ducrut-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Chính xác
+                </p>
             </div>
         </div>
 
@@ -95,55 +119,12 @@
 @stop
 
 @section('scripts')
+    <script src="{{ url('assets/js/question.js?v=1.0') }}"></script>
     <script>
         $(document).ready(function() {
-
-            // Initialize all your Lottie animations here
-            loadLottieAnimation('button-track', '{{url('assets/img/track2/breakcrum.json')}}');
-            loadLottieAnimation('question', '{{url('assets/img/track2/border.json')}}');
-            loadLottieAnimation('answer1', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer2', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer3', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer4', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('button-frame-next', '{{url('assets/img/track2/next.json')}}');
-
-            $("#answer1").click(function () {
-                $("#hint").fadeIn("slow", function() {
-                    loadLottieAnimation('hint-content', '{{url('assets/img/track2/hint.json')}}');
-                    $("#hint-text").fadeIn(2500);
-                })
-            })
-
-            $("#answer2").click(function () {
-                $("#explain").fadeIn("slow", function() {
-                    loadLottieAnimation('explain-content', '{{url('assets/img/track2/giaithich.json')}}');
-                    $("#explain-text").fadeIn(2500);
-                })
-            })
-            $("#answer3").click(function () {
-                $("#ducrut").fadeIn("slow", function() {
-                    loadLottieAnimation('ducrut-content', '{{url('assets/img/track2/ducrut.json')}}');
-                    $("#ducrut-text").fadeIn(3000);
-                })
-            })
             $("#button-frame-next").click(function () {
-                window.location.href = '/1/track2/2';
+                window.location.href = '/2/track3/3';
             })
-
-            $(window).click(function(event) {
-                if ($(event.target).is("#hint")) {
-                    destroyLottieAnimation('hint-content')
-                    $(".modal").hide();
-                }
-                if ($(event.target).is("#explain")) {
-                    destroyLottieAnimation('explain-content')
-                    $("#explain").hide();
-                }
-                if ($(event.target).is("#ducrut")) {
-                    destroyLottieAnimation('ducrut-content')
-                    $("#ducrut").hide();
-                }
-            });
         });
     </script>
 @stop

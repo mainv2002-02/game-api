@@ -18,7 +18,7 @@
                 <div class="left-content">
                     <!-- Your left-side content goes here -->
                     <div id="button-track" class="button-track">
-                        <div class="button-track-label">TRACK01</div>
+                        <div class="button-track-label">TRACK 01</div>
                     </div>
                 </div>
 
@@ -34,28 +34,32 @@
                 <div class="title">Câu số 1</div>
                 <div id="question" class="question">
                     <div class="question-content">
-
+                        Nối mục đích mua sắm tương ứng với diễn giải và ví dụ:
+                        <p style="text-align: center">(Ấn vào <b>HIỆN BẢNG</b> để xem câu hỏi đầy đủ)</p>
+                    </div>
+                    <div class="background-full-question" onclick="openFullQuestion()">
+                        <p class="centered-text">HIỆN BẢNG</p>
                     </div>
                 </div>
                 <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer">
+                <div id="answer1" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        answer1
+                        1E   2D   3B   4A   5C   6F
                     </div>
                 </div>
-                <div id="answer2" class="answer">
+                <div id="answer2" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        answer2
+                        1D   2E   3C   4F   5B   6A
                     </div>
                 </div>
-                <div id="answer3" class="answer">
+                <div id="answer3" class="answer" onclick="answer(this, false, true)">
                     <div class="answer-content">
-                        answer3
+                        1A   2D   3B   4F   5C   6E
                     </div>
                 </div>
-                <div id="answer4" class="answer">
+                <div id="answer4" class="answer" onclick="answer(this, true, true)">
                     <div class="answer-content">
-                        answer4
+                        1E   2D   3B   4F   5C   6A
                     </div>
                 </div>
                 <div id="button-frame-next" class="next"></div>
@@ -63,11 +67,22 @@
         </div>
     </div>
 
+    <div id="full-question" class="modal">
+        <!-- Modal content -->
+        <div id="full-question-content" class="modal-game-content" style="display: none">
+            Nối mục đích mua sắm tương ứng với diễn giải và ví dụ:
+            <p style="text-align: center">
+                <img src="{{url('assets/img/track1/question5/dashboard.png')}}" class="support" alt="support" style="width: 70%"/>
+            </p>
+        </div>
+    </div>
+
     <div id="hint" class="modal">
         <!-- Modal content -->
         <div id="hint-content" class="modal-game-content">
             <div id="hint-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Rất tiếc, hãy đọc kĩ và hiểu thấu để có câu trả lời chính xác bạn nhé!
+                </p>
             </div>
         </div>
 
@@ -78,7 +93,8 @@
         <!-- Modal content -->
         <div id="explain-content" class="modal-game-content">
             <div id="explain-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Rất tiếc, ắt hẳn bạn đã có chút nhầm lẫn. Lên kế hoạch dự đoán nhu cầu thị trường đòi hỏi người lên kế hoạch phải nhạy bén và có kiến thức sâu về nhiệm vụ, cách thức, động cơ mua sắm của khách hàng với từng mặt hàng khác nhau.
+                </p>
             </div>
         </div>
 
@@ -87,7 +103,8 @@
         <!-- Modal content -->
         <div id="ducrut-content" class="modal-game-content">
             <div id="ducrut-text" class="modal-game-text" style="display: none">
-                <p>ssssdasdasdas</p>
+                <p>Lên kế hoạch dự đoán nhu cầu thị trường đòi hỏi người lên kế hoạch phải nhạy bén và có kiến thức sâu về nhiệm vụ, cách thức, động cơ mua sắm của khách hàng với từng mặt hàng khác nhau.
+                </p>
             </div>
         </div>
 
@@ -95,55 +112,14 @@
 @stop
 
 @section('scripts')
-    <script>
-        $(document).ready(function() {
-
-            // Initialize all your Lottie animations here
-            loadLottieAnimation('button-track', '{{url('assets/img/track2/breakcrum.json')}}');
-            loadLottieAnimation('question', '{{url('assets/img/track2/border.json')}}');
-            loadLottieAnimation('answer1', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer2', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer3', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('answer4', '{{url('assets/img/track2/answer.json')}}');
-            loadLottieAnimation('button-frame-next', '{{url('assets/img/track2/next.json')}}');
-
-            $("#answer1").click(function () {
-                $("#hint").fadeIn("slow", function() {
-                    loadLottieAnimation('hint-content', '{{url('assets/img/track2/hint.json')}}');
-                    $("#hint-text").fadeIn(2500);
+    @section('scripts')
+        <script src="{{ url('assets/js/question.js?v=1.0') }}"></script>
+        <script>
+            $(document).ready(function() {
+                $("#button-frame-next").click(function () {
+                    window.location.href = '/2/track1/2';
                 })
-            })
-
-            $("#answer2").click(function () {
-                $("#explain").fadeIn("slow", function() {
-                    loadLottieAnimation('explain-content', '{{url('assets/img/track2/giaithich.json')}}');
-                    $("#explain-text").fadeIn(2500);
-                })
-            })
-            $("#answer3").click(function () {
-                $("#ducrut").fadeIn("slow", function() {
-                    loadLottieAnimation('ducrut-content', '{{url('assets/img/track2/ducrut.json')}}');
-                    $("#ducrut-text").fadeIn(3000);
-                })
-            })
-            $("#button-frame-next").click(function () {
-                window.location.href = '/1/track2/2';
-            })
-
-            $(window).click(function(event) {
-                if ($(event.target).is("#hint")) {
-                    destroyLottieAnimation('hint-content')
-                    $(".modal").hide();
-                }
-                if ($(event.target).is("#explain")) {
-                    destroyLottieAnimation('explain-content')
-                    $("#explain").hide();
-                }
-                if ($(event.target).is("#ducrut")) {
-                    destroyLottieAnimation('ducrut-content')
-                    $("#ducrut").hide();
-                }
             });
-        });
-    </script>
+        </script>
+    @stop
 @stop
