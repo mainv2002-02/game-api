@@ -484,19 +484,27 @@ dt {
     .answer {
         width: 26vw;
     }
+    #answer1 {
+        left: 22vw;
+        top: 58vh;
+    }
+    #answer2 {
+        left: 56vw;
+        top: 58vh;
+    }
+    #answer3 {
+        left: 22vw;
+        top: 71vh;
+    }
+    #answer4 {
+        left: 56vw;
+        top: 71vh;
+    }
     .question-content {
-
+        left: 16vw;
+        width: 38vw;
     }
     .answer-content {
-
-    }
-    .next {
-
-    }
-    .background-full-question > .centered-text {
-
-    }
-    .modal-game-text {
 
     }
 }
@@ -525,7 +533,8 @@ dt {
         top: 71vh;
     }
     .question-content {
-
+        left: 16vw;
+        width: 38vw;
     }
     .answer-content {
 

@@ -138,12 +138,12 @@ body {
 @media only screen and (min-width: 1440px) and (max-width: 1919px) {
     .page-home > .form-container > .lottie-input:nth-child(1) {top: 21%;}
     .page-home > .form-container > .lottie-input:nth-child(2) {top: 34%;}
-    .page-home > .form-container > .lottie-input:nth-child(3) { top: 47%; }
-    .page-home > .form-container > .lottie-input:nth-child(4) {bottom: 31%;}
-    .page-home > .form-container > .lottie-input:nth-child(5) {bottom: 18%;}
+    .page-home > .form-container > .lottie-input:nth-child(3) {top: 47%;}
+    .page-home > .form-container > .lottie-input:nth-child(4) {bottom: 30%;}
+    .page-home > .form-container > .lottie-input:nth-child(5) {bottom: 17%;}
 
     .page-home > .form-container > .lottie-button {
-        bottom: 18%;
+        bottom: 16%;
         right: 10%;
     }
 
@@ -153,14 +153,14 @@ body {
 }
 
 @media only screen and (min-width: 1920px) {
-    .page-home > .form-container > .lottie-input:nth-child(1) {top: 21%;}
-    .page-home > .form-container > .lottie-input:nth-child(2) {top: 34%;}
-    .page-home > .form-container > .lottie-input:nth-child(3) {top: 47%;}
-    .page-home > .form-container > .lottie-input:nth-child(4) {bottom: 30%;}
-    .page-home > .form-container > .lottie-input:nth-child(5) {bottom: 17%;}
+    .page-home > .form-container > .lottie-input:nth-child(1) {top: 17%;}
+    .page-home > .form-container > .lottie-input:nth-child(2) {top: 31%;}
+    .page-home > .form-container > .lottie-input:nth-child(3) {top: 46%;}
+    .page-home > .form-container > .lottie-input:nth-child(4) {bottom: 28%;}
+    .page-home > .form-container > .lottie-input:nth-child(5) {bottom: 13%;}
 
     .page-home > .form-container > .lottie-button {
-        bottom: 16%;
+        bottom: 12%;
         right: 10%;
     }
 
