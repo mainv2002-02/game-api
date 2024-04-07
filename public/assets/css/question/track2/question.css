@@ -177,7 +177,7 @@ body {
     color: #35FF86;
     width: 90%;
     text-align: center;
-    top:  3vh;
+    top: 3vh;
     left: 5%;
 }
 
@@ -236,7 +236,7 @@ body {
     font-size: 22px;
     color: #35FF86;
     width: 46vw;
-    height: 13vh;
+    height: 21vh;
     overflow: auto;
     word-wrap: break-word; /* Older property name, supported in IE */
     overflow-wrap: break-word; /* Standard property name */
@@ -349,4 +349,185 @@ dt {
     font-size: 16px;
     text-align: left;
     width: 95%;
+}
+
+
+@media only screen and (max-height: 479px) and (orientation: landscape) {
+    .title {font-size: 11px;}
+    .answer {
+        width: 26vw;
+    }
+    .question-content {font-size: 12px;left: 17vw;width: 37vw;}
+    .answer-content {font-size: 11px;}
+    .button-track > .button-track-label {font-size: 13px;}
+    .centered-text {font-size: 12px;}
+    .two-table-long {
+        font-size: 11px;
+    }
+    .two-long{
+        font-size: 8px;
+        top: 1.5vh;
+    }
+    #full-question-content {
+        font-size: 12px;
+    }
+    .modal-game-text {
+        font-size: 9px;
+        top: 18vh;
+        height: 17vh;
+    }
+    .next {width: 50vw;height: 8vh;top: 86vh;left: 27%;}
+    .background-full-question > .centered-text {
+        font-size: 11px;
+    }
+    #ducrut-content .modal-game-text {
+        top: 13vh;
+    }
+    #hint-text .modal-game-text {
+        font-size: 9px;
+        top: 18vh;
+        height: 17vh;
+    }
+}
+
+@media only screen and (min-height: 480px) and (max-height: 767px) and (orientation: landscape) {
+    .title {
+
+    }
+    .answer {
+        width: 26vw;
+    }
+    .question-content {
+
+    }
+    .answer-content {
+
+    }
+    .next {
+
+    }
+    .background-full-question > .centered-text {
+
+    }
+    .modal-game-text {
+
+    }
+}
+
+@media only screen and (min-height: 768px) and (max-height: 1023px) and (orientation: landscape) {
+    .title {
+
+    }
+    .answer {
+        width: 26vw;
+    }
+    .question-content {
+
+    }
+    .answer-content {
+
+    }
+    .next {
+
+    }
+    .background-full-question > .centered-text {
+
+    }
+    .modal-game-text {
+
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+    .title {left: 48vw;font-size: 22px;top: 12vh;}
+    .answer {
+        width: 26vw;
+    }
+    .question-content {font-size: 18px;}
+    .answer-content {top: 2vh;font-size: 18px;}
+    .button-track > .button-track-label {font-size: 20px;}
+    .centered-text {font-size: 27px;}
+    .two-table-long {
+        font-size: 13px;
+    }
+    .two-long{
+        font-size: 12px;
+        top: 1.5vh;
+    }
+    #full-question-content {
+        font-size: 16px;
+        height: 60%;
+    }
+    .modal-game-text {
+        font-size: 14px;
+        top: 10vh;
+        height: 11vh;
+    }
+    .next {width: 50vw;height: 8vh;top: 86vh;left: 27%;}
+    .background-full-question > .centered-text {
+        font-size: 19px;
+    }
+    #ducrut-content .modal-game-text {
+        top: 8vh;
+    }
+    #hint-text .modal-game-text {
+        font-size: 9px;
+        top: 18vh;
+        height: 17vh;
+    }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+    .title {
+
+    }
+    .answer {
+        width: 26vw;
+    }
+    .question-content {
+
+    }
+    .answer-content {
+
+    }
+    .next {
+
+    }
+    .background-full-question > .centered-text {
+
+    }
+    .modal-game-text {
+
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .title {
+
+    }
+    .answer {
+        width: 26vw;
+    }
+    #answer1 {
+        left: 22vw;
+        top: 58vh;
+    }
+    #answer2 {
+        left: 56vw;
+        top: 58vh;
+    }
+    #answer3 {
+        left: 22vw;
+        top: 71vh;
+    }
+    #answer4 {
+        left: 56vw;
+        top: 71vh;
+    }
+    .question-content {
+
+    }
+    .answer-content {
+
+    }
 }

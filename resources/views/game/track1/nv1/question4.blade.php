@@ -34,7 +34,7 @@
                 <div class="title">Câu số 4</div>
                 <div id="question" class="question">
                     <div class="question-content">
-                        Với 6,000,000 USD đã tính phía trên sẽ được tiếp tục lên kế hoạch theo quý và tính toán kỹ từng SKU. Sau đó, bộ phận Kế hoạch Cung Ứng sẽ tính nguyên vật liệu cần để sản xuất đáp ứng được nhu cầu của thị trường. Hãy nhìn vào ví dụ nhỏ dưới đây và điền vào ô xanh lá để hiểu một cách cơ bản nhất về công việc của Phòng Kế hoạch.
+                        Với 6,000,000 USD đã tính phía trên sẽ được tiếp tục lên kế hoạch theo quý và tính toán kỹ từng SKU.
                         <p style="text-align: center">(Ấn vào <b>HIỆN BẢNG</b> để xem câu hỏi đầy đủ)</p>
                     </div>
                     <div class="background-full-question" onclick="openFullQuestion()">

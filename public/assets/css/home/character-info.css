@@ -78,9 +78,9 @@
     color: #19FF7A;
     font-size: 20px;
     left: 35vw;
-    width: 38vw;
+    width: 36vw;
     max-height: 40vh;
-    top: 19vh;
+    top: 20vh;
     overflow: auto;
 }
 .character-info > .background > .frame-container > .select-character {
@@ -129,4 +129,200 @@
     top: 64vh;
     left: 65vw;
     cursor: pointer;
+}
+
+
+@media only screen and (max-height: 479px) and (orientation: landscape) {
+    .character-info > .background > .frame-container > .character-info-label {
+        font-size: 12px;
+        bottom: 10.5vh;
+        width: 10vw;
+    }
+    .character-info > .lottie {
+        top: 50%;
+        left: 50%;
+        width: 90%;
+    }
+    .character-info > .background > .frame-container > .character-info-des {
+        font-size: 13px;
+        top: 17vh;
+        left: 28vw;
+        width: 36vw;
+    }
+    .character-info > .background > .frame-container:nth-child(1) > .character-info-image {
+        width: 14vw; /* Set the width of the character image */
+        height: 37vh;
+        top: 7vh;
+        left: 3vw;
+    }
+    .character-info > .background > .frame-container:nth-child(1) {
+        left: 17vw;
+        /* position: relative; */
+    }
+    .character-info > .background > .frame-container > #button-frame-back {
+        left: 36vw;
+    }
+    .character-info > .background > .frame-container > #button-frame-next {
+        left: 52vw;
+    }
+}
+
+@media only screen and (min-height: 480px) and (max-height: 767px) and (orientation: landscape) {
+    .character-info > .background > .frame-container > .character-info-label {
+        font-size: 25px;
+        bottom: 10.5vh;
+        width: 10vw;
+    }
+    .character-info > .lottie {
+        top: 50%;
+        left: 50%;
+        width: 100%;
+    }
+    .character-info > .background > .frame-container > .character-info-des {
+        font-size: 20px;
+    }
+    .character-info > .background > .frame-container:nth-child(1) > .character-info-image {
+        width: 15vw; /* Set the width of the character image */
+        height: 40vh;
+        top: 6vh;
+        left: 2vw;
+    }
+    .character-info > .background > .frame-container:nth-child(1) {
+        left: 10vw;
+    }
+    .character-info > .background > .frame-container > #button-frame-back {
+        left: 47vw;
+    }
+    .character-info > .background > .frame-container > #button-frame-next {
+        left: 65vw;
+    }
+}
+
+@media only screen and (min-height: 768px) and (max-height: 1023px) and (orientation: landscape) {
+    .character-info > .background > .frame-container > .character-info-label {
+        font-size: 25px;
+        bottom: 10.5vh;
+        width: 10vw;
+    }
+    .character-info > .lottie {
+        top: 50%;
+        left: 50%;
+        width: 100%;
+    }
+    .character-info > .background > .frame-container > .character-info-des {
+        font-size: 20px;
+    }
+    .character-info > .background > .frame-container:nth-child(1) > .character-info-image {
+        width: 15vw; /* Set the width of the character image */
+        height: 40vh;
+        top: 6vh;
+        left: 2vw;
+    }
+    .character-info > .background > .frame-container:nth-child(1) {
+        left: 10vw;
+    }
+    .character-info > .background > .frame-container > #button-frame-back {
+        left: 47vw;
+    }
+    .character-info > .background > .frame-container > #button-frame-next {
+        left: 65vw;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+    .character-info > .background > .frame-container > .character-info-label {
+        font-size: 18px;
+        bottom: 12.5vh;
+        width: 10vw;
+    }
+    .character-info > .lottie {
+        top: 50%;
+        left: 50%;
+        width: 100%;
+    }
+    .character-info > .background > .frame-container > .character-info-des {
+        font-size: 20px;
+        top: 23vh;
+        left: 32vw;
+        width: 39vw;
+    }
+    .character-info > .background > .frame-container:nth-child(1) > .character-info-image {
+        width: 16vw; /* Set the width of the character image */
+        height: 30vh;
+        top: 15vh;
+        left: 2vw;
+    }
+    .character-info > .background > .frame-container:nth-child(1) {
+        left: 13vw;
+    }
+    .character-info > .background > .frame-container > #button-frame-back {
+        left: 47vw;
+        top: 55vh;
+    }
+    .character-info > .background > .frame-container > #button-frame-next {
+        left: 65vw;
+        top: 55vh;
+    }
+}
+
+@media only screen and (min-width: 1440px) and (max-width: 1919px) {
+    .character-info > .background > .frame-container > .character-info-label {
+        font-size: 25px;
+        bottom: 10.5vh;
+        text-align: center;
+        width: 18vw;
+        left: 1vw;
+    }
+    .character-info > .lottie {
+        top: 50%;
+        left: 50%;
+        width: 100%;
+    }
+    .character-info > .background > .frame-container > .character-info-des {
+        font-size: 20px;
+        width: 39vw;
+    }
+    .character-info > .background > .frame-container:nth-child(1) > .character-info-image {
+        width: 15vw; /* Set the width of the character image */
+        height: 40vh;
+        top: 6vh;
+        left: 2vw;
+    }
+    .character-info > .background > .frame-container:nth-child(1) {
+        left: 10vw;
+    }
+    .character-info > .background > .frame-container > #button-frame-back {
+        left: 47vw;
+    }
+    .character-info > .background > .frame-container > #button-frame-next {
+        left: 65vw;
+    }
+}
+
+@media only screen and (min-width: 1920px) {
+    .character-info > .background > .frame-container > .character-info-label {
+        font-size: 25px;
+        bottom: 10.5vh;
+        width: 10vw;
+    }
+    .character-info > .lottie {
+        top: 50%;
+        left: 50%;
+        width: 100%;
+    }
+    .character-info > .background > .frame-container > .character-info-des {
+        font-size: 20px;
+    }
+    .character-info > .background > .frame-container:nth-child(1) > .character-info-image {
+        width: 15vw; /* Set the width of the character image */
+        height: 40vh;
+        top: 6vh;
+        left: 2vw;
+    }
+    .character-info > .background > .frame-container > #button-frame-back {
+        left: 47vw;
+    }
+    .character-info > .background > .frame-container > #button-frame-next {
+        left: 65vw;
+    }
 }

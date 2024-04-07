@@ -49,9 +49,9 @@
     </div>
 
     <div class="story" id="story" style="display: none">
-        <div id="story-background" class="lottie">
-            <div class="lottie-text story-text" style="display: none">BỐI CẢNH</div>
-        </div>
+
+        <div class="lottie-text story-text" style="display: none">BỐI CẢNH</div>
+
         <div class="frame-container">
             <div id="border-frame-story">
                 <div class="typewriter green" id="story-content">
@@ -64,9 +64,7 @@
     </div>
 
     <div class="mission" id="mission" style="display: none">
-        <div id="story-background" class="lottie">
-            <div class="lottie-text mission-text" style="display: none">NHIỆM VỤ</div>
-        </div>
+        <div class="lottie-text mission-text" style="display: none">NHIỆM VỤ</div>
         <div class="frame-container">
             <div id="border-frame-mission">
                 <div class="typewriter green" >
