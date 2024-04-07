@@ -28,11 +28,11 @@ body {
     left: 40%;
 }
 
-.page-home > .form-container > .lottie-input:nth-child(1) { top: 20vh; }
-.page-home > .form-container > .lottie-input:nth-child(2) { top: 33vh; }
-.page-home > .form-container > .lottie-input:nth-child(3) { top: 47vh; }
-.page-home > .form-container > .lottie-input:nth-child(4) { bottom: 30vh; }
-.page-home > .form-container > .lottie-input:nth-child(5) { bottom: 17vh; }
+.page-home > .form-container > .lottie-input:nth-child(1) { top: 19%; }
+.page-home > .form-container > .lottie-input:nth-child(2) { top: 33%; }
+.page-home > .form-container > .lottie-input:nth-child(3) { top: 47%; }
+.page-home > .form-container > .lottie-input:nth-child(4) { bottom: 29%; }
+.page-home > .form-container > .lottie-input:nth-child(5) { bottom: 15%; }
 .page-home > .form-container > .lottie-button {
     position: fixed;
     bottom: 15%;
@@ -55,160 +55,56 @@ body {
     overflow: auto;
 }
 
-/* Small devices (600px và lên) */
-@media only screen and (min-width: 568px) and (max-width: 812px) and (orientation: landscape) {
-    .page-home > .lottie {
-        width: 100%; /* Set to the width of your lottie animation */
-    }
+/* Larger tablets and desktops */
+/*@media only screen and (min-width: 768px) {*/
+/*    .page-home > .form-container {*/
+/*        position: relative;*/
+/*        height: 100vh;*/
+/*    }*/
+/*    .page-home > .form-container > .lottie-input {*/
+/*        position: fixed;*/
+/*        width: 24vw; !* Adjust width based on your design *!*/
+/*        left: 38%;*/
+/*    }*/
 
-    .page-home > .form-container > .lottie-input > .lottie-text {
-        font-size: 11px; /* Or any other size */
-    }
+/*    .page-home > .form-container > .lottie-input:nth-child(1) { top: 16%; }*/
+/*    .page-home > .form-container > .lottie-input:nth-child(2) { top: 30%; }*/
+/*    .page-home > .form-container > .lottie-input:nth-child(3) { top: 44%; }*/
+/*    .page-home > .form-container > .lottie-input:nth-child(4) { bottom: 30%; }*/
+/*    .page-home > .form-container > .lottie-input:nth-child(5) { bottom: 16%; }*/
+/*    .page-home > .form-container > .lottie-button {*/
+/*        position: fixed;*/
+/*        bottom: 15%;*/
+/*        right: 13%;*/
+/*        width: 14vw;*/
+/*        z-index: 2;*/
+/*        cursor: pointer;*/
+/*    }*/
+/*}*/
 
-    .page-home > .form-container > .lottie-input:nth-child(1) { top: 19vh; }
-    .page-home > .form-container > .lottie-input:nth-child(2) { top: 33vh; }
-    .page-home > .form-container > .lottie-input:nth-child(3) { top: 47vh; }
-    .page-home > .form-container > .lottie-input:nth-child(4) { bottom: 29vh; }
-    .page-home > .form-container > .lottie-input:nth-child(5) { bottom: 16vh; }
+/*!* Desktops and larger devices *!*/
+/*@media only screen and (min-width: 992px) {*/
+/*    .page-home > .form-container {*/
+/*        position: relative;*/
+/*        height: 100vh;*/
+/*    }*/
+/*    .page-home > .form-container > .lottie-input {*/
+/*        position: fixed;*/
+/*        width: 22vw; !* Adjust width based on your design *!*/
+/*        left: 39vw;*/
+/*    }*/
 
-    .page-home > .form-container > .lottie-button {
-        bottom: 15vh;
-    }
-}
-
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-    /* Styles ở đây */
-    .page-home > .lottie {
-        width: 90%; /* Set to the width of your lottie animation */
-    }
-
-    .page-home > .form-container > .lottie-input > .lottie-text {
-        font-size: 13px; /* Or any other size */
-    }
-
-    .page-home > .form-container > .lottie-input:nth-child(1) { top: 17vh; }
-    .page-home > .form-container > .lottie-input:nth-child(2) { top: 31vh; }
-    .page-home > .form-container > .lottie-input:nth-child(3) { top: 45vh; }
-    .page-home > .form-container > .lottie-input:nth-child(4) { bottom: 30vh; }
-    .page-home > .form-container > .lottie-input:nth-child(5) { bottom: 16vh; }
-
-    .page-home > .form-container > .lottie-button {
-        bottom: 15vh;
-    }
-}
-
-@media only screen and (min-width: 834px) and (max-width: 1194px) and (orientation: landscape) {
-    /* Styles ở đây */
-    .page-home > .lottie {
-        width: 90%; /* Set to the width of your lottie animation */
-    }
-
-    .page-home > .form-container > .lottie-input > .lottie-text {
-        font-size: 13px; /* Or any other size */
-    }
-
-    .page-home > .form-container > .lottie-input:nth-child(1) { top: 17vh; }
-    .page-home > .form-container > .lottie-input:nth-child(2) { top: 31vh; }
-    .page-home > .form-container > .lottie-input:nth-child(3) { top: 45vh; }
-    .page-home > .form-container > .lottie-input:nth-child(4) { bottom: 30vh; }
-    .page-home > .form-container > .lottie-input:nth-child(5) { bottom: 16vh; }
-
-    .page-home > .form-container > .lottie-button {
-        bottom: 15vh;
-    }
-}
-
-@media only screen and (min-width: 1024px) and (max-width: 1366px) and (orientation: landscape) {
-    /* Styles ở đây */
-    .page-home > .lottie {
-        width: 90%; /* Set to the width of your lottie animation */
-    }
-
-    .page-home > .form-container > .lottie-input > .lottie-text {
-        font-size: 13px; /* Or any other size */
-    }
-
-    .page-home > .form-container > .lottie-input:nth-child(1) { top: 17vh; }
-    .page-home > .form-container > .lottie-input:nth-child(2) { top: 31vh; }
-    .page-home > .form-container > .lottie-input:nth-child(3) { top: 45vh; }
-    .page-home > .form-container > .lottie-input:nth-child(4) { bottom: 30vh; }
-    .page-home > .form-container > .lottie-input:nth-child(5) { bottom: 16vh; }
-
-    .page-home > .form-container > .lottie-button {
-        bottom: 15vh;
-    }
-}
-
-/* Medium devices (960px và lên) */
-@media only screen and (min-width: 960px) {
-    .page-home > .lottie {
-        width: 100%; /* Set to the width of your lottie animation */
-    }
-
-    .page-home > .form-container > .lottie-input > .lottie-text {
-        font-size: 14px; /* Or any other size */
-    }
-
-    .page-home > .form-container > .lottie-input:nth-child(1) { top: 31vh; }
-    .page-home > .form-container > .lottie-input:nth-child(2) { top: 40vh; }
-    .page-home > .form-container > .lottie-input:nth-child(3) { top: 48vh; }
-    .page-home > .form-container > .lottie-input:nth-child(4) { bottom: 37vh; }
-    .page-home > .form-container > .lottie-input:nth-child(5) { bottom: 29vh; }
-
-    .page-home > .form-container > .lottie-button {
-        bottom: 28vh;
-    }
-}
-
-/* Large devices (1280px và lên) */
-@media only screen and (min-width: 1280px) {
-    .page-home > .lottie {
-        width: 100%; /* Set to the width of your lottie animation */
-    }
-
-    /*.page-home > .form-container > .lottie-input {*/
-    /*    position: fixed;*/
-    /*    width: 18vw;*/
-    /*    left: 41%;*/
-    /*}*/
-
-    .page-home > .form-container > .lottie-button {
-        width: 13vw;
-    }
-
-    .page-home > .form-container > .lottie-input > .lottie-text {
-        font-size: 18px; /* Or any other size */
-    }
-
-    .page-home > .form-container > .lottie-input:nth-child(1) { top: 28vh; }
-    .page-home > .form-container > .lottie-input:nth-child(2) { top: 38vh; }
-    .page-home > .form-container > .lottie-input:nth-child(3) { top: 48vh; }
-    .page-home > .form-container > .lottie-input:nth-child(4) { bottom: 35vh; }
-    .page-home > .form-container > .lottie-input:nth-child(5) { bottom: 25vh; }
-
-    .page-home > .form-container > .lottie-button {
-        bottom: 24vh;
-        width: 13vw;
-    }
-}
-
-/* Extra large devices (1920px và lên) */
-@media only screen and (min-width: 1920px) {
-    .page-home > .lottie {
-        width: 100%; /* Set to the width of your lottie animation */
-    }
-
-    .page-home > .form-container > .lottie-input > .lottie-text {
-        font-size: 18px; /* Or any other size */
-    }
-
-    .page-home > .form-container > .lottie-input:nth-child(1) { top: 16vh; }
-    .page-home > .form-container > .lottie-input:nth-child(2) { top: 31vh; }
-    .page-home > .form-container > .lottie-input:nth-child(3) { top: 46vh; }
-    .page-home > .form-container > .lottie-input:nth-child(4) { bottom: 29vh; }
-    .page-home > .form-container > .lottie-input:nth-child(5) { bottom: 14vh; }
-
-    .page-home > .form-container > .lottie-button {
-        bottom: 13vh;
-    }
-}
+/*    .page-home > .form-container > .lottie-input:nth-child(1) { top: 19%; }*/
+/*    .page-home > .form-container > .lottie-input:nth-child(2) { top: 32%; }*/
+/*    .page-home > .form-container > .lottie-input:nth-child(3) { top: 45%; }*/
+/*    .page-home > .form-container > .lottie-input:nth-child(4) { bottom: 33%; }*/
+/*    .page-home > .form-container > .lottie-input:nth-child(5) { bottom: 19%; }*/
+/*    .page-home > .form-container > .lottie-button {*/
+/*        position: fixed;*/
+/*        bottom: 15%;*/
+/*        right: 13%;*/
+/*        width: 14vw;*/
+/*        z-index: 2;*/
+/*        cursor: pointer;*/
+/*    }*/
+/*}*/
