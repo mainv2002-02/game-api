@@ -8,12 +8,12 @@
 @stop
 
 @section('styles')
-    <link rel="stylesheet" href="{{ url('assets/css/home/home.css?v=1.5') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=1.3') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=1.3') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.3') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.4') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.5') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/home.css?v=1.6') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=1.4') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=1.4') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.4') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.5') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.6') }}">
 @stop
 
 @section('content')

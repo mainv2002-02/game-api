@@ -3,7 +3,7 @@
 @section('title', 'Question')
 
 @section('style-libraries')
-    <link rel="stylesheet" href="{{ url('assets/css/question/track2/question.css?v=1.1') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/question/track2/question.css?v=1.0?v=1.1') }}">
 @stop
 
 @section('styles')
