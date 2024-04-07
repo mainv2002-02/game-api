@@ -29,6 +29,7 @@ $router->group([
     $router->get('/1/track2/2', 'GameController@track2nv12');
     $router->get('/1/track2/3', 'GameController@track2nv13');
     $router->get('/1/track2/4', 'GameController@track2nv14');
+    $router->get('/1/track2/5', 'GameController@track2nv15');
 
     $router->get('/1/track3/1', 'GameController@track3nv11');
     $router->get('/1/track3/2', 'GameController@track3nv12');

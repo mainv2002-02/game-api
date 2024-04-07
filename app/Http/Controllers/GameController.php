@@ -131,6 +131,11 @@ class GameController extends Controller
         return view('game.track2.nv1.question4');
     }
 
+    public function track2nv15(): View
+    {
+        return view('game.track2.nv1.question5');
+    }
+
     public function track2nv21(): View
     {
         return view('game.track2.nv2.question1');
