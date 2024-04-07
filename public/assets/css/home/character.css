@@ -300,7 +300,7 @@
 @media only screen and (min-width: 1920px) {
     .character > .background > .frame-container > .character-label {
         font-size: 25px;
-        bottom: 18%;
+        bottom: 16%;
         left: 4.5vw;
     }
     .character > .background > .frame-container > .select-character {
