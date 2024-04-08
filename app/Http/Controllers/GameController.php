@@ -6,6 +6,8 @@ use App\Http\Requests\BaseRequest;
 use App\Logic\BaseLogic;
 use App\Logic\GameLogic;
 use App\Models\Hero;
+use App\Models\Question;
+use App\Models\Track;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
@@ -14,11 +16,26 @@ use Laravel\Lumen\Http\Redirector;
 class GameController extends Controller
 {
     protected BaseLogic $logic;
+    protected ?Hero $heroInstance;
 
     public function __construct()
     {
         parent::__construct();
+        $this->heroInstance = Hero::getInstance(Auth::user()->hero_id);
         $this->logic = GameLogic::getInstance();
+    }
+
+    public function trackPlaying(int $trackId): View
+    {
+        $trackInstance = Track::getInstance($trackId);
+        if ($trackInstance->hero_id != $this->heroInstance->id) {
+            abort(403);
+        }
+
+        $state = Auth::user()->state;
+        $questionId = $state[$trackId] ?? ($trackId * 10 + 1);
+        $questionInstance = Question::getInstance($questionId);
+        return view($questionInstance->template);
     }
 
     public function question(BaseRequest $request): View|Redirector|RedirectResponse

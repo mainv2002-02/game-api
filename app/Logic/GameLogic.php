@@ -5,37 +5,41 @@ namespace App\Logic;
 use App\Models\History;
 use App\Models\Question;
 use App\Models\Record;
-use App\Utilities\GameUtility;
 use Exception;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 
 class GameLogic extends BaseLogic
 {
-    public function setHero(int $heroId): bool
+    public function initHero(int $heroId): bool
     {
         if (Auth::user()->hero_id == $heroId) {
             return true;
         }
         $heroes = Auth::user()->heroes;
-        if (empty(Auth::user()->hero_id) || GameUtility::finishAllTracks() || !in_array($heroId, $heroes)) {
+        if (empty(Auth::user()->hero_id) || !in_array($heroId, $heroes)) {
             if ($heroId == 3) {
                 $track1 = ((rand() % 2) + 1) * 100 + 1;
+                $track2 = ((rand() % 2) + 1) * 100 + 2;
+                $track3 = ((rand() % 2) + 1) * 100 + 3;
                 Auth::user()->data = [
                     'hero_3' => [
                         'track_1' => $track1,
-                        'track_2' => ((rand() % 2) + 1) * 100 + 2,
-                        'track_3' => ((rand() % 2) + 1) * 100 + 3,
+                        'track_2' => $track2,
+                        'track_3' => $track3,
                     ]
                 ];
             } else {
                 $track1 = ($heroId == 1) ? 101 : 201;
+                $track2 = ($heroId == 1) ? 102 : 202;
+                $track3 = ($heroId == 1) ? 103 : 203;
             }
-            Auth::user()->state = [
-                'hero_id'     => $heroId,
-                'track_id'    => $track1,
-                'question_id' => ($track1 == 101) ? 1011 : 2011,
-            ];
+            Auth::user()->state =
+                [
+                    $track1 => $track1 * 10 + 1,
+                    $track2 => $track2 * 10 + 1,
+                    $track3 => $track3 * 10 + 1,
+                ];
             $heroes[] = $heroId;
             Auth::user()->heroes = $heroes;
             return Auth::user()->save();

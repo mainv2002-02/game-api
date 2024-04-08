@@ -12,13 +12,17 @@ $router->group([
                ], function () use ($router) {
     $router->get('/', 'AuthController@home');
 
-
-//    $router->get('/', 'HomeController@indexHome');
     $router->get('/kickoff', 'HomeController@indexKickoff');
     $router->get('/character', 'HomeController@indexCharacter');
     $router->get('/home/{heroId}', 'HomeController@index');
     $router->get('/gift', 'HomeController@gift');
     $router->get('/gift2', 'HomeController@gift2');
+
+    $router->get('/game/question', 'GameController@question');
+    $router->post('/game/question', 'GameController@question');
+    $router->get('/game/records', 'GameController@getRecords');
+
+    $router->get('/games/{trackId}', 'GameController@trackPlaying');
 
     $router->get('/1/track1/1', 'GameController@track1nv11');
     $router->get('/1/track1/2', 'GameController@track1nv12');
@@ -55,16 +59,6 @@ $router->group([
     $router->get('/2/track3/4', 'GameController@track3nv24');
     $router->get('/2/track3/5', 'GameController@track3nv25');
 
-    $router->get('/game/question', 'GameController@question');
-    $router->post('/game/question', 'GameController@question');
-    $router->get('/game/records', 'GameController@getRecords');
 
-
-    $router->get('/login', 'AuthController@login');
-    $router->post('/login', 'AuthController@doLogin');
-
-    $router->get('/logout', 'AuthController@logout');
-    $router->get('/auth/callback', 'AuthController@callback');
-    $router->post('/auth/callback', 'AuthController@callback');
 });
 

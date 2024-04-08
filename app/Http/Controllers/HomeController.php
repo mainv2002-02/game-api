@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\BaseRequest;
 use App\Logic\BaseLogic;
 use App\Logic\GameLogic;
-use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Hero;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -33,10 +33,20 @@ class HomeController extends Controller
         return view('home.index_character');
     }
 
-    public function index(int $heroId): View
+    public function index(BaseRequest $request, int $heroId): View
     {
-        $this->logic->setHero($heroId);
-        return view('home.index');
+        $params = $request->all();
+//        $heroId = $params['heroId'];
+//        if (empty($params['heroId'])) {
+//            abort(403);
+//        }
+        $this->logic->initHero($heroId);
+        /** @var Hero $heroInstance */
+        $heroInstance = Hero::getInstance($heroId);
+        $tracks = $heroInstance->getTracks();
+
+        return view('home.index')
+            ->with('tracks', $tracks);
     }
 
     public function gift(): View

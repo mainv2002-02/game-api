@@ -52,10 +52,13 @@
        <div id="chat-frame" class=""></div>
        <div id="livestream-frame" class=""></div>
        <div class="main-content">
-           <!-- Lottie Animations for content will be placed here -->
-           <div class="track1 track"></div>
-           <div class="track2 track"></div>
-           <div class="track3 track"></div>
+           @if($tracks->count())
+               @foreach($tracks as $track)
+                   <a href="/games/{{$track->getKey()}}" target="_blank">
+                       <div class="track{{(int) filter_var($track->title, FILTER_SANITIZE_NUMBER_INT)}}"></div>
+                   </a>
+               @endforeach
+           @endif
            <div class="livestream"></div>
        </div>
    </div>
@@ -84,15 +87,6 @@
 
              $("#button-gift").click(function () {
                 window.open('/gift', '_blank');
-             })
-             $(".track1").click(function () {
-                 window.open('/1/track1/1', '_blank');
-             })
-             $(".track2").click(function () {
-                 window.open('/1/track2/1', '_blank');
-             })
-             $(".track3").click(function () {
-                 window.open('/1/track3/1', '_blank');
              })
          });
     </script>

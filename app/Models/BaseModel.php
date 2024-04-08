@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Cache\ModelCache;
+use Carbon\Carbon;
 use Exception;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
@@ -21,16 +22,19 @@ class BaseModel extends Model
     {
         parent::boot();
 
-        self::creating(function ($model) {
-            // ... code here
+        $now = Carbon::now();
+        self::creating(function ($model) use ($now) {
+            $model->created_at = $now;
+            $model->updated_at = $now;
         });
 
         self::created(function ($model) {
             // ... code here
         });
 
-        self::updating(function ($model) {
-            // ... code here
+        self::updating(function ($model) use ($now) {
+            $model->created_at = $now;
+            $model->updated_at = $now;
         });
 
         self::updated(function ($model) {

@@ -3,7 +3,7 @@
 
 
 # Pull the latest changes from the git repository
-echo -e "\n----------"
+echo "\n----------"
 echo "Pull the latest changes from the git repository"
 echo "GIT branch: $1"
 git reset --hard
@@ -13,12 +13,12 @@ git checkout $1
 git pull
 
 # Change configurations
-echo -e "\n----------"
+echo "\n----------"
 echo "Change configurations .$2"
 cp .env.$2 .env
 
 # Install/update composer dependencies
-echo -e "\n----------"
+echo "\n----------"
 echo "Install/update composer dependencies"
 rm -rf composer.lock
 composer install --no-interaction --prefer-dist --optimize-autoloader --no-dev
@@ -29,9 +29,9 @@ composer dump-autoload
 php artisan migrate --force
 
 # Run database seeder
-php artisan db:seed --force
+#php artisan db:seed --force
 
 # Clear caches
-echo -e "\n----------"
+echo "\n----------"
 echo "Clear caches"
 php artisan cache:clear
