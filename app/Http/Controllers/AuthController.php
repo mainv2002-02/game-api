@@ -19,16 +19,16 @@ class AuthController extends Controller
     public function home(): View|RedirectResponse|Redirector
     {
         if (!Auth::check()) {
-//            return redirect('/saml2/sso/login');
-            $user = User::updateOrCreate([
-                                             'email' => 'mainv2002@gmail.com',
-                                         ], [
-                                             'full_name' => 'Mai Nguyen',
-                                             'name'      => 'Mai Mai',
-                                             'token'     => '123',
-                                             'refresh'   => '321',
-                                         ]);
-            Auth::login($user);
+            return redirect('/saml2/sso/login');
+//            $user = User::updateOrCreate([
+//                                             'email' => 'mainv2002@gmail.com',
+//                                         ], [
+//                                             'full_name' => 'Mai Nguyen',
+//                                             'name'      => 'Mai Mai',
+//                                             'token'     => '123',
+//                                             'refresh'   => '321',
+//                                         ]);
+//            Auth::login($user);
         }
         return view('auth.home');
     }
