@@ -37,28 +37,33 @@
                         <p>Đây là tên 1 giải pháp bộ phận IT đã thành công đề xuất đưa vào hoạt động năm 2022 cho bộ phân Chuỗi cung ứng, hãy sắp xếp để ra đáp án đúng</p>
                     </div>
                 </div>
-                <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer"  onclick="answer(this, false, true)">
-                    <div class="answer-content">
-                        Đáp án: E-FROM
+                <form method="POST" id="answer-form">
+                    <input type="hidden" name="answer" id="answer-input">
+                    <input type="hidden" name="track-id" id="track-id" value="{{$track->id}}">
+                    <input type="hidden" name="question-id" id="question-id" value="{{$question->id}}">
+                    <!-- Lottie Animations for content will be placed here -->
+                    <div id="answer1" class="answer"  onclick="answer(this, false, true)">
+                        <div class="answer-content">
+                            Đáp án: E-FROM
+                        </div>
                     </div>
-                </div>
-                <div id="answer2" class="answer"  onclick="answer(this, true, true)">
-                    <div class="answer-content">
-                        Đáp án: E-FORM
+                    <div id="answer2" class="answer"  onclick="answer(this, true, true)">
+                        <div class="answer-content">
+                            Đáp án: E-FORM
+                        </div>
                     </div>
-                </div>
-                <div id="answer3" class="answer"  onclick="answer(this, false, true)">
-                    <div class="answer-content">
-                        Đáp án: FROM
+                    <div id="answer3" class="answer"  onclick="answer(this, false, true)">
+                        <div class="answer-content">
+                            Đáp án: FROM
+                        </div>
                     </div>
-                </div>
-                <div id="answer4" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content">
-                        Đáp án: FORM
+                    <div id="answer4" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content">
+                            Đáp án: FORM
+                        </div>
                     </div>
-                </div>
-                <div id="button-frame-next" class="next"></div>
+                    <div id="button-frame-next" class="next"></div>
+                </form>
             </div>
         </div>
     </div>
@@ -97,11 +102,4 @@
 
 @section('scripts')
     <script src="{{ url('assets/js/question.js?v=1.0') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $("#button-frame-next").click(function () {
-                window.location.href = '/2/track3/5';
-            })
-        });
-    </script>
 @stop

@@ -54,6 +54,16 @@ function answer(element, correct, isExplain = false) {
     } else {
         wrongAnswer(element, isExplain);
     }
+    $.post(
+        '/games/answer',
+        {
+            'track_id' : $('#track-id').val(),
+            'question_id' : $('#question-id').val(),
+            'correct': Number(correct),
+            'count' : count
+        },
+        function(){}
+    );
 }
 
 function wrongAnswer(element, isHint = false) {
@@ -98,3 +108,9 @@ function correctAnswer(element) {
     })
     isCorrect = true;
 }
+
+$(document).ready(function() {
+    $("#button-frame-next").click(function () {
+        $('#answer-form').submit();
+    })
+});

@@ -40,53 +40,58 @@
                         <p class="centered-text">HIỆN BẢNG</p>
                     </div>
                 </div>
-                <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer" onclick="answer(this, true, true)">
-                    <div class="answer-content two-long">
-                        <ul>
-                            <li>
-                                Siêu Thị A và B đi chung xe 14 Pallets
-                            </li>
-                            <li>
-                                Siêu Thị C giao bằng xe 2 Pallets, tách giao 4 lần.
-                            </li>
-                        </ul>
+                <form method="POST" id="answer-form">
+                    <input type="hidden" name="answer" id="answer-input">
+                    <input type="hidden" name="track-id" id="track-id" value="{{$track->id}}">
+                    <input type="hidden" name="question-id" id="question-id" value="{{$question->id}}">
+                    <!-- Lottie Animations for content will be placed here -->
+                    <div id="answer1" class="answer" onclick="answer(this, true, true)">
+                        <div class="answer-content two-long">
+                            <ul>
+                                <li>
+                                    Siêu Thị A và B đi chung xe 14 Pallets
+                                </li>
+                                <li>
+                                    Siêu Thị C giao bằng xe 2 Pallets, tách giao 4 lần.
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div id="answer2" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content two-long">
-                        <ul>
-                            <li>
-                                Siêu Thị A và B đi chung xe 14 Pallets
-                            </li>
-                            <li>
-                                Siêu Thị C giao bằng xe 14 Pallets, giao một lần.
-                            </li>
-                        </ul>
+                    <div id="answer2" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content two-long">
+                            <ul>
+                                <li>
+                                    Siêu Thị A và B đi chung xe 14 Pallets
+                                </li>
+                                <li>
+                                    Siêu Thị C giao bằng xe 14 Pallets, giao một lần.
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div id="answer3" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content two-long">
-                        <ul>
-                            <li>
-                                Siêu Thị A và C đi chung xe 14 Pallets
-                            </li>
-                            <li>
-                                Siêu Thị B giao bằng xe 14 Pallets, giao một lần.
-                            </li>
-                        </ul>
+                    <div id="answer3" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content two-long">
+                            <ul>
+                                <li>
+                                    Siêu Thị A và C đi chung xe 14 Pallets
+                                </li>
+                                <li>
+                                    Siêu Thị B giao bằng xe 14 Pallets, giao một lần.
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div id="answer4" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content two-long">
-                        <ul>
-                            <li>
-                                3 Siêu Thị giao chung một lần xe 24 Pallets
-                            </li>
-                        </ul>
+                    <div id="answer4" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content two-long">
+                            <ul>
+                                <li>
+                                    3 Siêu Thị giao chung một lần xe 24 Pallets
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div id="button-frame-next" class="next"></div>
+                    <div id="button-frame-next" class="next"></div>
+                </form>
             </div>
         </div>
     </div>
@@ -222,11 +227,4 @@
 
 @section('scripts')
     <script src="{{ url('assets/js/question.js?v=1.0') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $("#button-frame-next").click(function () {
-                window.location.href = '/1/track2/3';
-            })
-        });
-    </script>
 @stop

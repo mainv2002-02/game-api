@@ -92,18 +92,20 @@ class User extends BaseModel implements AuthenticatableContract, AuthorizableCon
         );
     }
 
-    public function currentQuestion(): ?Question
+    public function currentQuestion(int $trackId): ?Question
     {
-        return Question::getInstance($this->question_id);
+        $state = Auth::user()->state;
+        $questionId = $state['tracks'][$trackId] ?? ($trackId * 10 + 1);
+        return Question::getInstance($questionId);
     }
 
-    public function currentRecord(): Record
+    public function currentRecord(int $trackId): Record
     {
-        $currentQuestion = $this->currentQuestion();
+        $currentQuestion = $this->currentQuestion($trackId);
         return Record::firstOrCreate([
                                          'user_id'     => Auth::id(),
                                          'hero_id'     => Auth::user()->hero_id,
-                                         'track_id'    => $currentQuestion->getAttribute('track_id'),
+                                         'track_id'    => $trackId,
                                          'question_id' => $currentQuestion->getKey(),
                                      ]);
     }

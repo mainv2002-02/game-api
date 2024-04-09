@@ -45,66 +45,71 @@
                         <b>Hãy tiếp tục tính số cửa hàng bạn SNhân viên bán hàng cần viếng thăm trong tuần 2-tuần 5.</b>
                     </div>
                 </div>
-                <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer" onclick="answer(this, true, false)">
-                    <div class="answer-content two-table">
-                        <table class="table-answer">
-                            <tr>
-                                <td>Tuần 2: 33</td>
-                                <td>Tuần 3: 35</td>
-                            </tr>
-                            <tr>
-                                <td>Tuần 4: 33</td>
-                                <td>Tuần 5: 40</td>
-                            </tr>
-                        </table>
+                <form method="POST" id="answer-form">
+                    <input type="hidden" name="answer" id="answer-input">
+                    <input type="hidden" name="track-id" id="track-id" value="{{$track->id}}">
+                    <input type="hidden" name="question-id" id="question-id" value="{{$question->id}}">
+                    <!-- Lottie Animations for content will be placed here -->
+                    <div id="answer1" class="answer" onclick="answer(this, true, false)">
+                        <div class="answer-content two-table">
+                            <table class="table-answer">
+                                <tr>
+                                    <td>Tuần 2: 33</td>
+                                    <td>Tuần 3: 35</td>
+                                </tr>
+                                <tr>
+                                    <td>Tuần 4: 33</td>
+                                    <td>Tuần 5: 40</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div id="answer2" class="answer" onclick="answer(this, false, false)">
-                    <div class="answer-content two-table">
-                        <table class="table-answer">
-                            <tr>
-                                <td>Tuần 2: 33</td>
-                                <td>Tuần 3: 35</td>
+                    <div id="answer2" class="answer" onclick="answer(this, false, false)">
+                        <div class="answer-content two-table">
+                            <table class="table-answer">
+                                <tr>
+                                    <td>Tuần 2: 33</td>
+                                    <td>Tuần 3: 35</td>
 
-                            </tr>
-                            <tr>
-                                <td>Tuần 4: 35</td>
-                                <td>Tuần 5: 40</td>
-                            </tr>
-                        </table>
+                                </tr>
+                                <tr>
+                                    <td>Tuần 4: 35</td>
+                                    <td>Tuần 5: 40</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div id="answer3" class="answer" onclick="answer(this, false, false)">
-                    <div class="answer-content two-table">
-                        <table class="table-answer">
-                            <tr>
-                                <td>Tuần 2: 33</td>
-                                <td>Tuần 3: 35</td>
+                    <div id="answer3" class="answer" onclick="answer(this, false, false)">
+                        <div class="answer-content two-table">
+                            <table class="table-answer">
+                                <tr>
+                                    <td>Tuần 2: 33</td>
+                                    <td>Tuần 3: 35</td>
 
-                            </tr>
-                            <tr>
-                                <td>Tuần 4: 33</td>
-                                <td>Tuần 5: 35</td>
-                            </tr>
-                        </table>
+                                </tr>
+                                <tr>
+                                    <td>Tuần 4: 33</td>
+                                    <td>Tuần 5: 35</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div id="answer4" class="answer" onclick="answer(this, false, false)">
-                    <div class="answer-content two-table">
-                        <table class="table-answer">
-                            <tr>
-                                <td>Tuần 2: 33</td>
-                                <td>Tuần 4: 40</td>
-                            </tr>
-                            <tr>
-                                <td>Tuần 3: 35</td>
-                                <td>Tuần 5: 40</td>
-                            </tr>
-                        </table>
+                    <div id="answer4" class="answer" onclick="answer(this, false, false)">
+                        <div class="answer-content two-table">
+                            <table class="table-answer">
+                                <tr>
+                                    <td>Tuần 2: 33</td>
+                                    <td>Tuần 4: 40</td>
+                                </tr>
+                                <tr>
+                                    <td>Tuần 3: 35</td>
+                                    <td>Tuần 5: 40</td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div id="button-frame-next" class="next"></div>
+                    <div id="button-frame-next" class="next"></div>
+                </form>
             </div>
         </div>
     </div>
@@ -224,11 +229,4 @@
 
 @section('scripts')
     <script src="{{ url('assets/js/question.js?v=1.0') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $("#button-frame-next").click(function () {
-                window.location.href = '/1/track2/5';
-            })
-        });
-    </script>
 @stop

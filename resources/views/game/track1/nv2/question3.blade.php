@@ -47,36 +47,41 @@
                         <p>Biết tuần ra mắt sản phẩm thiết kế mới là tuần 18 của năm 2024, việc đặt nắp lon và việc đặt carton vào lúc nào?</p>
                     </div>
                 </div>
-                <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content two">
-                        Việc đặt nắp lon xảy ra vào tuần thứ: 12
-                        <br/>
-                        Việc đặt carton xảy ra vào tuần thứ: 14
+                <form method="POST" id="answer-form">
+                    <input type="hidden" name="answer" id="answer-input">
+                    <input type="hidden" name="track-id" id="track-id" value="{{$track->id}}">
+                    <input type="hidden" name="question-id" id="question-id" value="{{$question->id}}">
+                    <!-- Lottie Animations for content will be placed here -->
+                    <div id="answer1" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content two">
+                            Việc đặt nắp lon xảy ra vào tuần thứ: 12
+                            <br/>
+                            Việc đặt carton xảy ra vào tuần thứ: 14
+                        </div>
                     </div>
-                </div>
-                <div id="answer2" class="answer" onclick="answer(this, true, true)">
-                    <div class="answer-content two">
-                        Việc đặt nắp lon xảy ra vào tuần thứ: 11
-                        <br/>
-                        Việc đặt carton xảy ra vào tuần thứ: 14
+                    <div id="answer2" class="answer" onclick="answer(this, true, true)">
+                        <div class="answer-content two">
+                            Việc đặt nắp lon xảy ra vào tuần thứ: 11
+                            <br/>
+                            Việc đặt carton xảy ra vào tuần thứ: 14
+                        </div>
                     </div>
-                </div>
-                <div id="answer3" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content two">
-                        Việc đặt nắp lon xảy ra vào tuần thứ: 11
-                        <br/>
-                        Việc đặt carton xảy ra vào tuần thứ: 15
+                    <div id="answer3" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content two">
+                            Việc đặt nắp lon xảy ra vào tuần thứ: 11
+                            <br/>
+                            Việc đặt carton xảy ra vào tuần thứ: 15
+                        </div>
                     </div>
-                </div>
-                <div id="answer4" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content two">
-                        Việc đặt nắp lon xảy ra vào tuần thứ: 12
-                        <br/>
-                        Việc đặt carton xảy ra vào tuần thứ: 15
+                    <div id="answer4" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content two">
+                            Việc đặt nắp lon xảy ra vào tuần thứ: 12
+                            <br/>
+                            Việc đặt carton xảy ra vào tuần thứ: 15
+                        </div>
                     </div>
-                </div>
-                <div id="button-frame-next" class="next"></div>
+                    <div id="button-frame-next" class="next"></div>
+                </form>
             </div>
         </div>
     </div>
@@ -118,11 +123,4 @@
 
 @section('scripts')
     <script src="{{ url('assets/js/question.js?v=1.0') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $("#button-frame-next").click(function () {
-                window.location.href = '/2/track1/3';
-            })
-        });
-    </script>
 @stop

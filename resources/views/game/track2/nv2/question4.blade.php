@@ -41,28 +41,33 @@
                         <p class="centered-text">HIỆN BẢNG</p>
                     </div>
                 </div>
-                <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content">
-                        25
+                <form method="POST" id="answer-form">
+                    <input type="hidden" name="answer" id="answer-input">
+                    <input type="hidden" name="track-id" id="track-id" value="{{$track->id}}">
+                    <input type="hidden" name="question-id" id="question-id" value="{{$question->id}}">
+                    <!-- Lottie Animations for content will be placed here -->
+                    <div id="answer1" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content">
+                            25
+                        </div>
                     </div>
-                </div>
-                <div id="answer2" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content">
-                        35
+                    <div id="answer2" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content">
+                            35
+                        </div>
                     </div>
-                </div>
-                <div id="answer3" class="answer" onclick="answer(this, true, true)">
-                    <div class="answer-content two-table">
-                        45
+                    <div id="answer3" class="answer" onclick="answer(this, true, true)">
+                        <div class="answer-content two-table">
+                            45
+                        </div>
                     </div>
-                </div>
-                <div id="answer4" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content two-table">
-                       55
+                    <div id="answer4" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content two-table">
+                           55
+                        </div>
                     </div>
-                </div>
-                <div id="button-frame-next" class="next"></div>
+                    <div id="button-frame-next" class="next"></div>
+                </form>
             </div>
         </div>
     </div>
@@ -152,11 +157,4 @@
 
 @section('scripts')
     <script src="{{ url('assets/js/question.js?v=1.0') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $("#button-frame-next").click(function () {
-                window.location.href = '/home/2';
-            })
-        });
-    </script>
 @stop

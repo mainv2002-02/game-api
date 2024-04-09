@@ -6,7 +6,6 @@ use App\Models\History;
 use App\Models\Question;
 use App\Models\Record;
 use Exception;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
 
 class GameLogic extends BaseLogic
@@ -36,9 +35,12 @@ class GameLogic extends BaseLogic
             }
             Auth::user()->state =
                 [
-                    $track1 => $track1 * 10 + 1,
-                    $track2 => $track2 * 10 + 1,
-                    $track3 => $track3 * 10 + 1,
+                    'tracks'  => [
+                        $track1 => $track1 * 10 + 1,
+                        $track2 => $track2 * 10 + 1,
+                        $track3 => $track3 * 10 + 1,
+                    ],
+                    'hero_id' => $heroId
                 ];
             $heroes[] = $heroId;
             Auth::user()->heroes = $heroes;
@@ -57,9 +59,8 @@ class GameLogic extends BaseLogic
             'record' => null,
         ];
         try {
-            $currentQuestion = Auth::user()->currentQuestion();
             /** @var Record $record */
-            $record = Auth::user()->currentRecord();
+            $record = Auth::user()->currentRecord($params['track_id']);
             if (!empty($record->point)) {
                 return [
                     'status' => false,
@@ -67,23 +68,18 @@ class GameLogic extends BaseLogic
                     'point'  => $record->point,
                 ];
             }
-            $answer = Arr::only($params, 'answer');
-            if ($record->times < 2) {
-                $diff = array_diff($answer, $currentQuestion->answer ?? []);
-                if (empty($diff)) {
-                    $point = 2 - $record->times;
-                    $result['status'] = true;
-                    $result['msg'] = 'Câu trả lời chính xác';
-                    $record->point = $point ?? max(0, $point);
+            if (count(Auth::user()->heroes) == 1 && $record->times < 2) {
+                if (!empty($params['correct'])) {
+                    $record->point = empty($params['count']) ? 1 : 0.5;
+                    $record->times = empty($params['count']) ? 1 : 2;
                 }
-                $record->answer = $answer;
-                $record->times = $record->times + 1;
+                $record->answer = ['correct' => !empty($params['correct'])];
             }
             $record->save();
             History::create(array_merge(
                                 $record->toArray(),
                                 [
-                                    'answer' => $answer,
+                                    'answer' => ['correct' => !empty($params['correct'])],
                                 ]
                             ));
             $result['record'] = $record;
@@ -93,26 +89,18 @@ class GameLogic extends BaseLogic
         return $result;
     }
 
-    public function nextQuestion(): bool
+    public function nextQuestion(int $trackId): bool
     {
+        $currentQuestion = Auth::user()->currentQuestion($trackId);
+        $nextId = $currentQuestion->getKey() + 1;
+        $nextQuestion = Question::getInstance($nextId);
         $state = Auth::user()->state;
-        $currentQuestionId = Auth::user()->questionId;
-        $nextQuestion = Question::getInstance(++$currentQuestionId);
         if ($nextQuestion) {
-            $state['question_id'] = $currentQuestionId;
+            $state['tracks'][$trackId] = $nextId;
+            Auth::user()->state = $state;
+            return Auth::user()->save();
         } else {
-            if ($state['track_id'] % 100 == 3) {
-                return false;
-            }
-            if (Auth::user()->hero_id == 3) {
-                $data = Auth::user()->data;
-                $state['track_id'] = $data['hero_3']['track_' . (($state['track_id'] % 100) + 1)];
-            } else {
-                $state['track_id']++;
-            }
-            $state['question_id'] = $state['track_id'] * 10 + 1;
+            return false;
         }
-        Auth::user()->state = $state;
-        return Auth::user()->save();
     }
 }

@@ -41,64 +41,69 @@
                         <p class="centered-text">HIỆN BẢNG</p>
                     </div>
                 </div>
-                <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content two-table">
-                        <table class="table-answer">
-                            <tr>
-                                <td>Siêu thị A: 7</td>
-                                <td>Siêu thị B: 1</td>
-                            </tr>
-                            <tr>
-                                <td>Siêu thị C: 6</td>
-                                <td></td>
-                            </tr>
-                        </table>
+                <form method="POST" id="answer-form">
+                    <input type="hidden" name="answer" id="answer-input">
+                    <input type="hidden" name="track-id" id="track-id" value="{{$track->id}}">
+                    <input type="hidden" name="question-id" id="question-id" value="{{$question->id}}">
+                    <!-- Lottie Animations for content will be placed here -->
+                    <div id="answer1" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content two-table">
+                            <table class="table-answer">
+                                <tr>
+                                    <td>Siêu thị A: 7</td>
+                                    <td>Siêu thị B: 1</td>
+                                </tr>
+                                <tr>
+                                    <td>Siêu thị C: 6</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div id="answer2" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content two-table">
-                        <table class="table-answer">
-                            <tr>
-                                <td>Siêu thị A: 5</td>
-                                <td>Siêu thị B: 1</td>
-                            </tr>
-                            <tr>
-                                <td>Siêu thị C: 8</td>
-                                <td></td>
-                            </tr>
-                        </table>
+                    <div id="answer2" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content two-table">
+                            <table class="table-answer">
+                                <tr>
+                                    <td>Siêu thị A: 5</td>
+                                    <td>Siêu thị B: 1</td>
+                                </tr>
+                                <tr>
+                                    <td>Siêu thị C: 8</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div id="answer3" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content two-table">
-                        <table class="table-answer">
-                            <tr>
-                                <td>Siêu thị A: 5</td>
-                                <td>Siêu thị B: 3</td>
-                            </tr>
-                            <tr>
-                                <td>Siêu thị C: 8</td>
-                                <td></td>
-                            </tr>
-                        </table>
+                    <div id="answer3" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content two-table">
+                            <table class="table-answer">
+                                <tr>
+                                    <td>Siêu thị A: 5</td>
+                                    <td>Siêu thị B: 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Siêu thị C: 8</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div id="answer4" class="answer" onclick="answer(this, true, true)">
-                    <div class="answer-content two-table">
-                        <table class="table-answer">
-                            <tr>
-                                <td>Siêu thị A: 7</td>
-                                <td>Siêu thị B: 3</td>
-                            </tr>
-                            <tr>
-                                <td>Siêu thị C: 8</td>
-                                <td></td>
-                            </tr>
-                        </table>
+                    <div id="answer4" class="answer" onclick="answer(this, true, true)">
+                        <div class="answer-content two-table">
+                            <table class="table-answer">
+                                <tr>
+                                    <td>Siêu thị A: 7</td>
+                                    <td>Siêu thị B: 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Siêu thị C: 8</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
                     </div>
-                </div>
-                <div id="button-frame-next" class="next"></div>
+                    <div id="button-frame-next" class="next"></div>
+                </form>
             </div>
         </div>
     </div>
@@ -215,11 +220,4 @@
 
 @section('scripts')
     <script src="{{ url('assets/js/question.js?v=1.0') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $("#button-frame-next").click(function () {
-                window.location.href = '/1/track2/2';
-            })
-        });
-    </script>
 @stop

@@ -19,10 +19,11 @@ $router->group([
     $router->get('/gift2', 'HomeController@gift2');
 
     $router->get('/game/question', 'GameController@question');
-    $router->post('/game/question', 'GameController@question');
     $router->get('/game/records', 'GameController@getRecords');
 
+    $router->post('/games/answer', 'GameController@answer');
     $router->get('/games/{trackId}', 'GameController@trackPlaying');
+    $router->post('/games/{trackId}', 'GameController@trackPlaying');
 
     $router->get('/1/track1/1', 'GameController@track1nv11');
     $router->get('/1/track1/2', 'GameController@track1nv12');

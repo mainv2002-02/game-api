@@ -44,28 +44,33 @@
                         <p>6. Thông tin tài chính của users (Số tài khoản/ Số dư tài khoản …)</p>
                     </div>
                 </div>
-                <!-- Lottie Animations for content will be placed here -->
-                <div id="answer1" class="answer"  onclick="answer(this, false, true)">
-                    <div class="answer-content">
-                        Đáp án: 1 2 3 4
+                <form method="POST" id="answer-form">
+                    <input type="hidden" name="answer" id="answer-input">
+                    <input type="hidden" name="track-id" id="track-id" value="{{$track->id}}">
+                    <input type="hidden" name="question-id" id="question-id" value="{{$question->id}}">
+                    <!-- Lottie Animations for content will be placed here -->
+                    <div id="answer1" class="answer"  onclick="answer(this, false, true)">
+                        <div class="answer-content">
+                            Đáp án: 1 2 3 4
+                        </div>
                     </div>
-                </div>
-                <div id="answer2" class="answer"  onclick="answer(this, false, true)">
-                    <div class="answer-content">
-                        Đáp án: 1 3 5 6
+                    <div id="answer2" class="answer"  onclick="answer(this, false, true)">
+                        <div class="answer-content">
+                            Đáp án: 1 3 5 6
+                        </div>
                     </div>
-                </div>
-                <div id="answer3" class="answer"  onclick="answer(this, true, true)">
-                    <div class="answer-content">
-                        Đáp án: 1 4 5 6
+                    <div id="answer3" class="answer"  onclick="answer(this, true, true)">
+                        <div class="answer-content">
+                            Đáp án: 1 4 5 6
+                        </div>
                     </div>
-                </div>
-                <div id="answer4" class="answer" onclick="answer(this, false, true)">
-                    <div class="answer-content">
-                        Tất cả đáp án trên.
+                    <div id="answer4" class="answer" onclick="answer(this, false, true)">
+                        <div class="answer-content">
+                            Tất cả đáp án trên.
+                        </div>
                     </div>
-                </div>
-                <div id="button-frame-next" class="next"></div>
+                    <div id="button-frame-next" class="next"></div>
+                </form>
             </div>
         </div>
     </div>
@@ -113,11 +118,4 @@
 
 @section('scripts')
     <script src="{{ url('assets/js/question.js?v=1.0') }}"></script>
-    <script>
-        $(document).ready(function() {
-            $("#button-frame-next").click(function () {
-                window.location.href = '/1/track3/5';
-            })
-        });
-    </script>
 @stop
