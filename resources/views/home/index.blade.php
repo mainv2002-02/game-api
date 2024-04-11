@@ -68,7 +68,7 @@
      <script>
          $(document).ready(function() {
          // Then some JavaScript in the browser:
-            var conn = new WebSocket('ws://{{$host}}:6001/echo');
+            var conn = new WebSocket('wss://{{$host}}/echo');
             conn.onmessage = function(e) { console.log(e.data); };
             conn.onopen = function(e) { conn.send('Hello Me!'); };
              var video = document.getElementById('myVideo');
