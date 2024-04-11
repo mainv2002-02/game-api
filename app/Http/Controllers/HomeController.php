@@ -46,7 +46,8 @@ class HomeController extends Controller
         $tracks = $heroInstance->getTracks();
 
         return view('home.index')
-            ->with('tracks', $tracks);
+            ->with('tracks', $tracks)
+            ->with('host', env('APP_URL'));
     }
 
     public function gift(): View
