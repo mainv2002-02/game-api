@@ -2,26 +2,24 @@
 
 use App\Console\Kernel;
 use App\Exceptions\Handler;
-use App\Http\Middleware\Authenticate;
-use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\ResolveTenant;
 use App\Providers\AppServiceProvider;
 use App\Providers\AuthServiceProvider;
 use App\Providers\EventServiceProvider;
 use App\Providers\Saml2;
+use App\Providers\WebSocket;
 use Illuminate\Contracts\Console\Kernel as ConsoleKernel;
 use Illuminate\Contracts\Cookie\QueueingFactory;
 use Illuminate\Contracts\Debug\ExceptionHandler;
 use Illuminate\Cookie\CookieServiceProvider;
-use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Redis\RedisServiceProvider;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\Session\SessionManager;
 use Illuminate\Session\SessionServiceProvider;
-use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Laravel\Lumen\Application;
 use Laravel\Lumen\Bootstrap\LoadEnvironmentVariables;
 use Slides\Saml2\Facades\Auth;
+use Urameshibr\Providers\LumenFormRequestServiceProvider;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
@@ -106,9 +104,9 @@ foreach ($configs as $value) {
 $app->middleware([
 //                     EncryptCookies::class,
 //                     AddQueuedCookiesToResponse::class,
-                     StartSession::class,
+StartSession::class,
 //                     ShareErrorsFromSession::class,
-                     //\Laravel\Lumen\Http\Middleware\VerifyCsrfToken::class,
+//\Laravel\Lumen\Http\Middleware\VerifyCsrfToken::class,
                  ]);
 
 $app->routeMiddleware([
@@ -138,9 +136,9 @@ $app->register(AppServiceProvider::class);
 $app->register(AuthServiceProvider::class);
 $app->register(EventServiceProvider::class);
 $app->register(RedisServiceProvider::class);
-$app->register(\Urameshibr\Providers\LumenFormRequestServiceProvider::class);
+$app->register(LumenFormRequestServiceProvider::class);
 $app->register(Saml2::class);
-
+$app->register(WebSocket::class);
 /*
 |--------------------------------------------------------------------------
 | Load The Application Routes

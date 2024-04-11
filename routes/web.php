@@ -17,6 +17,7 @@ $router->group([
     $router->get('/home/{heroId}', 'HomeController@index');
     $router->get('/gift', 'HomeController@gift');
     $router->get('/gift2', 'HomeController@gift2');
+    $router->get('/chat', 'HomeController@chat');
 
     $router->get('/game/question', 'GameController@question');
     $router->get('/game/records', 'GameController@getRecords');

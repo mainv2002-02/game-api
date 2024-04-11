@@ -6,6 +6,8 @@ use App\Http\Requests\BaseRequest;
 use App\Logic\BaseLogic;
 use App\Logic\GameLogic;
 use App\Models\Hero;
+use BeyondCode\LaravelWebSockets\Apps\AppProvider;
+use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -57,5 +59,12 @@ class HomeController extends Controller
     public function gift2(): View
     {
         return view('home.gift2');
+    }
+
+    public function chat(Request $request, AppProvider $apps)
+    {
+        return view('home.dashboard')
+            ->with('apps', [])
+            ->with('port', config('websockets.dashboard.port', 6001));
     }
 }
