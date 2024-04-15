@@ -30,8 +30,8 @@
            <div class="left-content">
                <!-- Your left-side content goes here -->
                <div class="user-info">
-                   <img src="{{url('assets/img/main/avata.png')}}" alt="{{Auth::user()->name}}"/>
-                   <span class="name">{{Auth::user()->name}}</span>
+                   <img src="{{url('assets/img/main/avata.png')}}" alt="{{Auth::user()->full_name}}"/>
+                   <span class="name">{{Auth::user()->full_name}}</span>
                </div>
                <div id="button-gift" class="lottie"></div>
                <div id="lottie-button-2" class="lottie"></div>
@@ -68,7 +68,7 @@
      <script>
          $(document).ready(function() {
          // Then some JavaScript in the browser:
-            var conn = new WebSocket('wss://{{$host}}/echo');
+            var conn = new WebSocket('ws://{{$host}}:6001/echo');
             conn.onmessage = function(e) { console.log(e.data); };
             conn.onopen = function(e) { conn.send('Hello Me!'); };
              var video = document.getElementById('myVideo');

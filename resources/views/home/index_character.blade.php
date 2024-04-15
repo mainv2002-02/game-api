@@ -62,9 +62,7 @@
 
              var video = document.getElementById('myVideo');
 
-             video.addEventListener('ended', function() {
-                 window.location.href = "/home/" + heroId;
-             });
+
          });
     </script>
 @stop

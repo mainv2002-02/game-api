@@ -19,7 +19,7 @@
             <div class="form-container">
                 <div id="lottie-input-1" class="lottie-input">
                     <div class="lottie-text"
-                         style="display: none">{{Auth::user()->name}}</div>
+                         style="display: none">{{Auth::user()->full_name}}</div>
                 </div>
                 <div id="lottie-input-2" class="lottie-input">
                     <div class="lottie-text" style="display: none">{{Auth::user()->phone}}</div>

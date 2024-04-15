@@ -6,6 +6,7 @@ use App\Http\Requests\BaseRequest;
 use App\Logic\BaseLogic;
 use App\Logic\GameLogic;
 use App\Models\Hero;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\View\View;
 
 class HomeController extends Controller
@@ -33,14 +34,18 @@ class HomeController extends Controller
         return view('home.index_character');
     }
 
-    public function index(BaseRequest $request, int $heroId): View
+    public function index(BaseRequest $request): mixed
     {
-        $params = $request->all();
-//        $heroId = $params['heroId'];
-//        if (empty($params['heroId'])) {
-//            abort(403);
-//        }
-        $this->logic->initHero($heroId);
+        if ($request->getMethod() == 'POST') {
+            $params = $request->all();
+            $heroId = $params['heroId'];
+            if (empty($params['heroId'])) {
+                abort(403);
+            }
+            $result = $this->logic->initHero($heroId);
+            return response()->json(data: ['msg' => $result ? 'Success' : 'You can not change your hero! Please finish all questions!!']);
+        }
+        $heroId = Auth::user()->hero_id;
         /** @var Hero $heroInstance */
         $heroInstance = Hero::getInstance($heroId);
         $tracks = $heroInstance->getTracks();

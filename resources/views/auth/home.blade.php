@@ -21,7 +21,7 @@
         <div id="lottie-background" class="lottie"></div>
         <div class="form-container">
             <div id="lottie-input-1" class="lottie-input">
-                <div class="input-text lottie-text" style="display: none">{{Auth::user()->name}}</div>
+                <div class="input-text lottie-text" style="display: none">{{Auth::user()->full_name}}</div>
             </div>
             <div id="lottie-input-2" class="lottie-input">
                 <div class="input-text lottie-text" style="display: none">{{Auth::user()->phone}}</div>
@@ -224,8 +224,16 @@
             var video = document.getElementById('myVideo');
 
             video.addEventListener('ended', function() {
-                window.location.href = "/home/" + heroId;
-            });
+                 $.post(
+                    '/home',
+                    {
+                        'heroId' : heroId,
+                    },
+                    function(){}
+                 ).done(function( data ) {
+                    window.location.href = "/home";
+                 });
+             });
 
             function displayLottieText(cssClass) {
                 $("." + cssClass).fadeIn(100);

@@ -16,7 +16,7 @@ class GameLogic extends BaseLogic
             return true;
         }
         $heroes = Auth::user()->heroes;
-        if (empty(Auth::user()->hero_id) || !in_array($heroId, $heroes)) {
+        if (empty(Auth::user()->hero_id) || (!in_array($heroId, $heroes) && $this->finishAllTracks())) {
             if ($heroId == 3) {
                 $track1 = ((rand() % 2) + 1) * 100 + 1;
                 $track2 = ((rand() % 2) + 1) * 100 + 2;
@@ -89,7 +89,7 @@ class GameLogic extends BaseLogic
         return $result;
     }
 
-    public function nextQuestion(int $trackId): bool
+    public function nextQuestion(int $trackId, $isChecking = false): bool
     {
         $currentQuestion = Auth::user()->currentQuestion($trackId);
         $nextId = $currentQuestion->getKey() + 1;
@@ -97,10 +97,24 @@ class GameLogic extends BaseLogic
         $state = Auth::user()->state;
         if ($nextQuestion) {
             $state['tracks'][$trackId] = $nextId;
-            Auth::user()->state = $state;
-            return Auth::user()->save();
+            if (!$isChecking ) {
+                Auth::user()->state = $state;
+                Auth::user()->save();
+            }
+            return true;
         } else {
             return false;
         }
+    }
+
+    public function finishAllTracks():bool
+    {
+        $state = Auth::user()->state;
+        foreach (array_keys($state['tracks'] ?? []) as $trackId) {
+            if ($this->nextQuestion($trackId, true)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
