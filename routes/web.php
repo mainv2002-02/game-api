@@ -11,6 +11,7 @@ $router->group([
                    ],
                ], function () use ($router) {
     $router->get('/', 'AuthController@home');
+    $router->post('/', 'AuthController@home');
 
     $router->get('/kickoff', 'HomeController@indexKickoff');
     $router->get('/character', 'HomeController@indexCharacter');

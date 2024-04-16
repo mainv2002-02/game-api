@@ -6,7 +6,6 @@ use App\Http\Requests\BaseRequest;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Log;
 use Illuminate\View\View;
 use Laravel\Lumen\Http\Redirector;
 
@@ -16,7 +15,7 @@ class AuthController extends Controller
     {
     }
 
-    public function home(): View|RedirectResponse|Redirector
+    public function home(BaseRequest $request): View|RedirectResponse|Redirector
     {
         if (!Auth::check()) {
             return redirect('/saml2/sso/login');
@@ -29,6 +28,15 @@ class AuthController extends Controller
 //                                             'refresh'   => '321',
 //                                         ]);
 //            Auth::login($user);
+        }
+        if ($request->getMethod() === 'POST') {
+            $params = $request->all();
+            Auth::user()->update([
+                                     'phone'      => $params['phone'] ?? '',
+                                     'title'      => $params['title'] ?? '',
+                                     'department' => $params['department'] ?? '',
+                                     'area'       => $params['area'] ?? '',
+                                 ]);
         }
         return view('auth.home');
     }

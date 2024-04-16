@@ -27,54 +27,54 @@
                     <h5 class="modal-title">Thông tin</h5>
                 </div>
                 <div class="modal-body">
-                    <form id="inputForm">
+                    <form id="inputForm" method="POST">
                         <!-- Phone Input -->
                         <div class="form-group">
                             <label for="phone">Điện Thoại:</label>
-                            <input type="text" class="form-control" id="phone" name="phone" required>
+                            <input type="text" class="form-control" id="phone" name="phone" required value="{{Auth::user()->phone}}">
                         </div>
 
                         <!-- Title Dropdown -->
                         <div class="form-group">
                             <label for="title">Chức danh:</label>
-                            <input type="text" id="title" name="title" class="form-control" required>
+                            <input type="text" id="title" name="title" class="form-control" required value="{{Auth::user()->title}}">
                         </div>
 
                         <!-- Department Dropdown -->
                         <div class="form-group">
                             <label for="department">Bộ Phận:</label>
-                            <select class="form-control" id="department" name="department" required>
+                            <select class="form-control" id="department" name="department" required value="{{Auth::user()->department}}">
                                 <option value="">Lựa chọn Bộ phận</option>
-                                <option value="hr">Supply Chain</option>
-                                <option value="it">Sales & Commercial</option>
-                                <option value="finance">People</option>
-                                <option value="marketing">IT</option>
-                                <option value="marketing">Finance</option>
-                                <option value="marketing">Legal</option>
-                                <option value="marketing">PACS</option>
-                                <option value="marketing">Strategy</option>
+                                <option value="Supply Chain">Supply Chain</option>
+                                <option value="Sales & Commercial">Sales & Commercial</option>
+                                <option value="People">People</option>
+                                <option value="IT">IT</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Legal">Legal</option>
+                                <option value="PACS">PACS</option>
+                                <option value="Strategy">Strategy</option>
                             </select>
                         </div>
 
                         <!-- Area Dropdown -->
                         <div class="form-group">
                             <label for="area">Vùng Miền:</label>
-                            <select class="form-control" id="area" name="area" required>
+                            <select class="form-control" id="area" name="area" required value="{{Auth::user()->area}}">
                                 <option value="">Lựa chọn vùng miền</option>
-                                <option value="north">HO (trụ sở chính)</option>
-                                <option value="south">HCM</option>
-                                <option value="east">Mekong</option>
-                                <option value="west">South Provinces</option>
-                                <option value="east">Da Nang</option>
-                                <option value="east">Hanoi</option>
-                                <option value="east">North East</option>
-                                <option value="east">North West</option>
+                                <option value="HO (trụ sở chính)">HO (trụ sở chính)</option>
+                                <option value="HCM">HCM</option>
+                                <option value="Mekong">Mekong</option>
+                                <option value="South Provinces">South Provinces</option>
+                                <option value="Da Nang">Da Nang</option>
+                                <option value="Hanoi">Hanoi</option>
+                                <option value="North East">North East</option>
+                                <option value="North West">North West</option>
                             </select>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+                    <button type="button" class="btn btn-primary" onclick="checkSubmit()">Submit</button>
                 </div>
             </div>
         </div>
@@ -202,31 +202,27 @@
 
 @section('scripts')
     <script>
-        $(document).ready(function() {
-            // Display the modal when the document is fully loaded
-            $("#myModal").show();
-
-            // Handle the form submission
-            $("#inputForm").submit(function(event) {
-                event.preventDefault(); // Prevent the default form submission
-
-                // Here you can add your logic to handle or validate the input data
-                // For example, checking if all fields are filled
-                var isFormComplete = true;
-                $('#inputForm input, #inputForm select').each(function() {
-                    if (!$(this).val()) {
-                        isFormComplete = false;
-                        return false; // break the loop
-                    }
-                });
-
-                if (isFormComplete) {
-                    $("#myModal").hide(); // Hide the modal on successful submission
-                } else {
-                    alert("Please fill all the fields.");
+        function checkSubmit() {
+            var isFormComplete = true;
+            $('#inputForm input, #inputForm select').each(function() {
+                if (!$(this).val()) {
+                    isFormComplete = false;
+                    return false; // break the loop
                 }
             });
 
+            if (isFormComplete) {
+                $("#inputForm").submit();
+            } else {
+                alert("Please fill all the fields.");
+            }
+        }
+
+        $(document).ready(function() {
+            // Display the modal when the document is fully loaded
+            @if(empty(Auth::user()->phone) ||empty(Auth::user()->title) ||empty(Auth::user()->department) ||empty(Auth::user()->area))
+            $("#myModal").show();
+            @endif
 
             loadLottieAnimation('lottie-background', '{{url('assets/img/home/border.json')}}');
             loadLottieAnimation('lottie-input-1', '{{url('assets/img/home/input.json')}}');
