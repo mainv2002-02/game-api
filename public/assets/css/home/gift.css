@@ -238,9 +238,25 @@
 }
 
 @media only screen and (min-width: 1440px) and (max-width: 1919px) {
-
+    .convert-text {
+        font-size: 14px;
+        width: 11vw;
+        top: 52%;
+    }
+    .score-text {
+        font-size: 70px;
+        -webkit-text-stroke-width: 2px;
+    }
 }
 
 @media only screen and (min-width: 1920px) {
-
+    .convert-text {
+        font-size: 14px;
+        width: 11vw;
+        top: 55%;
+    }
+    .score-text {
+        font-size: 80px;
+        -webkit-text-stroke-width: 3px;
+    }
 }

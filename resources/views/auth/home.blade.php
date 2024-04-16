@@ -14,9 +14,72 @@
     <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.4') }}">
     <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.5') }}">
     <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.6') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/modal.css?v=1.1') }}">
 @stop
 
 @section('content')
+    <!-- Modal Container -->
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Thông tin</h5>
+                </div>
+                <div class="modal-body">
+                    <form id="inputForm">
+                        <!-- Phone Input -->
+                        <div class="form-group">
+                            <label for="phone">Điện Thoại:</label>
+                            <input type="text" class="form-control" id="phone" name="phone" required>
+                        </div>
+
+                        <!-- Title Dropdown -->
+                        <div class="form-group">
+                            <label for="title">Chức danh:</label>
+                            <input type="text" id="title" name="title" class="form-control" required>
+                        </div>
+
+                        <!-- Department Dropdown -->
+                        <div class="form-group">
+                            <label for="department">Bộ Phận:</label>
+                            <select class="form-control" id="department" name="department" required>
+                                <option value="">Lựa chọn Bộ phận</option>
+                                <option value="hr">Supply Chain</option>
+                                <option value="it">Sales & Commercial</option>
+                                <option value="finance">People</option>
+                                <option value="marketing">IT</option>
+                                <option value="marketing">Finance</option>
+                                <option value="marketing">Legal</option>
+                                <option value="marketing">PACS</option>
+                                <option value="marketing">Strategy</option>
+                            </select>
+                        </div>
+
+                        <!-- Area Dropdown -->
+                        <div class="form-group">
+                            <label for="area">Vùng Miền:</label>
+                            <select class="form-control" id="area" name="area" required>
+                                <option value="">Lựa chọn vùng miền</option>
+                                <option value="north">HO (trụ sở chính)</option>
+                                <option value="south">HCM</option>
+                                <option value="east">Mekong</option>
+                                <option value="west">South Provinces</option>
+                                <option value="east">Da Nang</option>
+                                <option value="east">Hanoi</option>
+                                <option value="east">North East</option>
+                                <option value="east">North West</option>
+                            </select>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="page-home" class="page-home">
         <div id="lottie-background" class="lottie"></div>
         <div class="form-container">
@@ -81,11 +144,12 @@
     <div class="character" id="character" style="display: none">
         <div class="background" id="bg-character">
             <!-- Container for the first character and frame -->
+
+            <div id="lottie-frame" class="lottie-animation"></div>
+
             <div class="frame-container">
-                <div id="lottie-frame-1" class="lottie-animation"></div>
                 <img id="nv01" src="{{url('assets/img/nv/nv01-01.png')}}"
                      alt="Data Master" hero-id="1" class="character-image" style="display: none" onclick="selectCharacter('1')">
-                <div class="character-label" style="display: none">Data Master</div>
                 <div class="left-character" onclick="prevCharacter('1')"></div>
                 <div class="right-character" onclick="nextCharacter('1')"></div>
                 <div class="select-character" onclick="selectCharacter('1')"></div>
@@ -93,10 +157,8 @@
 
             <!-- Container for the second character and frame -->
             <div class="frame-container">
-                <div id="lottie-frame-2" class="lottie-animation"></div>
                 <img id="nv02" src="{{url('assets/img/nv/nv02-01.png')}}"
                      alt="Data Master" hero-id="2" class="character-image" style="display: none" onclick="selectCharacter('2')">
-                <div class="character-label" style="display: none;">Problem Solver</div>
                 <div class="left-character" onclick="prevCharacter('2')"></div>
                 <div class="right-character" onclick="nextCharacter('2')"></div>
                 <div class="select-character" onclick="selectCharacter('2')"></div>
@@ -104,10 +166,8 @@
 
             <!-- Container for the third character and frame -->
             <div class="frame-container">
-                <div id="lottie-frame-3" class="lottie-animation"></div>
                 <img id="nv03" src="{{url('assets/img/nv/nv03-01.png')}}"
                      alt="Data Master" hero-id="3" class="character-image" style="display: none" onclick="selectCharacter('3')">
-                <div class="character-label" style="display: none">Multitasker</div>
                 <div class="left-character" onclick="prevCharacter('3')"></div>
                 <div class="right-character" onclick="nextCharacter('3')"></div>
                 <div class="select-character" onclick="selectCharacter('3')"></div>
@@ -143,6 +203,31 @@
 @section('scripts')
     <script>
         $(document).ready(function() {
+            // Display the modal when the document is fully loaded
+            $("#myModal").show();
+
+            // Handle the form submission
+            $("#inputForm").submit(function(event) {
+                event.preventDefault(); // Prevent the default form submission
+
+                // Here you can add your logic to handle or validate the input data
+                // For example, checking if all fields are filled
+                var isFormComplete = true;
+                $('#inputForm input, #inputForm select').each(function() {
+                    if (!$(this).val()) {
+                        isFormComplete = false;
+                        return false; // break the loop
+                    }
+                });
+
+                if (isFormComplete) {
+                    $("#myModal").hide(); // Hide the modal on successful submission
+                } else {
+                    alert("Please fill all the fields.");
+                }
+            });
+
+
             loadLottieAnimation('lottie-background', '{{url('assets/img/home/border.json')}}');
             loadLottieAnimation('lottie-input-1', '{{url('assets/img/home/input.json')}}');
             loadLottieAnimation('lottie-input-2', '{{url('assets/img/home/input.json')}}');
@@ -191,7 +276,7 @@
                     loadLottieAnimation('border-frame-mission', '{{url('assets/img/story/border.json')}}');
                     loadLottieAnimation('button-frame-mission', '{{url('assets/img/mission/button.json')}}');
 
-                    const htmlContent1 = `<p>Bạn đã sẵn sàng bay tới <b class="pink">Thị trấn Hạnh Phúc</b></p>
+                    const htmlContent1 = `<p>Bạn đã sẵn sàng tới khám phá <b class="pink">Thị trấn Hạnh Phúc</b></p>
                                           <p>và cùng hoàn thành những thử thách khác nhau để trở thành</p>
                                           <p>Người hùng dẫn đầu  <b class="pink">Tương lai - Growth Shapers?</b></p>`;
 
@@ -323,9 +408,7 @@
         }
 
         function addAnimationCharacter() {
-            loadLottieAnimation('lottie-frame-1', '{{url('assets/img/character/border.json')}}');
-            loadLottieAnimation('lottie-frame-2', '{{url('assets/img/character/border.json')}}');
-            loadLottieAnimation('lottie-frame-3', '{{url('assets/img/character/border.json')}}');
+            loadLottieAnimation('lottie-frame', '{{url('assets/img/character/fullBackground.json')}}');
 
             setTimeout(function () {
                 $(".character-image").fadeIn(4000);
@@ -334,9 +417,7 @@
         }
 
         function destroyAnimationCharacter() {
-            destroyLottieAnimation('lottie-frame-1');
-            destroyLottieAnimation('lottie-frame-2');
-            destroyLottieAnimation('lottie-frame-3');
+            destroyLottieAnimation('lottie-frame');
             $(".character-image").fadeOut("slow");
             $(".character-label").fadeOut("slow");
         }
@@ -382,20 +463,22 @@
                 case '1':
                     char = char1;
                     name = 'Data Master';
-                    des = `<p>Giới Tính: Không xác định</p>
-                    <p>Đặc điểm: Không xác định</p>`;
+                    des = `<p>Thoại: "Hãy để tôi cho bạn thấy những gì dữ liệu đang nói"</p>
+                    <p>Mô tả: Là người cẩn thận, tỉ mỉ và logic, bạn có nhiệm vụ thu thập và phân tích dữ liệu một cách nhanh chóng
+                        và chính xác từ mỗi tòa nhà để tạo ra những thông tin cần thiết hỗ trợ đưa ra các
+                        quyết định chiến lược thông minh nhằm nâng cấp thành phố hành phúc.</p>`;
                     break;
                 case '2':
                     char = char2;
                     name = 'Problem Solver';
-                    des = `<p>Giới Tính: Không xác định</p>
-                    <p>Đặc điểm: Không xác định</p>`;
+                    des = `<p>Thoại: "Tôi thích những thử thách, vì tôi luôn có giải pháp"</p>
+                    <p>Mô tả: Nhiệm vụ của bạn sẽ là tìm ra và đối mặt với các tình huống khó khăn và thử thách trong từng tòa nhà trong thành phố hạnh phúc, từ đó đưa ra những giải pháp sáng tạo để xử lý vấn đề hiệu quả.</p>`;
                     break;
                 case '3':
                     char = char3;
                     name = 'Multitasker';
-                    des = `<p>Giới Tính: Không xác định</p>
-                    <p>Đặc điểm: Không xác định</p>`;
+                    des = `<p>Thoại: "Tôi là người đa năng, có thể thích nghi với mọi tình huống và hoàn thành mọi nhiệm vụ"</p>
+                    <p>Mô tả: Là một nhân vật đa năng và linh hoạt, bạn mang trong mình khả năng phi thường kết hợp thu thập dữ liệu, phân tích chuyên sâu và đồng thời đưa ra giải pháp sáng tạo cho những thách thức phức tạp trong các tòa nhà thuộc thành phố hạnh phúc.</p>`;
                     break;
                 default:
                     break;

@@ -36,8 +36,6 @@
                     <div class="question-content">
                         <p>CCBV đang lên kế hoạch mở rộng hoạt động bằng cách xây dựng một nhà máy mới tại Long An, Việt Nam.
                             Nhà máy mới dự kiến sẽ đi vào hoạt động trong vòng 12 tháng tới với công suất sản xuất gấp 2 lần nhà máy hiện tại.
-                            Sau khi thống kê và phân tích nguồn nhân lực sẵn có theo 5 kỹ năng cần thiết nhất cho đội Kho vận,
-                            sau đây là kết quả đánh giá theo trạng thái năng lực của người lao động (Đạt, Chưa đạt và Nghỉ việc).
                         </p>
                         <p style="text-align: center">(Ấn vào <b>HIỆN BẢNG</b> để xem câu hỏi đầy đủ)</p>
                     </div>
@@ -139,11 +137,9 @@
                 Nhân sự với năng lực chưa đạt có thể thông qua giải pháp đào tạo để nâng cao năng lực phù hợp hơn
             </div>
         </div>
-
     </div>
 
     <div id="explain" class="modal">
-
         <!-- Modal content -->
         <div id="explain-content" class="modal-game-content">
             <div id="explain-text" class="modal-game-text" style="display: none; text-align: center">
