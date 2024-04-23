@@ -4,6 +4,7 @@ namespace App\Listeners;
 
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
 use Slides\Saml2\Events\SignedIn;
 
 class Login extends SignedIn
@@ -12,14 +13,11 @@ class Login extends SignedIn
     {
         $samlUser = $event->getSaml2User();
         $attributes = $samlUser->getAttributes();
-        if (empty($attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'][0]) || !in_array($attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'][0], explode(',', env('EMAIL_WHITELIST')))) {
-            abort(403);
-        }
         $user = User::updateOrCreate([
                                          'azure_id' => $samlUser->getUserId(),
                                      ], [
                                          'full_name' => $attributes['http://schemas.microsoft.com/identity/claims/displayname'][0] ?? '',
-                                         'email'     => $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'][0] ?? '',
+                                         'email'     => Str::lower($attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'][0] ?? ''),
                                          'name'      => $attributes['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'][0] ?? '',
                                          'token'     => $attributes['http://schemas.microsoft.com/identity/claims/tenantid'][0] ?? '',
                                          'refresh'   => $attributes['http://schemas.microsoft.com/identity/claims/objectidentifier'][0] ?? '',
