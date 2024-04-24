@@ -1,12 +1,20 @@
 .mission > .lottie-text {
     position: absolute;
     top: 14%;
-    left: 47%;
-    transform: translate(-10%, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 29px;
     font-weight: bold;
     color: #F565AF;
     font-family: 'SVN-Zelda';
+}
+
+.mission > .frame-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 .mission > .frame-container > #border-frame-mission,
@@ -29,10 +37,7 @@
     height: 11vh; /* Use viewport height for scalability */
     bottom: 30vh;
     left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    transform: translate(-50%, -50%);
     cursor: pointer;
 }
 
@@ -44,13 +49,14 @@
 }
 
 #border-frame-mission > .typewriter {
-    position: fixed;
+    position: absolute;
     z-index: 2;
     font-size: 24px; /* Ensures font size doesn't get too small */
-    top: 29%;
-    /*left: 28%;*/
     text-align: center;
     text-transform: uppercase;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .typewriter > div > p {
@@ -73,8 +79,7 @@
 
 @media only screen and (min-height: 480px) and (max-height: 767px) and (orientation: landscape) {
     .mission > .lottie-text {
-        top: 23%;
-        left: 47%;
+        /* top: 23%; */
     }
 
     #border-frame-mission > .typewriter {
@@ -90,24 +95,21 @@
 @media only screen and (max-height: 479px) and (orientation: landscape) {
     .mission > .lottie-text {
         top: 14%;
-        left: 47%;
         font-size: 16px;
     }
 
     #border-frame-mission > .typewriter {
         font-size: 12px;
-        top: 21%;
+        top: 34%;
     }
 
     .mission > .frame-container > #button-frame-mission {
-        top: 57%;
-        left: 50%;
+        top: 68%;
     }
 }
 @media only screen and (min-height: 768px) and (max-height: 1023px) and (orientation: landscape) {
     .mission > .lottie-text {
         top: 23%;
-        left: 47%;
     }
 
     #border-frame-mission > .typewriter {
@@ -117,51 +119,69 @@
 
     .mission > .frame-container > #button-frame-mission {
         top: 70%;
-        left: 50%;
     }
 }
-
-@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+@media only screen and (min-width: 1024px) and (max-width: 1180px) {
     .mission > .lottie-text {
-        bottom: 25.5vh;
-        left: 2vw;
-        position: relative;
+        top: 21%;
         font-size: 25px;
     }
 
     #border-frame-mission > .typewriter {
         font-size: 20px;
-        top: 29%;
+        top: 37%;
     }
 
     .mission > .frame-container > #button-frame-mission {
-        top: 56%;
-        left: 50%;
+        top: 63%;
+    }
+}
+
+
+@media only screen and (min-width: 1181px) and (max-width: 1439px) {
+    .mission > .lottie-text {
+        top: 23%;
+        font-size: 25px;
+    }
+
+    #border-frame-mission > .typewriter {
+        font-size: 20px;
+        top: 37%;
+    }
+
+    .mission > .frame-container > #button-frame-mission {
+        top: 63%;
     }
 }
 
 @media only screen and (min-width: 1440px) and (max-width: 1919px) {
     .mission > .lottie-text {
         top: 14%;
-        left: 47%;
         font-size: 29px;
     }
 
+    #border-frame-mission > .typewriter {
+        font-size: 20px;
+        top: 37%;
+    }
+
     .mission > .frame-container > #button-frame-mission {
-        bottom: 15vh;
-        left: 50%;
+        top: 70%;
     }
 }
 
 @media only screen and (min-width: 1920px) {
     .mission > .lottie-text {
         top: 14%;
-        left: 47%;
         font-size: 29px;
     }
 
+    #border-frame-mission > .typewriter {
+        top: 35%;
+    }
+
     .mission > .frame-container > #button-frame-mission {
-        bottom: 32vh;
-        left: 50%;
+        top: 65%;
+        /* left: 50%; */
     }
 }

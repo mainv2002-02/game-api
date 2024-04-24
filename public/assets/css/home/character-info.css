@@ -7,30 +7,30 @@
     }
 }
 
-.character-info > .lottie {
+
+.character-info > .background {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%; /* Set to the width of your lottie animation */
-    height: auto; /* Set to the height of your lottie animation */
-    z-index: 0;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+}
+
+.character-info > .background > .lottie {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 .character-info > .background > .frame-container {
     position: absolute;
     width: 20vw;
     height: 65vh;
     top: 14vh;
+    left: 17%;
 }
-.character-info > .background > .frame-container:nth-child(1) {
-    left: 10vw;
-}
-.character-info > .background > .frame-container:nth-child(2) {
-    left: 41vw;
-}
-.character-info > .background > .frame-container:nth-child(3) {
-    left: 72vw;;
-}
+
 .character-info > .background > .frame-container > img {
     cursor: pointer;
 }
@@ -40,7 +40,7 @@
     animation: moveUpDown 2s infinite ease-in-out;
 }
 
-.character-info > .background > .frame-container:nth-child(1) > .character-info-image {
+.character-info > .background > .frame-container > .character-info-image {
     width: 15vw; /* Set the width of the character image */
     height: 40vh;
     top: 6vh;
@@ -77,7 +77,7 @@
     position: absolute;
     color: #19FF7A;
     font-size: 20px;
-    left: 35vw;
+    left: 28.5vw;
     width: 36vw;
     max-height: 40vh;
     top: 20vh;
@@ -132,11 +132,12 @@
 }
 
 
-@media only screen and (max-height: 479px) and (orientation: landscape) {
+@media only screen and (max-width: 479px) and (orientation: landscape) {
     .character-info > .background > .frame-container > .character-info-label {
-        font-size: 12px;
+        font-size: 11px;
         bottom: 10.5vh;
-        width: 10vw;
+        width: 13vw;
+        left: 17%;
     }
     .character-info > .lottie {
         top: 50%;
@@ -144,10 +145,10 @@
         width: 90%;
     }
     .character-info > .background > .frame-container > .character-info-des {
-        font-size: 13px;
-        top: 17vh;
+        font-size: 11px;
+        top: 20vh;
         left: 28vw;
-        width: 36vw;
+        width: 37vw;
     }
     .character-info > .background > .frame-container:nth-child(1) > .character-info-image {
         width: 14vw; /* Set the width of the character image */
@@ -160,18 +161,19 @@
         /* position: relative; */
     }
     .character-info > .background > .frame-container > #button-frame-back {
-        left: 36vw;
+        left: 41vw;
     }
     .character-info > .background > .frame-container > #button-frame-next {
-        left: 52vw;
+        left: 59vw;
     }
 }
 
-@media only screen and (min-height: 480px) and (max-height: 767px) and (orientation: landscape) {
+@media only screen and (min-width: 480px) and (max-width: 767px) and (orientation: landscape) {
     .character-info > .background > .frame-container > .character-info-label {
-        font-size: 25px;
-        bottom: 10.5vh;
-        width: 10vw;
+        font-size: 13px;
+        top: 78%;
+        width: 15vw;
+        left: 12%;
     }
     .character-info > .lottie {
         top: 50%;
@@ -179,7 +181,7 @@
         width: 100%;
     }
     .character-info > .background > .frame-container > .character-info-des {
-        font-size: 20px;
+        font-size: 11px;
     }
     .character-info > .background > .frame-container:nth-child(1) > .character-info-image {
         width: 15vw; /* Set the width of the character image */
@@ -191,18 +193,19 @@
         left: 10vw;
     }
     .character-info > .background > .frame-container > #button-frame-back {
-        left: 47vw;
+        left: 45vw;
     }
     .character-info > .background > .frame-container > #button-frame-next {
-        left: 65vw;
+        left: 62vw;
     }
 }
 
-@media only screen and (min-height: 768px) and (max-height: 1023px) and (orientation: landscape) {
+@media only screen and (min-width: 768px) and (max-width: 1023px) and (orientation: landscape) {
     .character-info > .background > .frame-container > .character-info-label {
-        font-size: 25px;
-        bottom: 10.5vh;
-        width: 10vw;
+        font-size: 14px;
+        top: 76%;
+        width: 65%;
+        left: 20%;
     }
     .character-info > .lottie {
         top: 50%;
@@ -210,26 +213,65 @@
         width: 100%;
     }
     .character-info > .background > .frame-container > .character-info-des {
-        font-size: 20px;
+        font-size: 13px;
+        width: 32vw;
+        max-height: 35vh;
     }
-    .character-info > .background > .frame-container:nth-child(1) > .character-info-image {
+    .character-info > .background > .frame-container > .character-info-image {
         width: 15vw; /* Set the width of the character image */
         height: 40vh;
         top: 6vh;
         left: 2vw;
     }
-    .character-info > .background > .frame-container:nth-child(1) {
-        left: 10vw;
+    .character-info > .background > .frame-container {
+        left: 18%;
     }
     .character-info > .background > .frame-container > #button-frame-back {
-        left: 47vw;
+        left: 39vw;
     }
     .character-info > .background > .frame-container > #button-frame-next {
-        left: 65vw;
+        left: 53vw;
     }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+@media only screen and (min-width: 1024px) and (max-width: 1180px) {
+    .character-info > .background > .frame-container > .character-info-label {
+        font-size: 18px;
+        bottom: 12.5vh;
+        width: 14vw;
+        left: 16%;
+    }
+    .character-info > .lottie {
+        top: 50%;
+        left: 50%;
+        width: 100%;
+    }
+    .character-info > .background > .frame-container > .character-info-des {
+        font-size: 18px;
+        top: 24vh;
+        left: 32vw;
+        width: 39vw;
+    }
+    .character-info > .background > .frame-container > .character-info-image {
+        width: 16vw; /* Set the width of the character image */
+        height: 30vh;
+        top: 15vh;
+        left: 2vw;
+    }
+    .character-info > .background > .frame-container {
+        left: 13vw;
+    }
+    .character-info > .background > .frame-container > #button-frame-back {
+        left: 47vw;
+        top: 55vh;
+    }
+    .character-info > .background > .frame-container > #button-frame-next {
+        left: 65vw;
+        top: 55vh;
+    }
+}
+
+@media only screen and (min-width: 1181px) and (max-width: 1439px) {
     .character-info > .background > .frame-container > .character-info-label {
         font-size: 18px;
         bottom: 12.5vh;
@@ -242,17 +284,17 @@
     }
     .character-info > .background > .frame-container > .character-info-des {
         font-size: 20px;
-        top: 23vh;
+        top: 25vh;
         left: 32vw;
         width: 39vw;
     }
-    .character-info > .background > .frame-container:nth-child(1) > .character-info-image {
+    .character-info > .background > .frame-container > .character-info-image {
         width: 16vw; /* Set the width of the character image */
         height: 30vh;
         top: 15vh;
         left: 2vw;
     }
-    .character-info > .background > .frame-container:nth-child(1) {
+    .character-info > .background > .frame-container {
         left: 13vw;
     }
     .character-info > .background > .frame-container > #button-frame-back {
@@ -280,22 +322,22 @@
     }
     .character-info > .background > .frame-container > .character-info-des {
         font-size: 20px;
-        width: 39vw;
+        width: 36vw;
     }
-    .character-info > .background > .frame-container:nth-child(1) > .character-info-image {
+    .character-info > .background > .frame-container > .character-info-image {
         width: 15vw; /* Set the width of the character image */
         height: 40vh;
         top: 6vh;
         left: 2vw;
     }
-    .character-info > .background > .frame-container:nth-child(1) {
-        left: 10vw;
+    .character-info > .background > .frame-container {
+        left: 17vw;
     }
     .character-info > .background > .frame-container > #button-frame-back {
-        left: 47vw;
+        left: 40vw;
     }
     .character-info > .background > .frame-container > #button-frame-next {
-        left: 65vw;
+        left: 57vw;
     }
 }
 
@@ -313,16 +355,16 @@
     .character-info > .background > .frame-container > .character-info-des {
         font-size: 20px;
     }
-    .character-info > .background > .frame-container:nth-child(1) > .character-info-image {
+    .character-info > .background > .frame-container > .character-info-image {
         width: 15vw; /* Set the width of the character image */
         height: 40vh;
         top: 6vh;
         left: 2vw;
     }
     .character-info > .background > .frame-container > #button-frame-back {
-        left: 47vw;
+        left: 43vw;
     }
     .character-info > .background > .frame-container > #button-frame-next {
-        left: 65vw;
+        left: 60vw;
     }
 }

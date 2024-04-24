@@ -8,21 +8,21 @@
 @stop
 
 @section('styles')
-    <link rel="stylesheet" href="{{ url('assets/css/home/home.css?v=1.7') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=1.4') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=1.4') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.4') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.5') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.6') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/home.css?v=1.8') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=1.5') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=1.5') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.5') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.6') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.7') }}">
     <link rel="stylesheet" href="{{ url('assets/css/home/modal.css?v=1.1') }}">
 @stop
 
 @section('content')
     <!-- Modal Container -->
-    <div class="modal" tabindex="-1" role="dialog" id="myModal">
-        <div class="modal-dialog" role="document">
+    <div class="modal bd-example-modal-lg" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog modal-lg" role="document">
             <!-- Modal content -->
-            <div class="modal-content">
+            <div class="modal-content ">
                 <div class="modal-header">
                     <h5 class="modal-title">Thông tin</h5>
                 </div>
@@ -30,7 +30,7 @@
                     <form id="inputForm">
                         <!-- Phone Input -->
                         <div class="form-group">
-                            <label for="phone">Điện Thoại:</label>
+                            <label for="phone">Số Điện Thoại:</label>
                             <input type="text" class="form-control" id="phone" name="phone" required>
                         </div>
 
@@ -74,7 +74,7 @@
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Submit</button>
+                    <button type="button" class="btn btn-primary" onclick="submitForm()">Lưu Thông Tin</button>
                 </div>
             </div>
         </div>
@@ -146,7 +146,6 @@
             <!-- Container for the first character and frame -->
 
             <div id="lottie-frame" class="lottie-animation"></div>
-
             <div class="frame-container">
                 <img id="nv01" src="{{url('assets/img/nv/nv01-01.png')}}"
                      alt="Data Master" hero-id="1" class="character-image" style="display: none" onclick="selectCharacter('1')">
@@ -176,8 +175,8 @@
     </div>
 
     <div class="character-info" id="character-info" style="display: none">
-        <div id="character-info-background" class="lottie"></div>
         <div class="background" id="bg-character">
+            <div id="character-info-background" class="lottie"></div>
             <div class="frame-container">
                 <div id="character-info-des" class="character-info-des" style="display: none">
 

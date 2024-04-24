@@ -1,12 +1,20 @@
 .story > .lottie-text {
     position: absolute;
     top: 14%;
-    left: 47%;
-    transform: translate(-10%, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
     font-size: 29px;
     font-weight: bold;
     color: #F565AF;
     font-family: 'SVN-Zelda';
+}
+
+.story > .frame-container {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
 }
 
 .story > .frame-container  > #border-frame-story,
@@ -18,9 +26,8 @@
 .story > .frame-container > #border-frame-story {
     width: 100%; /* Use viewport width for scalability */
     height: 100%; /* Use viewport height for scalability */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
 }
 
 .story > .frame-container > #button-frame-story {
@@ -28,10 +35,8 @@
     height: 8vh;
     bottom: 15vh;
     left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    top: 50%;
+    transform: translate(-50%, -50%);
     cursor: pointer;
 }
 
@@ -46,12 +51,16 @@
     position: absolute;
     z-index: 2;
     font-size: 24px; /* Ensures font size doesn't get too small */
-    top: 22%;
-    left: 20%;
+    top: 50%;
+    left: 50%;
     width: 61vw;
     text-align: left;
     max-height: 50vh;
     overflow: auto;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    width: 50%;ư:
+    nowrap;
 }
 
 .typewriter > div > p {
@@ -81,8 +90,6 @@
 }
 @media only screen and (min-height: 480px) and (max-height: 767px) and (orientation: landscape) {
     .story > .lottie-text {
-        top: 23%;
-        left: 47%;
     }
 
     #border-frame-story > .typewriter {
@@ -98,13 +105,13 @@
 @media only screen and (max-height: 479px) and (orientation: landscape) {
     .story > .lottie-text {
         top: 14%;
-        left: 47%;
         font-size: 16px;
     }
 
     #border-frame-story > .typewriter {
         font-size: 12px;
-        top: 21%;
+        top: 46%;
+        width: 62vw;
     }
 
     .story > .frame-container > #button-frame-story {
@@ -115,34 +122,48 @@
 @media only screen and (min-height: 768px) and (max-height: 1023px) and (orientation: landscape) {
     .story > .lottie-text {
         top: 23%;
-        left: 47%;
     }
 
     #border-frame-story > .typewriter {
         font-size: 22px;
-        top: 29%;
+        top: 39%;
     }
 
     .story > .frame-container > #button-frame-story {
         top: 70%;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1180px) {
+    .story > .lottie-text {
+        font-size: 25px;
+        top: 21%;
+    }
+    #border-frame-story > .typewriter {
+        font-size: 15px;
+        top: 44%;
+    }
+
+    .story > .frame-container > #button-frame-story {
+        top: 77%;
         left: 50%;
     }
 }
 
-@media only screen and (min-width: 1024px) and (max-width: 1439px) {
+@media only screen and (min-width: 1181px) and (max-width: 1439px) {
     .story > .lottie-text {
-        bottom: 25.5vh;
-        left: 2vw;
-        position: relative;
+    font-size: 27px;
+    top: 23%;
     }
 
     #border-frame-story > .typewriter {
-        font-size: 20px;
-        top: 29%;
+        font-size: 17px;
+        top: 44%;
+        width: 60vw;
     }
 
     .story > .frame-container > #button-frame-story {
-        top: 70%;
+        top: 73%;
         left: 50%;
     }
 }
@@ -150,25 +171,23 @@
 @media only screen and (min-width: 1440px) and (max-width: 1919px) {
     .story > .lottie-text {
         top: 14%;
-        left: 47%;
         font-size: 29px;
     }
 
     .story > .frame-container > #button-frame-story {
-        bottom: 15vh;
-        left: 50%;
+        top: 78%;
     }
 }
 
 @media only screen and (min-width: 1920px) {
     .story > .lottie-text {
-        top: 14%;
-        left: 47%;
-        font-size: 29px;
+    }
+
+    #border-frame-story > .typewriter {
+        top: 38%;
     }
 
     .story > .frame-container > #button-frame-story {
-        bottom: 15vh;
-        left: 50%;
+    top: 78%;
     }
 }
