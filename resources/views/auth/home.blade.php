@@ -8,73 +8,73 @@
 @stop
 
 @section('styles')
-    <link rel="stylesheet" href="{{ url('assets/css/home/home.css?v=1.8') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=1.5') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=1.5') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.5') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.6') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.7') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/home.css?v=1.7') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=1.4') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=1.4') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.4') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.5') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.6') }}">
     <link rel="stylesheet" href="{{ url('assets/css/home/modal.css?v=1.1') }}">
 @stop
 
 @section('content')
     <!-- Modal Container -->
-    <div class="modal bd-example-modal-lg" tabindex="-1" role="dialog" id="myModal">
-        <div class="modal-dialog modal-lg" role="document">
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
             <!-- Modal content -->
-            <div class="modal-content ">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Thông tin</h5>
                 </div>
                 <div class="modal-body">
-                    <form id="inputForm">
+                    <form id="inputForm" method="POST">
                         <!-- Phone Input -->
                         <div class="form-group">
-                            <label for="phone">Số Điện Thoại:</label>
-                            <input type="text" class="form-control" id="phone" name="phone" required>
+                            <label for="phone">Điện Thoại:</label>
+                            <input type="text" class="form-control" id="phone" name="phone" required value="{{Auth::user()->phone}}">
                         </div>
 
                         <!-- Title Dropdown -->
                         <div class="form-group">
                             <label for="title">Chức danh:</label>
-                            <input type="text" id="title" name="title" class="form-control" required>
+                            <input type="text" id="title" name="title" class="form-control" required value="{{Auth::user()->title}}">
                         </div>
 
                         <!-- Department Dropdown -->
                         <div class="form-group">
                             <label for="department">Bộ Phận:</label>
-                            <select class="form-control" id="department" name="department" required>
+                            <select class="form-control" id="department" name="department" required value="{{Auth::user()->department}}">
                                 <option value="">Lựa chọn Bộ phận</option>
-                                <option value="hr">Supply Chain</option>
-                                <option value="it">Sales & Commercial</option>
-                                <option value="finance">People</option>
-                                <option value="marketing">IT</option>
-                                <option value="marketing">Finance</option>
-                                <option value="marketing">Legal</option>
-                                <option value="marketing">PACS</option>
-                                <option value="marketing">Strategy</option>
+                                <option value="Supply Chain">Supply Chain</option>
+                                <option value="Sales & Commercial">Sales & Commercial</option>
+                                <option value="People">People</option>
+                                <option value="IT">IT</option>
+                                <option value="Finance">Finance</option>
+                                <option value="Legal">Legal</option>
+                                <option value="PACS">PACS</option>
+                                <option value="Strategy">Strategy</option>
                             </select>
                         </div>
 
                         <!-- Area Dropdown -->
                         <div class="form-group">
                             <label for="area">Vùng Miền:</label>
-                            <select class="form-control" id="area" name="area" required>
+                            <select class="form-control" id="area" name="area" required value="{{Auth::user()->area}}">
                                 <option value="">Lựa chọn vùng miền</option>
-                                <option value="north">HO (trụ sở chính)</option>
-                                <option value="south">HCM</option>
-                                <option value="east">Mekong</option>
-                                <option value="west">South Provinces</option>
-                                <option value="east">Da Nang</option>
-                                <option value="east">Hanoi</option>
-                                <option value="east">North East</option>
-                                <option value="east">North West</option>
+                                <option value="HO (trụ sở chính)">HO (trụ sở chính)</option>
+                                <option value="HCM">HCM</option>
+                                <option value="Mekong">Mekong</option>
+                                <option value="South Provinces">South Provinces</option>
+                                <option value="Da Nang">Da Nang</option>
+                                <option value="Hanoi">Hanoi</option>
+                                <option value="North East">North East</option>
+                                <option value="North West">North West</option>
                             </select>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Lưu Thông Tin</button>
+                    <button type="button" class="btn btn-primary" onclick="checkSubmit()">Submit</button>
                 </div>
             </div>
         </div>
@@ -146,6 +146,7 @@
             <!-- Container for the first character and frame -->
 
             <div id="lottie-frame" class="lottie-animation"></div>
+
             <div class="frame-container">
                 <img id="nv01" src="{{url('assets/img/nv/nv01-01.png')}}"
                      alt="Data Master" hero-id="1" class="character-image" style="display: none" onclick="selectCharacter('1')">
@@ -175,8 +176,8 @@
     </div>
 
     <div class="character-info" id="character-info" style="display: none">
+        <div id="character-info-background" class="lottie"></div>
         <div class="background" id="bg-character">
-            <div id="character-info-background" class="lottie"></div>
             <div class="frame-container">
                 <div id="character-info-des" class="character-info-des" style="display: none">
 
@@ -201,31 +202,27 @@
 
 @section('scripts')
     <script>
-        $(document).ready(function() {
-            // Display the modal when the document is fully loaded
-            $("#myModal").show();
-
-            // Handle the form submission
-            $("#inputForm").submit(function(event) {
-                event.preventDefault(); // Prevent the default form submission
-
-                // Here you can add your logic to handle or validate the input data
-                // For example, checking if all fields are filled
-                var isFormComplete = true;
-                $('#inputForm input, #inputForm select').each(function() {
-                    if (!$(this).val()) {
-                        isFormComplete = false;
-                        return false; // break the loop
-                    }
-                });
-
-                if (isFormComplete) {
-                    $("#myModal").hide(); // Hide the modal on successful submission
-                } else {
-                    alert("Please fill all the fields.");
+        function checkSubmit() {
+            var isFormComplete = true;
+            $('#inputForm input, #inputForm select').each(function() {
+                if (!$(this).val()) {
+                    isFormComplete = false;
+                    return false; // break the loop
                 }
             });
 
+            if (isFormComplete) {
+                $("#inputForm").submit();
+            } else {
+                alert("Please fill all the fields.");
+            }
+        }
+
+        $(document).ready(function() {
+            // Display the modal when the document is fully loaded
+            @if(empty(Auth::user()->phone) ||empty(Auth::user()->title) ||empty(Auth::user()->department) ||empty(Auth::user()->area))
+            $("#myModal").show();
+            @endif
 
             loadLottieAnimation('lottie-background', '{{url('assets/img/home/border.json')}}');
             loadLottieAnimation('lottie-input-1', '{{url('assets/img/home/input.json')}}');
