@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="{{ url('assets/css/home/kickoff.css?v=1.4') }}">
     <link rel="stylesheet" href="{{ url('assets/css/home/story.css?v=1.4') }}">
     <link rel="stylesheet" href="{{ url('assets/css/home/mission.css?v=1.4') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.5') }}">
-    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.6') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character.css?v=1.6') }}">
+    <link rel="stylesheet" href="{{ url('assets/css/home/character-info.css?v=1.7') }}">
     <link rel="stylesheet" href="{{ url('assets/css/home/modal.css?v=1.1') }}">
 @stop
 
