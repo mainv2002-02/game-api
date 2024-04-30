@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BaseRequest;
+use App\Logic\GameLogic;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -37,6 +38,11 @@ class AuthController extends Controller
                                      'department' => $params['department'] ?? '',
                                      'area'       => $params['area'] ?? '',
                                  ]);
+        }
+        /** @var GameLogic $gameLogic */
+        $gameLogic = GameLogic::getInstance();
+        if (!$gameLogic->finishAllTracks()) {
+            return redirect('/home');
         }
         return view('auth.home');
     }
