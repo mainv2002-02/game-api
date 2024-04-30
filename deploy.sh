@@ -12,11 +12,6 @@ git checkout $1
 
 git pull
 
-# Change configurations
-echo "\n----------"
-echo "Change configurations .$2"
-cp .env.$2 .env
-
 # Install/update composer dependencies
 echo "\n----------"
 echo "Install/update composer dependencies"
