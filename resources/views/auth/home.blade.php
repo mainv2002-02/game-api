@@ -31,19 +31,19 @@
                         <!-- Phone Input -->
                         <div class="form-group">
                             <label for="phone">Điện Thoại:</label>
-                            <input type="text" class="form-control" id="phone" name="phone" required value="{{Auth::user()->phone}}">
+                            <input type="text" class="form-control" id="phone" name="phone" required value="123">
                         </div>
 
                         <!-- Title Dropdown -->
                         <div class="form-group">
                             <label for="title">Chức danh:</label>
-                            <input type="text" id="title" name="title" class="form-control" required value="{{Auth::user()->title}}">
+                            <input type="text" id="title" name="title" class="form-control" required value="111">
                         </div>
 
                         <!-- Department Dropdown -->
                         <div class="form-group">
                             <label for="department">Bộ Phận:</label>
-                            <select class="form-control" id="department" name="department" required value="{{Auth::user()->department}}">
+                            <select class="form-control" id="department" name="department" required value="123}">
                                 <option value="">Lựa chọn Bộ phận</option>
                                 <option value="Supply Chain">Supply Chain</option>
                                 <option value="Sales & Commercial">Sales & Commercial</option>
@@ -59,7 +59,7 @@
                         <!-- Area Dropdown -->
                         <div class="form-group">
                             <label for="area">Vùng Miền:</label>
-                            <select class="form-control" id="area" name="area" required value="{{Auth::user()->area}}">
+                            <select class="form-control" id="area" name="area" required value="233">
                                 <option value="">Lựa chọn vùng miền</option>
                                 <option value="HO (trụ sở chính)">HO (trụ sở chính)</option>
                                 <option value="HCM">HCM</option>
@@ -84,19 +84,19 @@
         <div id="lottie-background" class="lottie"></div>
         <div class="form-container">
             <div id="lottie-input-1" class="lottie-input">
-                <div class="input-text lottie-text" style="display: none">{{Auth::user()->full_name}}</div>
+                <div class="input-text lottie-text" style="display: none">111</div>
             </div>
             <div id="lottie-input-2" class="lottie-input">
-                <div class="input-text lottie-text" style="display: none">{{Auth::user()->phone}}</div>
+                <div class="input-text lottie-text" style="display: none">222</div>
             </div>
             <div id="lottie-input-3" class="lottie-input">
-                <div class="input-text lottie-text" style="display: none">{{Auth::user()->title}}</div>
+                <div class="input-text lottie-text" style="display: none">333</div>
             </div>
             <div id="lottie-input-4" class="lottie-input">
-                <div class="input-text lottie-text" style="display: none">{{Auth::user()->department}}</div>
+                <div class="input-text lottie-text" style="display: none">444</div>
             </div>
             <div id="lottie-input-5" class="lottie-input">
-                <div class="input-text lottie-text" style="display: none">{{Auth::user()->area}}</div>
+                <div class="input-text lottie-text" style="display: none">555</div>
             </div>
             <div id="home-button" class="lottie-button"></div>
         </div>
@@ -220,9 +220,7 @@
 
         $(document).ready(function() {
             // Display the modal when the document is fully loaded
-            @if(empty(Auth::user()->phone) ||empty(Auth::user()->title) ||empty(Auth::user()->department) ||empty(Auth::user()->area))
-            $("#myModal").show();
-            @endif
+
 
             loadLottieAnimation('lottie-background', '{{url('assets/img/home/border.json')}}');
             loadLottieAnimation('lottie-input-1', '{{url('assets/img/home/input.json')}}');
