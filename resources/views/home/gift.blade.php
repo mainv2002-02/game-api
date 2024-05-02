@@ -11,36 +11,38 @@
 @stop
 
 @section('content')
-    <div class="video-bg" id="bg01">
-        <video playsinline autoplay muted id="myVideo">
-            <source src="{{url('assets/img/gift/background01.mp4')}}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    <div class="main-view">
+        <div class="video-bg" id="bg01">
+            <video playsinline autoplay muted id="myVideo">
+                <source src="{{url('assets/img/gift/background01.mp4')}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
-    <div id="button-frame"></div>
+        <div id="button-frame"></div>
 
-    <div class="frame-container">
-        <div id="border-frame">
-            <div class="typewriter green">
-                <div id="gift-content1"></div>
+        <div class="frame-container">
+            <div id="border-frame">
+                <div class="typewriter green">
+                    <div id="gift-content1"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <img src="{{url('assets/img/gift/logo.png')}}" alt="Celerating You" class="image-logo"/>
-    <div id="convert-frame" class="convert-frame">
-        <div class="convert-text green">
-            Đổi quà tại đây
+        <img src="{{url('assets/img/gift/logo.png')}}" alt="Celerating You" class="image-logo"/>
+        <div id="convert-frame" class="convert-frame">
+            <div class="convert-text green">
+                Đổi quà tại đây
+            </div>
         </div>
-    </div>
 
-{{--    <div id="gift-frame"></div>--}}
-    <div id="number" class="score-animation score-text">
-        100
+    {{--    <div id="gift-frame"></div>--}}
+        <div id="number" class="score-animation score-text">
+            100
+        </div>
+        <div id="score-frame"></div>
+        <div id="back-frame"></div>
+        <!-- Your content here -->
     </div>
-    <div id="score-frame"></div>
-    <div id="back-frame"></div>
-    <!-- Your content here -->
 @stop
 
 @section('scripts')
