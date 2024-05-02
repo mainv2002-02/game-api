@@ -78,7 +78,7 @@
              })
 
              $("#back-frame").click(function() {
-                 window.location.href = 'home/2';
+                 window.location.href = '/home';
              })
          });
     </script>
