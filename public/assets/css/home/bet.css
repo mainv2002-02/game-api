@@ -1,0 +1,106 @@
+.main-view {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Set to the width of your lottie animation */
+    height: 100%; /* Set to the height of your lottie animation */
+    z-index: 0;
+}
+
+.video-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* Set to the width of your lottie animation */
+    height: 100%; /* Set to the height of your lottie animation */
+    z-index: 0;
+    /*aspect-ratio: 16 / 9;*/
+}
+
+
+.video-bg > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.frame-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+#button-frame {
+    position: absolute;
+    z-index: 20;
+}
+
+#button-frame {
+    top: 90%    ;
+    right: 5%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.team {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.choose-team {
+    position: absolute;
+    width: 19vw;
+    height: 7vh;
+    cursor: pointer;
+    z-index: 2;
+}
+
+#list {
+    top: 7%;
+    right: 7%;
+    width: 15vw;
+    height: 7vh;
+}
+#team-01 {
+    top: 28%;
+    left: 14%;
+}
+#team-02 {
+    top: 28%;
+    left: 40%;
+}
+#team-03 {
+    top: 28%;
+    left: 67%;
+}
+#team-04 {
+    top: 45%;
+    left: 14%;
+}
+#team-05 {
+    top: 45%;
+    left: 40%;
+}
+#team-06 {
+    top: 45%;
+    left: 67%;
+}
+#team-07 {
+    top: 62%;
+    left: 14%;
+}
+#team-08 {
+    top: 62%;
+    left: 40%;
+}
+#team-09 {
+    top: 62%;
+    left: 67%;
+}
+#team-10 {
+    top: 79%;
+    left: 40%;
+}

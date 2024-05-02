@@ -92,7 +92,11 @@
              loadLottieAnimation('button-dc', '{{url('assets/img/main/dc.json')}}');
 
              $("#button-gift").click(function () {
-                window.open('/gift', '_blank');
+                 window.location.href = '/gift';
+             })
+
+             $("#button-dc").click(function () {
+                 window.location.href = '/bet';
              })
          });
     </script>
