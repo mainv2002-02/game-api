@@ -74,8 +74,8 @@
 @section('scripts')
      <script>
          $(document).ready(function() {
-             loadLottieAnimation('border-frame', '{{url('assets/img/kickoff/border.json')}}');
-             loadLottieAnimation('button-frame', '{{url('assets/img/kickoff/button.json')}}');
+             loadLottieAnimation('border-frame', '{{url('assets/img/kickoff/border.json', secure: true)}}');
+             loadLottieAnimation('button-frame', '{{url('assets/img/kickoff/button.json', secure: true)}}');
 
              var video = document.getElementById('myVideo');
 
@@ -87,8 +87,8 @@
              $("#button-frame").click(function() {
                  $("#kickoff").fadeOut(2000);
                  $("#story").fadeIn(2000, function (){
-                     loadLottieAnimation('border-frame-story', '{{url('assets/img/story/border.json')}}');
-                     loadLottieAnimation('button-frame-story', '{{url('assets/img/story/button.json')}}');
+                     loadLottieAnimation('border-frame-story', '{{url('assets/img/story/border.json', secure: true)}}');
+                     loadLottieAnimation('button-frame-story', '{{url('assets/img/story/button.json', secure: true)}}');
 
                      const htmlContent1 = `<p><b>Thị trấn Happiness - The Happiness City</b> luôn được biết tới là một nơi sản xuất
                         và phân phối hàng đầu của nhiều loại thức uống đa dạng, hợp thời và được
@@ -111,8 +111,8 @@
              $("#button-frame-story").click(function() {
                  $("#story").fadeOut(2000);
                  $("#mission").fadeIn(2000, function (){
-                     loadLottieAnimation('border-frame-mission', '{{url('assets/img/mission/border.json')}}');
-                     loadLottieAnimation('button-frame-mission', '{{url('assets/img/mission/button.json')}}');
+                     loadLottieAnimation('border-frame-mission', '{{url('assets/img/mission/border.json', secure: true)}}');
+                     loadLottieAnimation('button-frame-mission', '{{url('assets/img/mission/button.json', secure: true)}}');
 
                      const htmlContent1 = `<p>Bạn đã sẵn sàng bay tới <b class="pink">Thị trấn Happiness</b></p>`
                      const htmlContent2 = `<p>và cùng hoàn thành những thử thách khác nhau để trở thành</p>`
