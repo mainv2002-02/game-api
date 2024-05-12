@@ -20,6 +20,7 @@ $router->group([
     $router->get('/gift', 'HomeController@gift');
     $router->get('/gift2', 'HomeController@gift2');
     $router->get('/bet', 'HomeController@bet');
+    $router->get('/final', 'HomeController@final');
 
     $router->get('/game/question', 'GameController@question');
     $router->get('/game/records', 'GameController@getRecords');
