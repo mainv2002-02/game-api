@@ -1,5 +1,9 @@
 var allAnimations = [];
 function loadLottieAnimation(elementId, path, isRepeat = false) {
+    const index = allAnimations.findIndex(animation => animation.name === elementId);
+    if (index > -1) {
+        return;
+    }
     var animation = lottie.loadAnimation({
         container: document.getElementById(elementId), // the DOM element that will contain the animation
         renderer: 'svg',

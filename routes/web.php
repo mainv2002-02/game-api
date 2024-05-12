@@ -19,6 +19,7 @@ $router->group([
     $router->post('/home', 'HomeController@index');
     $router->get('/gift', 'HomeController@gift');
     $router->get('/gift2', 'HomeController@gift2');
+    $router->get('/bet', 'HomeController@bet');
 
     $router->get('/game/question', 'GameController@question');
     $router->get('/game/records', 'GameController@getRecords');

@@ -11,47 +11,49 @@
 @stop
 
 @section('content')
-    <div class="video-bg" id="bg01">
-        <video playsinline autoplay muted id="myVideo">
-            <source src="{{url('assets/img/gift/background01.mp4')}}" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-    </div>
+    <div class="main-view">
+        <div class="video-bg" id="bg01">
+            <video playsinline autoplay muted id="myVideo">
+                <source src="{{url('assets/img/gift/background01.mp4')}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
 
-    <div id="button-frame"></div>
+        <div id="button-frame"></div>
 
-    <div class="frame-container">
-        <div id="border-frame">
-            <div class="typewriter green">
-                <div id="gift-content1"></div>
+        <div class="frame-container">
+            <div id="border-frame">
+                <div class="typewriter green">
+                    <div id="gift-content1"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <img src="{{url('assets/img/gift/logo.png')}}" alt="Celerating You" class="image-logo"/>
-    <div id="convert-frame" class="convert-frame">
-        <div class="convert-text green">
-            Đổi quà tại đây
+        <img src="{{url('assets/img/gift/logo.png')}}" alt="Celerating You" class="image-logo"/>
+        <div id="convert-frame" class="convert-frame">
+            <div class="convert-text green">
+                Đổi quà tại đây
+            </div>
         </div>
-    </div>
 
-{{--    <div id="gift-frame"></div>--}}
-    <div id="number" class="score-animation score-text">
-        100
+    {{--    <div id="gift-frame"></div>--}}
+        <div id="number" class="score-animation score-text">
+            100
+        </div>
+        <div id="score-frame"></div>
+        <div id="back-frame"></div>
+        <!-- Your content here -->
     </div>
-    <div id="score-frame"></div>
-    <div id="back-frame"></div>
-    <!-- Your content here -->
 @stop
 
 @section('scripts')
      <script>
          $(document).ready(function() {
-             loadLottieAnimation('border-frame', '{{url('assets/img/gift/border.json')}}');
-             loadLottieAnimation('button-frame', '{{url('assets/img/gift/gift.json')}}');
-             loadLottieAnimation('back-frame', '{{url('assets/img/gift/back.json')}}');
-             loadLottieAnimation('gift-frame', '{{url('assets/img/gift/border-logo.json')}}');
-             loadLottieAnimation('score-frame', '{{url('assets/img/gift/score.json')}}');
-             loadLottieAnimation('convert-frame', '{{url('assets/img/gift/border2.json')}}');
+             loadLottieAnimation('border-frame', '{{url('assets/img/gift/border.json', secure: true)}}');
+             loadLottieAnimation('button-frame', '{{url('assets/img/gift/gift.json', secure: true)}}');
+             loadLottieAnimation('back-frame', '{{url('assets/img/gift/back.json', secure: true)}}');
+             loadLottieAnimation('gift-frame', '{{url('assets/img/gift/border-logo.json', secure: true)}}');
+             loadLottieAnimation('score-frame', '{{url('assets/img/gift/score.json', secure: true)}}');
+             loadLottieAnimation('convert-frame', '{{url('assets/img/gift/border2.json', secure: true)}}');
 
              var $number = $('#number'),
                  numberFromText = parseInt($number.text(), 10);
@@ -76,7 +78,7 @@
              })
 
              $("#back-frame").click(function() {
-                 window.location.href = 'home/2';
+                 window.location.href = '/home';
              })
          });
     </script>
