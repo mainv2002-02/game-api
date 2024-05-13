@@ -45,9 +45,9 @@
 @section('scripts')
      <script>
          $(document).ready(function() {
-             loadLottieAnimation('lottie-frame-1', '{{url('assets/img/character/border.json', secure: true)}}');
-             loadLottieAnimation('lottie-frame-2', '{{url('assets/img/character/border.json', secure: true)}}');
-             loadLottieAnimation('lottie-frame-3', '{{url('assets/img/character/border.json', secure: true)}}');
+             loadLottieAnimation('lottie-frame-1', '{{url('assets/img/character/border.json')}}');
+             loadLottieAnimation('lottie-frame-2', '{{url('assets/img/character/border.json')}}');
+             loadLottieAnimation('lottie-frame-3', '{{url('assets/img/character/border.json')}}');
 
              setTimeout(function () {
                 $(".character-image").fadeIn(3000);

@@ -44,14 +44,14 @@
         $(document).ready(function() {
             $("#content").fadeIn(1800);
             setTimeout(function () {
-                loadLottieAnimation('lottie-background', '{{url('assets/img/home/border.json', secure: true)}}');
+                loadLottieAnimation('lottie-background', '{{url('assets/img/home/border.json')}}');
                 // Initialize Lottie animations for each input and the button
-                loadLottieAnimation('lottie-input-1', '{{url('assets/img/home/input.json', secure: true)}}');
-                loadLottieAnimation('lottie-input-2', '{{url('assets/img/home/input.json', secure: true)}}');
-                loadLottieAnimation('lottie-input-3', '{{url('assets/img/home/input.json', secure: true)}}');
-                loadLottieAnimation('lottie-input-4', '{{url('assets/img/home/input.json', secure: true)}}');
-                loadLottieAnimation('lottie-input-5', '{{url('assets/img/home/input.json', secure: true)}}');
-                loadLottieAnimation('lottie-button', '{{url('assets/img/home/button.json', secure: true)}}');
+                loadLottieAnimation('lottie-input-1', '{{url('assets/img/home/input.json')}}');
+                loadLottieAnimation('lottie-input-2', '{{url('assets/img/home/input.json')}}');
+                loadLottieAnimation('lottie-input-3', '{{url('assets/img/home/input.json')}}');
+                loadLottieAnimation('lottie-input-4', '{{url('assets/img/home/input.json')}}');
+                loadLottieAnimation('lottie-input-5', '{{url('assets/img/home/input.json')}}');
+                loadLottieAnimation('lottie-button', '{{url('assets/img/home/button.json')}}');
                 $(".lottie-text").fadeIn(2000);
             }, 2000)
 

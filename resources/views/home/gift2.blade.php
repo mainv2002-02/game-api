@@ -34,8 +34,8 @@
 @section('scripts')
      <script>
          $(document).ready(function() {
-             loadLottieAnimation('border-frame', '{{url('assets/img/gift/gift.json', secure: true)}}');
-             loadLottieAnimation('button-frame', '{{url('assets/img/gift/2/back.json', secure: true)}}');
+             loadLottieAnimation('border-frame', '{{url('assets/img/gift/gift.json')}}');
+             loadLottieAnimation('button-frame', '{{url('assets/img/gift/2/back.json')}}');
              var video = document.getElementById('myVideo');
 
              video.addEventListener('ended', function() {

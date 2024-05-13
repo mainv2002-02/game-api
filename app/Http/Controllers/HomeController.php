@@ -69,4 +69,9 @@ class HomeController extends Controller
     {
         return view('home.bet');
     }
+
+    public function final(): View
+    {
+        return view('home.final');
+    }
 }
