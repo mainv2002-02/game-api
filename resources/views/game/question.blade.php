@@ -39,7 +39,7 @@
     <script>
         $(document).ready(function() {
             // Initialize all your Lottie animations here
-            loadLottieAnimation('button-gift', '{{url('assets/img/track2/breakcrum.json', secure: true)}}');
+            loadLottieAnimation('button-gift', '{{url('assets/img/track2/breakcrum.json')}}');
 
             $("#button-gift").click(function () {
                 window.open('/gift', '_blank');

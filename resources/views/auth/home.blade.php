@@ -224,23 +224,23 @@
             $("#myModal").show();
             @endif
 
-            loadLottieAnimation('lottie-background', '{{url('assets/img/home/border.json', secure: true)}}');
-            loadLottieAnimation('lottie-input-1', '{{url('assets/img/home/input.json', secure: true)}}');
-            loadLottieAnimation('lottie-input-2', '{{url('assets/img/home/input.json', secure: true)}}');
-            loadLottieAnimation('lottie-input-3', '{{url('assets/img/home/input.json', secure: true)}}');
-            loadLottieAnimation('lottie-input-4', '{{url('assets/img/home/input.json', secure: true)}}');
-            loadLottieAnimation('lottie-input-5', '{{url('assets/img/home/input.json', secure: true)}}');
-            loadLottieAnimation('home-button', '{{url('assets/img/home/button.json', secure: true)}}');
+            loadLottieAnimation('lottie-background', '{{url('assets/img/home/border.json')}}');
+            loadLottieAnimation('lottie-input-1', '{{url('assets/img/home/input.json')}}');
+            loadLottieAnimation('lottie-input-2', '{{url('assets/img/home/input.json')}}');
+            loadLottieAnimation('lottie-input-3', '{{url('assets/img/home/input.json')}}');
+            loadLottieAnimation('lottie-input-4', '{{url('assets/img/home/input.json')}}');
+            loadLottieAnimation('lottie-input-5', '{{url('assets/img/home/input.json')}}');
+            loadLottieAnimation('home-button', '{{url('assets/img/home/button.json')}}');
             $(".input-text").fadeIn(1000);
 
             $("#home-button").click(function () {
                 $("#page-home").fadeOut(2000);
                 $("#kickoff").fadeIn(2000, function () {
                     displayLottieText('kickoff-text');
-                    loadLottieAnimation('kickoff-background', '{{url('assets/img/kickoff/borderNew.json', secure: true)}}');
-                    loadLottieAnimation('kickoff-border-frame', '{{url('assets/img/kickoff/border01.json', secure: true)}}');
-                    loadLottieAnimation('kickoff-button-frame', '{{url('assets/img/kickoff/button.json', secure: true)}}');
-                    loadLottieAnimation('kickoff-fullscreen-frame', '{{url('assets/img/kickoff/fullscreen.json', secure: true)}}');
+                    loadLottieAnimation('kickoff-background', '{{url('assets/img/kickoff/borderNew.json')}}');
+                    loadLottieAnimation('kickoff-border-frame', '{{url('assets/img/kickoff/border01.json')}}');
+                    loadLottieAnimation('kickoff-button-frame', '{{url('assets/img/kickoff/button.json')}}');
+                    loadLottieAnimation('kickoff-fullscreen-frame', '{{url('assets/img/kickoff/fullscreen.json')}}');
                 });
             });
 
@@ -248,8 +248,8 @@
                 $("#kickoff").fadeOut(2000);
                 $("#story").fadeIn(2000, function (){
                     displayLottieText('story-text');
-                    loadLottieAnimation('border-frame-story', '{{url('assets/img/story/border.json', secure: true)}}');
-                    loadLottieAnimation('button-frame-story', '{{url('assets/img/story/button.json', secure: true)}}');
+                    loadLottieAnimation('border-frame-story', '{{url('assets/img/story/border.json')}}');
+                    loadLottieAnimation('button-frame-story', '{{url('assets/img/story/button.json')}}');
 
                     const htmlContent1 = `<p><b>Thị trấn Hạnh Phúc - The Happiness City</b> luôn được biết tới là một nơi sản xuất
                         và phân phối hàng đầu của nhiều loại thức uống đa dạng, hợp thời và được
@@ -269,8 +269,8 @@
                 $("#story").fadeOut(2000);
                 $("#mission").fadeIn(2000, function (){
                     displayLottieText('mission-text');
-                    loadLottieAnimation('border-frame-mission', '{{url('assets/img/story/border.json', secure: true)}}');
-                    loadLottieAnimation('button-frame-mission', '{{url('assets/img/mission/button.json', secure: true)}}');
+                    loadLottieAnimation('border-frame-mission', '{{url('assets/img/story/border.json')}}');
+                    loadLottieAnimation('button-frame-mission', '{{url('assets/img/mission/button.json')}}');
 
                     const htmlContent1 = `<p>Bạn đã sẵn sàng tới khám phá <b class="pink">Thị trấn Hạnh Phúc</b></p>
                                           <p>và cùng hoàn thành những thử thách khác nhau để trở thành</p>
@@ -404,7 +404,7 @@
         }
 
         function addAnimationCharacter() {
-            loadLottieAnimation('lottie-frame', '{{url('assets/img/character/fullBackground.json', secure: true)}}');
+            loadLottieAnimation('lottie-frame', '{{url('assets/img/character/fullBackground.json')}}');
 
             setTimeout(function () {
                 $(".character-image").fadeIn(4000);
@@ -419,10 +419,10 @@
         }
 
         function addAnimationCharacterInfo() {
-            loadLottieAnimation('character-info-background', '{{url('assets/img/character-info/border.json', secure: true)}}');
-            loadLottieAnimation('lottie-frame-info', '{{url('assets/img/character-info/frame.json', secure: true)}}');
-            loadLottieAnimation('button-frame-back', '{{url('assets/img/character-info/back.json', secure: true)}}', true);
-            loadLottieAnimation('button-frame-next', '{{url('assets/img/character-info/next.json', secure: true)}}', true);
+            loadLottieAnimation('character-info-background', '{{url('assets/img/character-info/border.json')}}');
+            loadLottieAnimation('lottie-frame-info', '{{url('assets/img/character-info/frame.json')}}');
+            loadLottieAnimation('button-frame-back', '{{url('assets/img/character-info/back.json')}}', true);
+            loadLottieAnimation('button-frame-next', '{{url('assets/img/character-info/next.json')}}', true);
             $("#character-info-title").fadeIn("slow");
             $("#character-info-des").fadeIn(2000);
             $("#character-info-image").fadeIn("slow");

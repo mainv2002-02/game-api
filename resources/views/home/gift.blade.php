@@ -48,12 +48,12 @@
 @section('scripts')
      <script>
          $(document).ready(function() {
-             loadLottieAnimation('border-frame', '{{url('assets/img/gift/border.json', secure: true)}}');
-             loadLottieAnimation('button-frame', '{{url('assets/img/gift/gift.json', secure: true)}}');
-             loadLottieAnimation('back-frame', '{{url('assets/img/gift/back.json', secure: true)}}');
-             loadLottieAnimation('gift-frame', '{{url('assets/img/gift/border-logo.json', secure: true)}}');
-             loadLottieAnimation('score-frame', '{{url('assets/img/gift/score.json', secure: true)}}');
-             loadLottieAnimation('convert-frame', '{{url('assets/img/gift/border2.json', secure: true)}}');
+             loadLottieAnimation('border-frame', '{{url('assets/img/gift/border.json')}}');
+             loadLottieAnimation('button-frame', '{{url('assets/img/gift/gift.json')}}');
+             loadLottieAnimation('back-frame', '{{url('assets/img/gift/back.json')}}');
+             loadLottieAnimation('gift-frame', '{{url('assets/img/gift/border-logo.json')}}');
+             loadLottieAnimation('score-frame', '{{url('assets/img/gift/score.json')}}');
+             loadLottieAnimation('convert-frame', '{{url('assets/img/gift/border2.json')}}');
 
              var $number = $('#number'),
                  numberFromText = parseInt($number.text(), 10);

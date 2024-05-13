@@ -85,11 +85,11 @@
 
 
              // Initialize all your Lottie animations here
-             loadLottieAnimation('button-gift', '{{url('assets/img/main/gift.json', secure: true)}}');
-             loadLottieAnimation('lottie-button-2', '{{url('assets/img/main/agenda.json', secure: true)}}');
-             loadLottieAnimation('chat-frame', '{{url('assets/img/main/border.json', secure: true)}}');
-             loadLottieAnimation('livestream-frame', '{{url('assets/img/main/livestream.json', secure: true)}}');
-             loadLottieAnimation('button-dc', '{{url('assets/img/main/dc.json', secure: true)}}');
+             loadLottieAnimation('button-gift', '{{url('assets/img/main/gift.json')}}');
+             loadLottieAnimation('lottie-button-2', '{{url('assets/img/main/agenda.json')}}');
+             loadLottieAnimation('chat-frame', '{{url('assets/img/main/border.json')}}');
+             loadLottieAnimation('livestream-frame', '{{url('assets/img/main/livestream.json')}}');
+             loadLottieAnimation('button-dc', '{{url('assets/img/main/dc.json')}}');
 
              $("#button-gift").click(function () {
                  window.location.href = '/gift';
