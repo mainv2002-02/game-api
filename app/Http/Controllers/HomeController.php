@@ -74,4 +74,25 @@ class HomeController extends Controller
     {
         return view('home.final');
     }
+
+    public function demo(BaseRequest $request): mixed
+    {
+        if ($request->getMethod() == 'POST') {
+            $params = $request->all();
+            $heroId = $params['heroId'];
+            if (empty($params['heroId'])) {
+                abort(403);
+            }
+            $result = $this->logic->initHero($heroId);
+            return response()->json(data: ['msg' => $result ? 'Success' : 'You can not change your hero! Please finish all questions!!']);
+        }
+        $heroId = Auth::user()->hero_id;
+        /** @var Hero $heroInstance */
+        $heroInstance = Hero::getInstance($heroId);
+        $tracks = $heroInstance->getTracks();
+
+        return view('home.test')
+            ->with('tracks', $tracks)
+            ->with('host', env('APP_URL'));
+    }
 }
