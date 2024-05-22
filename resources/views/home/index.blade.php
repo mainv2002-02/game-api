@@ -52,7 +52,7 @@
            </div>
            <div id="chat-frame" class=""></div>
            <div id="livestream-frame" class="">
-               <iframe id="youtube-video" src="https://www.youtube.com/embed/KQtly6FFWlQ?si=3hy93A2UUcV0oma8?autoplay=1&controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+               <iframe id="youtube-video" src="https://www.youtube.com/embed/P9C25Un7xaM?autoplay=1&mute=1&controls=0&modestbranding=1&showinfo=0&rel=0&iv_load_policy=3" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
            </div>
            <div class="main-content">
                @if($tracks->count())

@@ -52,7 +52,7 @@
             </div>
             <div id="chat-frame" class=""></div>
             <div id="livestream-frame" class="">
-                <a href="https://youtu.be/KQtly6FFWlQ?si=flpbJyR7aPStOg2f" target="_blank">
+                <a href="https://ccbvl.workplace.com/live/producer/986490719770523/?entry_point=group_inline_composer" target="_blank">
                     <img src="{{url('assets/img/kv.jpg')}}" alt="{{Auth::user()->full_name}}" class="iframe"/>
                 </a>
             </div>
